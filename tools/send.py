@@ -135,4 +135,6 @@ def play(lines, check_run=True):
 
 
 if __name__ == "__main__":
+    import atexit, narrate_check
+    atexit.register(narrate_check.remind)
     main()

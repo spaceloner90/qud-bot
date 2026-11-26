@@ -1,8 +1,28 @@
 {
- "label": "Uumurem: the girshling by hand",
- "objective": "new character to level 5 (the recording)",
- "goal": "hold while the LLM fights",
+ "label": "Siwur: continue Red Rock stratum 1 (11.20.1.1.11)",
+ "objective": "Siwur from level 1 to level 5",
+ "goal": "Finish exploring, fighting, and looting Red Rock stratum 1",
  "stages": [
+  {
+   "script": "explore",
+   "args": {
+    "hand_off": true,
+    "fight": true,
+    "missile": true,
+    "collect": true,
+    "auto_eat": true,
+    "auto_cook": true,
+    "hunt": true,
+    "goal_level": 5,
+    "max_turns": 1500,
+    "raise_hp_fraction": 0.5,
+    "hold": true,
+    "max_hostiles": 2,
+    "accept_kinds": [
+     "dreadroot"
+    ]
+   }
+  },
   {
    "script": "remote",
    "args": {

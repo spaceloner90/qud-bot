@@ -106,4 +106,6 @@ def main():
 
 
 if __name__ == "__main__":
+    import atexit, narrate_check
+    atexit.register(narrate_check.remind)
     sys.exit(main())

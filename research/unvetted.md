@@ -7,22 +7,21 @@ re-validated here; this is only what hasn't been seen yet.
 
 | Change (2026-11-26) | What to watch for |
 |---|---|
-| Mod v0.26: autoexplore prey interrupt (live/interrupt.txt) | `autoact_interrupt` lines in live/log.jsonl; no repeated interrupts for one creature |
-| Mod v0.27: `inventory_ids` / `equipped_ids` | present in live/state.json after a restart; weapon records keyed `name#id` |
 | To-hit from the game's rolls + proficiency (threat.to_hit_bonus) | estimates close to what fights do; no hand-over for easy kills |
 | Weapon records per character (not shared) | a new character starts with empty records; estimates still sane |
 | Hand-played swings recorded (remote.observe_swings) | rolls/roll_n grow during my own fights |
 | Charge only from 3-4 cells | Charge fires and lands; no "no clear line" from 2 |
 | Stuck in a pool: struggle free (explore.free_direction) | gets out in a few moves; never 30 moves |
 | Missile weapon fills an empty slot (gear check) | one hand-over per missile weapon, with the ammo listed |
-| New liquids and features listed (features.py) | "[new to evaluate: ...]" on hand-overs; not noisy; verdicts stick |
 | Cook refusal backs off (cook.refused_here) | no repeated refusals in place; still cooks before Famished |
 | Vague "shooting at you or the X" ignored twice in 100 turns | a real shooter still hands over (hit or near miss) |
 | Camp walk up to 80 steps | reaches a fire spot round walls |
-| Plan mtime counts as a new plan; watcher HELD | an identical re-sent plan is picked up |
 | Fight heal(): rest when only rooted hostiles are 2+ away | rests in one call; falls back to waits when refused |
 | Silent-attack guard (2 silent swings at prey: skip it) | doesn't fire on normal misses |
 
 ## Seen working
 
-(none yet)
+- **Mod v0.26: autoexplore prey interrupt (`live/interrupt.txt`)** — Siwur (`1f19697d`), turn ~141094: hunted and killed both wet glowfish in `JoppaWorld.11.22.2.2.10` without manual intervention.
+- **Mod v0.27: `inventory_ids` / `equipped_ids`** — Siwur (`1f19697d`), turn 141071 onward: present in `live/state.json`.
+- **New liquids and features listed (`features.py`)** — Siwur (`1f19697d`), turn 141899: `[new to evaluate: shrine to nathritafa, the cerulean bane of namritara ...]` appeared on hand-over and `tools/world.py evaluate feature` queued cleanly.
+- **Plan mtime counts as a new plan (`step.py`)** — Siwur (`1f19697d`), turns 141071 & 141899: rewriting `brain/plan.json` after popup/hand-over resumed `explore` cleanly.

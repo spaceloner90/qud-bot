@@ -75,7 +75,7 @@ owner sets each next goal.
    memory.
 5. Narrate while the voice is on (`live/voice_on`): `tools/say.py` for what you're doing and why,
    `tools/think.py` for decisions (the panel reads as a thought train: objective, goal, reasons, not
-   commands). The rules are in `.claude/skills/narrate/SKILL.md`.
+   commands). The rules are in [`research/narrate.md`](research/narrate.md).
 
 ## At every decision point (hand-over, level-up, take stock, town visit)
 

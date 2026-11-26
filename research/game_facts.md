@@ -171,3 +171,18 @@ missing or code-only there). Imported by CLAUDE.md. Facts, not rules (rules are 
   that key for per-run data: "features" did (per-cell map features), and a save copied 3,507 of them out of
   Uumurem's world.json (2026-11-26, repaired; a unit check now guards it). Back up both files before
   touching shared keys, and round-trip load/save to check.
+- **Narration silence reminder is agent-agnostic (2026-11-26):** canonical rules live in `research/narrate.md`,
+  implemented in `tools/narrate_check.py`, and wired via `atexit` into `send.py`, `walk.py`, `menu.py`,
+  `wait.py`, `next_zone.py`, and `watch_handover.py` (`.claude/hooks/narrate_check.py` is a thin shim).
+- **Windows Python & cold-shell harnesses (2026-11-26):**
+  - The Microsoft Store Python alias (`AppData\Local\Microsoft\WindowsApps\python.exe`) fails inside Windows
+    sandboxes (`The file cannot be accessed by the system`). Installing standard Python 3.11 for the user
+    (`winget install -e --id Python.Python.3.11 --scope user --override "/quiet InstallAllUsers=0 InstallLauncherAllUsers=0 PrependPath=1 Include_test=0"`)
+    lets `python` run inside the sandbox (~2x faster than sandbox bypass).
+  - Harnesses that spawn a fresh sandboxed PowerShell per shell call incur a ~5-6 s fixed startup floor per
+    call, and concurrent shell calls serialize (~13-14 s for two parallel calls like `send.py` + `say.py`).
+  - **What did NOT work to beat the cold-shell floor:** a file-piped warm daemon (`tools/exec_daemon.py`
+    watching `live/exec_in.txt` -> `live/exec_last.txt`) runs `send.py` in ~0.10 s internally, but splitting
+    "write command" and "read output" across two LLM turns adds an extra ~4-6 s LLM round-trip, negating the
+    shell-startup savings (~11 s either way). Fast turn-by-turn hand play requires a harness with a warm shell
+    (single-turn blocking execution with <1 s overhead).

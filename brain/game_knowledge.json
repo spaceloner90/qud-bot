@@ -24,21 +24,23 @@
     25,
     25,
     25,
+    25,
+    25,
     25
    ],
    "max_hit": 5,
    "difficulty": "Average",
    "mobile": false,
-   "kills": 20,
+   "kills": 22,
    "obs": {
-    "attacks": 45,
-    "hits": 24,
-    "dmg": 62,
-    "mult": 26,
-    "av": 59,
-    "av_n": 24,
-    "turns": 35,
-    "last_turn": 371000
+    "attacks": 49,
+    "hits": 26,
+    "dmg": 67,
+    "mult": 28,
+    "av": 63,
+    "av_n": 26,
+    "turns": 39,
+    "last_turn": 142538
    }
   },
   "seed-spitting vine": {
@@ -88,14 +90,14 @@
    "mobile": true,
    "kills": 8,
    "obs": {
-    "attacks": 69,
-    "hits": 47,
-    "dmg": 75,
-    "mult": 49,
-    "av": 102,
-    "av_n": 47,
-    "turns": 53,
-    "last_turn": 371016
+    "attacks": 75,
+    "hits": 51,
+    "dmg": 81,
+    "mult": 53,
+    "av": 110,
+    "av_n": 51,
+    "turns": 58,
+    "last_turn": 142585
    }
   },
   "giant centipede": {
@@ -195,12 +197,13 @@
     10,
     10,
     10,
+    10,
     10
    ],
    "max_hit": 2,
    "prey": true,
    "mobile": true,
-   "kills": 12,
+   "kills": 13,
    "obs": {
     "attacks": 6,
     "hits": 4,
@@ -224,7 +227,7 @@
    "difficulty": "Average",
    "xp_note": "died to 2 damage, gave no XP",
    "harmless": true,
-   "kills": 61
+   "kills": 67
   },
   "snapjaw scavenger": {
    "verdict": "fight",
@@ -529,8 +532,9 @@
   "glowfish": {
    "verdict": "fight",
    "effects": [],
-   "kills": 26,
+   "kills": 27,
    "xp": [
+    25,
     25,
     25,
     25,
@@ -562,14 +566,14 @@
    "prey": true,
    "difficulty": "Average",
    "obs": {
-    "attacks": 39,
+    "attacks": 40,
     "hits": 9,
     "dmg": 15,
     "mult": 9,
     "av": 18,
     "av_n": 9,
-    "turns": 37,
-    "last_turn": 206890
+    "turns": 38,
+    "last_turn": 141093
    }
   },
   "giant dragonfly": {
@@ -1105,6 +1109,10 @@
   "wine weep": {
    "note": "a spring of wine: fill every empty container and sell it (the user, 2026-11-26)",
    "turn": 371191
+  },
+  "shrine to nathritafa, the cerulean bane of namritara": {
+   "note": "Sultan shrine; reveals a historic site in the journal (Namritara Glassfold).",
+   "turn": 141899
   }
  }
 }

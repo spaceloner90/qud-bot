@@ -1,6 +1,6 @@
 # Qud bot
 
-A bot that plays Caves of Qud by reading the screen and pressing keys, with an LLM (Claude) deciding the plan and playing the hard fights by hand at hand-overs. We work out our own way through the game: no strategy guides, only web searches for mechanical questions. The game's code is read only to find input/output hooks, never for strategy or content.
+A bot that plays Caves of Qud by reading the screen and pressing keys, with an LLM deciding the plan and playing the hard fights by hand at hand-overs. We work out our own way through the game: no strategy guides, only web searches for mechanical questions. The game's code is read only to find input/output hooks, never for strategy or content.
 
 **Video:** [the first recording](https://www.youtube.com/watch?v=Fn8r-WRl4kI): a new character (Uumurem) from Joppa to level 5 through Red Rock, no deaths. Its run folder is `runs/9b6c18ef-2e3b-4573-99de-ed8d65ff19e8/` (`recording.json`, the world file and the character profile); the retrospective is [`research/retro_uumurem.md`](research/retro_uumurem.md).
 
@@ -15,7 +15,7 @@ This is an unofficial fan project, not affiliated with the game's developers. No
 - **`brain/plan.json`** is the top-level decision: which script to run, with which arguments. The LLM writes it after assessing the game, and also writes and refines the scripts.
 - **`brain/scripts/`** are the routines that carry a plan out over many calls. They stop and hand back when they reach something they can't handle. So far: `explore` (the game's autoexplore, stopping at hostiles, popups, low HP, no progress, the turn budget or the goal; with `fight` it hands hostiles to `fight`), `fight` (routine melee against kinds the world file marks "fight"; raises the LLM for new enemies, low HP, unexpected messages, long fights), `remote` (the LLM sends keys live), `keys` and `idle`.
 - **`runs/<game id>/world.json`** is the world file: what this run has shown us (zones, people and things at their last known place, quests, notes). Scripts may rely on it; `tools/world.py` shows it and adds notes.
-- **`research/`** holds what we've learned: `lessons.md` (standing lessons, loaded by `CLAUDE.md`), `game_facts.md`, `design.md` (the design and why), `playbook_level5.md`, the retros, and `unvetted.md` (changes not yet seen working in a live run).
+- **`research/`** holds what we've learned: `lessons.md` (standing lessons), `game_facts.md`, `narrate.md`, `design.md` (the design and why), `playbook_level5.md`, the retros, and `unvetted.md` (changes not yet seen working in a live run).
 
 The loop: the player presses **F1** in game, the bot plays until a script stops, and then the LLM reads `live/log.jsonl`, reassesses, and updates the plan and the scripts.
 
