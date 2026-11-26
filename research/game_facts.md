@@ -33,6 +33,7 @@ missing or code-only there). Imported by CLAUDE.md. Facts, not rules (rules are 
 - **Pools are groups**: hitting one glowpad or glowfish turns the whole pool hostile; the glowpads stay in
   the water, the glowfish come at you. Glowpads are not strictly rooted (a calm one moved a cell).
   Glowpad parts (stems, bud, leaf) sold for 0.01 drams total: not worth a detour.
+- **Glowpads** (rooted, 50 HP, 25 XP): a long siege at level 1, fine from level 3 or so.
 - **Swarmers** (girshlings, snapjaws, feral dogs): each gets stronger with another swarmer beside it.
   Fight them one at a time.
 - **Snapjaw warlord**: 20 HP, four or five attacks (steel war hammer, bites), Swarmer, tracks by smell,
@@ -98,6 +99,8 @@ missing or code-only there). Imported by CLAUDE.md. Facts, not rules (rules are 
   and the sword one-shot a 5-HP giant amoeba that the iron dagger did 1 a hit to (pen too low): the sword
   wins even underground (revised the same day). Equipping a torch from the stack lights it.
 - A blazing torch lights about 3 cells underground (about 4 on the surface at night).
+- In tile mode the text screen's map area is blank, so the snapshot builds `map` (rows, vis, objects) from
+  game state, limited to what the player could see.
 - The snapshot map: unexplored cells blank, remembered cells show terrain but no creatures, creatures
   only in cells in view now (indoors you see nobody outside).
 

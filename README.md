@@ -4,6 +4,8 @@ A bot that plays Caves of Qud by reading the screen and pressing keys, with an L
 
 **Video:** [the first recording](https://www.youtube.com/watch?v=Fn8r-WRl4kI): a new character (Uumurem) from Joppa to level 5 through Red Rock, no deaths. Its run folder is `runs/9b6c18ef-2e3b-4573-99de-ed8d65ff19e8/` (`recording.json`, the world file and the character profile); the retrospective is [`research/retro_uumurem.md`](research/retro_uumurem.md).
 
+Agents (and people) working on it start at [`AGENTS.md`](AGENTS.md): the ground rules, the working loop, and what to read.
+
 This is an unofficial fan project, not affiliated with the game's developers. No game files or decompiled game code are included.
 
 ## How it works

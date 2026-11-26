@@ -31,5 +31,5 @@ Silence for minutes reads as "broken". Two channels, not 1:1:
 Write a `think.py` line for each real decision (objective/goal changes, fight calls, what a review
 found), so the log reads as a thought train with the objective on top.
 
-A PostToolUse hook (`qud-bot/.claude/hooks/narrate_check.py`, wired in `workspace/.claude/settings.json` so sessions started in the workspace folder get it, with the Qud memories) reminds me when the voice has been silent for 25 s
+A PostToolUse hook (`.claude/hooks/narrate_check.py`, wired in this project's `.claude/settings.json`) reminds me when the voice has been silent for 25 s
 or more while narration is on. When it fires: say what I'm doing now, in one line, then carry on.

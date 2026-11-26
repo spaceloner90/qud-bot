@@ -1,8 +1,9 @@
 # Standing lessons (from every user message, 2026-11-24 to 2026-11-26)
 
-Recovered from the full transcript after the compact dropped them from my working knowledge (the user,
-2026-11-26: "a lot of in memory info that was not written into proper learnings"). Imported by
-CLAUDE.md, so it loads in every session. Dates point back to the user's words. Add to it; don't trim.
+Recovered from the full transcript after a compacted conversation dropped them (the owner,
+2026-11-26: "a lot of in memory info that was not written into proper learnings"). Required reading
+from AGENTS.md (CLAUDE.md loads it into every Claude session). "The user" below is the project's owner.
+Dates point back to the owner's words. Add to it; don't trim. Nothing lives only in an agent's memory.
 
 ## How to find the answers (the user's review of Uumurem, 2026-11-26)
 
@@ -68,6 +69,10 @@ Ways of looking, not item rules. Each came from something available that went un
 - **Death can be cheaper than burning every resource** near a checkpoint; case by case (11-24).
 - Finish the encounter before anything else (a level-up mid-fray isn't a stop); once clear, a level-up
   hands over to reconsider points (11-24).
+- **Learning over avoiding** (11-24): when the game rates something harsher than our estimate, something
+  is unmodelled. Read more first (its parts and description), then engage at range and watch; record a
+  tactic ("kill from range, never adjacent"), not a ban. Pure avoidance is for what's hopeless by the
+  numbers. When something hopeless blocks the way, go elsewhere (hunt the local zones) rather than retry.
 - **Evaluate every enemy dynamically** from its stats; danger depends on build, level and gear (11-24).
   Work out damage and resistances from the game's numbers up front, not after the fact (11-24).
 - **Fill every armour slot**; being hit hard by basic enemies means we're under-armoured (11-24).
