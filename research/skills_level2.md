@@ -1,0 +1,158 @@
+- **[-] Axe**: You are skilled with axes.
+- **- Axe Proficiency**: You get +2 to hit with axes.
+- **- Cleave [150sp] 19 Strength**: Whenever you hit an opponent with an axe, there's a 75% chance you cleave their armor, giving them a -1 penalty to their AV. This penalty can stack a number of times up to half your Str modifier, rounded up, +1 on a critical hit.
+- **- Charging Strike [100sp] 19 Strength, Cleave, Charge**: When you charge with an axe and hit, if you cleave their armor, they get an additional -1 penalty to their AV. If you have Dismember, your chance to dismember when charging with an axe is doubled. When you charge with a cudgel and hit, you automatically daze your opponent.
+- **- Dismember**: Activated; cooldown 30. Axe attack. If you hit and penetrate, you dismember one of their limbs at random and they start bleeding (1-2 damage per turn. toughness save; difficulty 35). Additionally, your axe attacks that penetrate have a percentage chance to dismember: 3% for one-handed axes and 6% for two-handed axes.
+- **- Hook and Drag [150sp] 23 Strength**: Activated; cooldown 50. You grab an opponent's limb with the heel of your axe. If successful, you pull your opponent with you as you move and make a free attack with your axe. Your opponent gets a chance to resist the move (strength save; difficulty 20 + your Str modifier) and a chance to break free at the start of their turn (same save). Lasts for 9 rounds or until you dismember the opponent.
+- **- Decapitate [150sp] 25 Strength, Dismember**: Heads are added to the list of possible limbs you can dismember. Chopping off the only head of a creature kills them instantly. If the creature has multiple heads, they start bleeding profusely (2-3 damage per turn. toughness save; difficulty 35).
+- **- Berserk! [300sp] 29 Strength, Dismember**: Activated; cooldown 100. You enter a blood frenzy, and for 5 rounds your chance to dismember with axe attacks is 100%. To use Berserk, Dismember must be off cooldown, and using Berserk puts Dismember on cooldown.
+- **[-] [100sp] Cooking and Gathering**: You are skilled at cooking and gathering meal ingredients.
+- **- Meal Preparation [0sp] 15 Intelligence**: While at a campfire, you can cook from recipes, choose up to two ingredients to cook with, and preserve fresh foods. Meals cooked from recipes bestow special status effects. Meals cooked with selected ingredients bestow dynamically-generated status effects. Preserved foods are used as meal ingredients.
+- **- Harvestry [50sp] 15 Intelligence**: You can harvest fresh ingredients and other usable parts from plants.
+- **- Butchery**: You can butcher fresh ingredients and other usable parts from animal corpses.
+- **- Spicer [50sp] 17 Intelligence**: When you choose ingredients to cook with, you can choose up to three instead of two. Meals cooked with three ingredients bestow more powerful status effects.
+- **- Carbide Chef [100sp] 17 Intelligence**: Whenever you gain a level, and 5% of the time you explore a new map, you become inspired for two days. While inspired, the next time you cook a meal by choosing ingredients, you get a choice of three dynamically-generated effects to apply. You create a recipe for the chosen effect.
+- **[-] [50sp] Tactics**: You are aware of basic combat tactics.
+- **- Hurdle [0sp] 0 Agility**: You receive no penalty to your DV while sprinting and can jump without interrupting your sprint.
+- **- Deft Throwing [50sp] 10 Agility**: Your throw range is increased by 3 and your throw variance is halved when throwing at a target inside your throw range.
+- **- Charge**: You charge forward two or three squares and perform a melee attack with +1 to your penetration roll.
+- **- Kickback [50sp] 19 Strength**: Whenever you fire a missile weapon at a target in melee range, you attempt to kick the target backwards.
+- **- Juke [200sp] 21 Agility**: Activated; cooldown 40. You move one square at no action cost. You may swap squares with a hostile opponent.
+- **[-] [100sp] Wayfaring**: You are skilled at wilderness survival.
+- **- Make Camp**: Start a campfire for cooking meals and preserving foods.
+- **- Mind's Compass [0sp] 15 Intelligence**: Doubles the chance of regaining your bearings when you are lost. Reduces chance of getting lost by about 15%. You travel on the world map twice as quickly.
+- **- Wilderness Lore: Flower Fields [25sp] 15 Intelligence**: Doubles the chance of interesting encounters while traveling through the flower fields on the world map. Reduces the chance of getting lost in the flower fields from base 12% to 1%. On the world map, you travel through the flower fields twice as quickly.
+- **- Wilderness Lore: Marshes [50sp] 15 Intelligence**: Doubles the chance of interesting encounters while traveling through the salt marshes and watervine fields on the world map. Reduces the chance of getting lost in the salt marshes and watervine fields from base 12% to 1%. On the world map, you travel through the salt marshes and watervine fields twice as quickly.
+- **- Wilderness Lore: Hills and Mountains [50sp] 17 Intelligence**: Doubles the chance of interesting encounters while traveling through the hills and mountains on the world map. Reduces the chance of getting lost in the hills and mountains from base 12% to 1%. On the world map, you travel through the hills and mountains twice as quickly.
+- **- Wilderness Lore: Canyons [50sp] 17 Intelligence**: Doubles the chance of interesting encounters while traveling through the desert canyons on the world map. Reduces the chance of getting lost in the desert canyons from base 12% to 1%. On the world map, you travel through the desert canyons twice as quickly.
+- **- Wilderness Lore: Salt Dunes [50sp] 19 Intelligence**: Doubles the chance of interesting encounters while traveling through the salt dunes on the world map. Reduces the chance of getting lost in the salt dunes from base 10% to 1%. On the world map, you travel through the salt dunes twice as quickly.
+- **- Wilderness Lore: Jungles [50sp] 19 Intelligence**: Doubles the chance of interesting encounters while traveling through the jungles on the world map. Reduces the chance of getting lost in the jungles from base 12% to 1%. On the world map, you travel through the jungles twice as quickly.
+- **- Wilderness Lore: Rivers and Lakes [50sp] 19 Intelligence**: Doubles the chance of interesting encounters while traveling across rivers and lakes on the world map. Reduces the chance of getting lost in rivers and lakes from base 12% to 1%. On the world map, you travel across rivers and lakes twice as quickly.
+- **- Wilderness Lore: Ruins [50sp] 21 Intelligence**: Doubles the chance of interesting encounters while traveling through chrome ruins on the world map. Reduces the chance of getting lost in ruins from base 12% to 1%. On the world map, you travel through ruins twice as quickly.
+- **[+] [75sp] Acrobatics**: You are skilled at acrobatics.
+- **[-] [75sp] Acrobatics**: You are skilled at acrobatics.
+- **- Swift Reflexes [0sp] 17 Agility**: You gain a +5 bonus to your DV when flinching away from missile attacks.
+- **- Spry [100sp] 17 Agility**: You gain a +2 bonus to your DV.
+- **- Jump [100sp] 17 Strength**: You jump into an unoccupied square within range 2. You cannot jump over a square occupied by a creature, unless you have an ability (such as flight) that augments your jump.
+- **- Tumble [150sp] 23 Agility, Juke**: You gain a +1 bonus to your DV. Additionally, Juke's cooldown is reduced to 20.
+- **[+] [100sp] Bow and Rifle**: You are skilled with bows and rifles.
+- **[-] [100sp] Bow and Rifle**: You are skilled with bows and rifles.
+- **- Steady Hands [0sp] 19 Agility**: For the purpose of determining your accuracy with bows and rifles, your agility is treated as if it were 4 points higher.
+- **- Draw a Bead [0sp] 19 Agility**: You spend a turn to draw a bead on a target and mark it. Whenever you fire at a marked target with a bow or rifle, your agility is treated as if it were 2 points higher for the purpose of determining your accuracy. You may only mark one target at a time. Targets get unmarked if you lose vision of them.
+- **- Suppressive Fire [150sp] 19 Agility, Draw a Bead**: You fire at a marked target. If your shot penetrates, your target is suppressed and can't move for 3-5 rounds. Then your target is unmarked.
+- **- Flattening Fire [200sp] 25 Agility, Draw a Bead, Suppressive Fire**: As long as your target is surrounded by 6 or more solid obstacles, Suppressive Fire is upgraded to Flattening Fire. Flattening Fire also knocks your target prone and disarms them.
+- **- Wounding Fire [150sp] 19 Agility, Draw a Bead**: You fire at a marked target. For each penetration on each shot that hits, your target bleeds 1 point of damage per round (save: 20 + max damage of the weapon). Then your target is unmarked.
+- **- Disorienting Fire [200sp] 25 Agility, Draw a Bead, Wounding Fire**: As long as your target can't see or hear any faction allies, Wounding Fire is upgraded to Disorienting Fire. Disorienting Fire also reduces your target's DV and MA by 4.
+- **- Sure Fire [150sp] 19 Agility, Draw a Bead**: You fire at a marked target with no accuracy penalty (the accuracy of your weapon still matters). Then your target is unmarked.
+- **- Beacon Fire [200sp] 25 Agility, Draw a Bead, Sure Fire**: As long as your target is flaming, luminous, or phosphorescent, Sure Fire is upgraded to Beacon Fire. Beacon Fire shots are also treated as critical hits.
+- **- Ultra Fire [300sp] 29 Agility, Draw a Bead**: Cooldown 100. You fire at a marked target. Your shot combines the effects of all the other Fire powers you have.
+- **[+] [50sp] Cudgel**: You are skilled with crushing and bludgeoning weapons.
+- **[-] [50sp] Cudgel**: You are skilled with crushing and bludgeoning weapons.
+- **- Cudgel Proficiency [0sp] 0 Strength**: You get +2 to hit with cudgels.
+- **- Bludgeon [150sp] 17 Strength**: Whenever you hit with a cudgel, there's a 50% chance to daze your opponent (-4 int, -4 agi, -10 movespeed) for 3-4 rounds. If you daze a dazed opponent, they're stunned for 1 round instead (cannot take actions and 0 DV).
+- **- Charging Strike [100sp] 19 Strength, Bludgeon, Charge**: When you charge with a cudgel and hit, you automatically daze your opponent. When you charge with an axe and hit, if you cleave their armor, they get an additional -1 penalty to their AV. If you have Dismember, your chance to dismember when charging with an axe is doubled.
+- **- Conk [150sp] 21 Strength, Bludgeon**: Activated; cooldown 10. You make an attack with a cudgel at an adjacent opponent. If you hit, you automatically daze them for 3-4 rounds. Dazing a dazed opponent stuns them. Conking a stunned opponent instead knocks them unconscious for 30-40 rounds (unconscious opponents wake up dazed when they take damage).
+- **- Backswing [100sp] 23 Strength**: Whenever you make a cudgel attack with your primary hand, there's a 25% chance you make an additional free attack with the same hand.
+- **- Slam [150sp] 25 Strength**: Activated; cooldown 50. You make an attack with a cudgel at an adjacent opponent with +1 to your penetration roll. If you hit, you slam your opponent backwards up to 3 spaces, pushing other creatures and breaking through walls if their AVs are less than 5 times your Strength modifier. Opponents who get pushed are stunned for 1 round plus an additional round for each space pushed. Opponents who are pushed through or against walls take extra weapon damage for each wall. Gigantic opponents don't get pushed but are still stunned for 1 round. Destroys a wall or door if its AV is under 5 times your Strength modifier.
+- **- Demolish [300sp] 29 Strength, Slam**: Activated; cooldown 100. For the next 5 rounds, your chance to daze with cudgel attacks is 100% and Slam has no cooldown. To use Demolish, Slam must be off cooldown, and using Demolish puts Slam on cooldown.
+- **[+] [150sp] Customs and Folklore**: You are familiar with the customs and folklore of Qud.
+- **[-] [150sp] Customs and Folklore**: You are familiar with the customs and folklore of Qud.
+- **- Tactful [0sp] 19 Intelligence**: Whenever you begin the water ritual with a new creature, you gain 25 bonus reputation. If you purchase this power after you treat with a creature, you gain 25 bonus reputation the next time you treat with them.
+- **- Trash Divining [150sp] 21 Intelligence**: Whenever you rifle through trash, there's a 5% chance you piece together clues and learn a random secret.
+- **[+] [100sp] Single Weapon Fighting**: You may choose not to make offhand attacks in exchange for mastery with a single weapon.
+- **[-] [100sp] Single Weapon Fighting**: You may choose not to make offhand attacks in exchange for mastery with a single weapon.
+- **- Opportune Attacks [0sp] 17 Agility or 17 Strength**: Whenever you score a critical hit with a melee weapon while single-weapon fighting, the cooldowns of up to two random weapon or shield skills are immediately refreshed.
+- **- Weapon Expertise [150sp] 21 Agility or 21 Strength**: Whenever you make a melee attack while single-weapon fighting, there's a 50% chance you immediately make a second attack for free.
+- **- Penetrating Strikes [200sp] 23 Agility or 23 Strength**: While single-weapon fighting, your melee attacks always penetrate one extra time.
+- **- Weapon Mastery [300sp] 29 Agility or 29 Strength, Weapon Expertise**: Whenever you make a melee attack while single-weapon fighting, immediately make a second attack for free.
+- **[+] [150sp] Multiweapon Fighting**: You are skilled at multiweapon fighting. Your chance to attack with offhand weapons is increased.
+- **[-] [150sp] Multiweapon Fighting**: You are skilled at multiweapon fighting. Your chance to attack with offhand weapons is increased.
+- **- Flurry [0sp] 17 Agility or 17 Strength**: Activated; cooldown 60. You make an attack with every weapon-wielding limb, including extra limbs granted by mutation or technology.
+- **- Multiweapon Proficiency [0sp] 17 Agility or 17 Strength**: Your chance to strike with each of your offhand weapons is increased by 20%.
+- **- Multiweapon Expertise [150sp] 23 Agility or 23 Strength, Multiweapon Prof**: Your chance to strike with each of your offhand weapons is increased by 35%.
+- **- Multiweapon Mastery [200sp] 27 Agility or 27 Strength, Multiweapon Expert**: Your chance to strike with each of your offhand weapons is increased by 50%.
+- **[+] [100sp] Endurance**: You are skilled at enduring harsh conditions and situations.
+- **[-] [100sp] Endurance**: You are skilled at enduring harsh conditions and situations.
+- **- Shake It Off [0sp] 0 Toughness**: Each round you are dazed or stunned, you have a (Toughness-10)% chance to shake off the effect. You also take 25% less damage from poison.
+- **- Swimming [100sp] 15 Toughness**: Reduces the movement speed penalty when swimming (normally 50 points) by 25 points.
+- **- Poison Tolerance [100sp] 19 Toughness**: You take 25% less damage from poison.
+- **- Weathered [200sp] 21 Toughness**: You take 15% less damage from heating and cooling effects. Additionally, the severities of effects that change your temperature are reduced by 15%.
+- **- Juicer [150sp] 23 Toughness**: You may ingest one additional tonic without it reacting adversely to the tonic you have already ingested.
+- **- Calloused [200sp] 23 Toughness**: Your natural AV improves to 1.
+- **- Longstrider [250sp] 25 Toughness**: You may sprint for an additional 10 turns.
+- **[+] [50sp] Physic**: You are skilled at physicking.
+- **[-] [50sp] Physic**: You are skilled at physicking.
+- **- Staunch Wounds [0sp] 0 Intelligence**: Bandages you apply are much more effective at stopping bleeding.
+- **- Nostrums [100sp] 21 Intelligence**: You can treat bleeding, poison, illness, and disease onset for you and your companions at a campfire.
+- **- Amputate Limb [50sp] 23 Intelligence**: You can voluntarily amputate your own limbs and the limbs of infected companions.
+- **- Apothecary [100sp] 25 Intelligence**: Healing tonics you apply last an extra round.
+- **[+] [100sp] Heavy Weapon**: You are skilled with heavy weapons.
+- **[-] [100sp] Heavy Weapon**: You are skilled with heavy weapons.
+- **- Strapping Shoulders [0sp] 19 Strength**: You shoulder your weapons more effectively. Heavy weapons count for half their weight toward your encumbrance.
+- **- Tank [150sp] 23 Strength**: You suffer no movement penalty while wielding a heavy weapon.
+- **- Sweep [200sp] 27 Strength**: You fire 5 shots with your heavy weapon, sweeping over a 90 degree cone. Your heavy weapon is reloaded before each shot.
+- **[+] [100sp] Long Blade**: You are skilled with long thrusting and slashing blades.
+- **[-] [100sp] Long Blade**: You are skilled with long thrusting and slashing blades.
+- **- Long Blade Proficiency [0sp] 0 Strength**: You gain access to two stances. Aggressive stance: With a long blade in your primary hand, your long blade and short blade attacks gain +1 to your penetration roll but -2 to hit. Defensive stance: While wielding a long blade in your primary hand, you gain +2 DV.
+- **- Lunge [200sp] 17 Agility**: Activated; cooldown 15. Aggressive stance: Lunge through an empty space at an opponent and attack with +2 to your penetration roll. You must move through the empty space. Defensive stance: Attack an opponent then lunge backward 2 spaces. Dueling stance: Attack an opponent with +1 to your penetration roll. The attack is guaranteed to hit and penetrate at least once.
+- **- Swipe [200sp] 17 Strength**: Activated; cooldown 15. Aggressive stance: Make an attack against all adjacent opponents. Defensive stance: Push all adjacent creatures back 1 space and attempt to trip opponents (strength/agility save; difficulty 30). Dueling stance: Attack an opponent and attempt to disarm them (strength save; difficulty 25 + your Agi modifier). The attack is guaranteed to hit and penetrate at least once.
+- **- Dueling Stance [200sp] 17 Intelligence**: You gain access to dueling stance. While wielding a long blade in your primary hand, you get +2 to hit with long blades and short blades.
+- **- Improved Aggressive Stance [100sp] 23 Strength**: Your penetration bonus in aggressive stance is increased to +2, but your to-hit penalty is increased to -3.
+- **- Improved Defensive Stance [100sp] 23 Agility**: Your DV bonus in defensive stance is increased to +3.
+- **- Improved Dueling Stance [100sp] 21 Intelligence, Dueling Stance**: Your to-hit bonus in dueling stance is increased to +3.
+- **- En Garde! [300sp] 29 Strength, 23 Agility or 29 Agility, 23 Strength**: Activated; cooldown 100. For the next 10 rounds, Lunge and Swipe have no cooldown.
+- **[+] [100sp] Persuasion**: You are skilled at convincing others.
+- **[-] [100sp] Persuasion**: You are skilled at convincing others.
+- **- Menacing Stare [0sp] 17 Ego**: You stare down a nearby opponent and send them fleeing in terror.
+- **- Intimidate [200sp] 17 Ego**: Cooldown 50. You try to terrify adjacent, hostile creatures (1d8 + [Ego modifier] penetration roll vs. MA). On success, a frightened creature flees from you for 6d4 rounds.
+- **- Berate [150sp] 19 Ego**: Cooldown 50. You shame a nearby creature for 6d6 rounds, giving it a -4 penalty to DV, to-hit, Ego, Willpower and a -10% penalty to quickness.
+- **- Snake Oiler [150sp] 19 Ego**: For purposes of bartering, your ego is treated as though it were 4 points higher.
+- **- Proselytize [300sp] 23 Ego**: You persuade an intelligent creature to join you.
+- **- Inspiring Presence [250sp] 25 Ego**: Your words embolden your companions.
+- **[+] [100sp] Pistol**: You are skilled with pistols of various kinds.
+- **[-] [100sp] Pistol**: You are skilled with pistols of various kinds.
+- **- Steady Hand [0sp] 0 Agility**: For purposes of determining your accuracy with pistols, your agility is treated as if it were 4 points higher.
+- **- Akimbo [150sp] 17 Agility**: Whenever you make a ranged attack while wielding multiple guns, you fire a shot with each of them.
+- **- Weak Spotter [150sp] 19 Agility**: You are 5% more likely to score critical hits with pistols (standard chance is 5%).
+- **- Sling and Run [50sp] 21 Agility**: You receive no accuracy penalties for firing pistols while running.
+- **- Disarming Shot [100sp] 23 Agility**: You have an agility-based chance to disarm your opponent when you score a hit with a pistol.
+- **- Dead Shot [200sp] 25 Agility**: Critical hits you score with pistols are more deadly.
+- **- Empty the Clips [300sp] 27 Agility**: Cooldown 200. For 20 rounds, firing a pistol only takes half a round instead of a full round.
+- **- Fastest Gun in the Rust [400sp] 29 Agility**: The action cost of firing pistols is reduced by 25%.
+- **[+] [150sp] Self-discipline**: You are skilled at maintaining self-discipline.
+- **[-] [150sp] Self-discipline**: You are skilled at maintaining self-discipline.
+- **- Meditate [0sp] 0 Willpower**: While meditating, you regenerate three times as fast, and negative status effects wear out three times as fast. The only action you can take while meditating is Wait. You stop meditating if you take damage in a single round exceeding (Willpower*3)-60. If you rest for 10 or more turns, you automatically begin meditating.
+- **- Fasting Way [50sp] 17 Willpower**: You hunger and thirst at one-half the normal rate. Metabolic effects from meals last twice as long.
+- **- Iron Mind [100sp] 21 Willpower**: Each round you are confused, you have a (Willpower-10)% chance to shake off the effect.
+- **- Lionheart [100sp] 21 Willpower**: Each round you are terrified, you have a (Willpower-10)% chance to shake off the effect.
+- **- Conatus [150sp] 23 Willpower**: You may sprint for an additional 10 turns.
+- **- Mind over Body [150sp] 29 Willpower**: You hunger and thirst at one-sixth rate. Metabolic effects from meals last six times as long. You suffer no penalty for becoming famished.
+- **[+] [100sp] Shield**: You are skilled at wielding shields.
+- **[-] [100sp] Shield**: You are skilled at wielding shields.
+- **- Block [0sp] 0 Strength**: As long as you wield a shield, there is a 50% chance you block one melee attack per round. When you block an attack, you add the shield's AV bonus to your AV for that attack. If you equip multiple shields, the one block per round limit is per shield, and you only can attempt to block a given attack once, using your best usable shield.
+- **- Shield Slam [100sp] 17 Strength**: Activated; cooldown 40. You attempt to knock an opponent down and deal (Str modifier)d2 + your shield's AV bonus in damage. Your opponent gets a chance to resist (strength save; difficulty 20 + your Str modifier). Whenever you charge an opponent with a shield equipped, you get a free Shield Slam attack against them.
+- **- Deft Blocking [200sp] 19 Agility**: Your chance to block with a shield improves to 75%.
+- **- Swift Blocking [200sp] 19 Agility**: You may block an additional attack per round per shield.
+- **- Staggering Block [200sp] 21 Strength**: Whenever you block an opponent's attack, there is a (Strength*2)-35% chance that your opponent is stunned for 1d2 rounds.
+- **- Shield Wall [200sp] 25 Willpower**: For the next three rounds, you automatically block all incoming melee attacks (may not be used with bucklers).
+- **[+] [50sp] Short Blade**: You are skilled with small one-handed knives and blades.
+- **[-] [50sp] Short Blade**: You are skilled with small one-handed knives and blades.
+- **- Short Blade Expertise [0sp] 0 Agility**: You get +1 to hit with short blades. Also, the action costs of attacking with a short blade in your primary hand is reduced by 25%.
+- **- Bloodletter [150sp] 17 Agility**: Your short blade attacks that penetrate have a 75% chance to cause your opponent to bleed (0-1 damage per turn. toughness save; difficulty 20 + your Agi modifier). The opponent saves to stop bleeding each round, and the save difficulty decreases by 1 each round. This effect can stack a number of times equal to 1 plus your Agi modifier.
+- **- Jab [100sp] 17 Agility**: Whenever you make an offhand attack with a short blade, you immediately make another attack with that same weapon. Flurry attacks do not trigger this.
+- **- Hobble [150sp] 21 Agility**: You make an attack with a short blade in your primary hand, looking for a weak spot in your opponent's armor. If you hit, you penetrate exactly once and hobble them (-50% movespeed for 16-20 rounds).
+- **- Pointed Circle [100sp] 23 Agility, Juke**: Whenever you juke an opponent while wielding a short blade in your primary hand, you make a free attack. If you have Bloodletter, the attack's chance to cause bleeding is 100%.
+- **- Rejoinder [250sp] 25 Agility**: Once per turn, when an opponent misses you with a melee attack, there's a 40% chance you make a free attack with a short blade you're wielding.
+- **- Shank [250sp] 27 Agility**: Activated; cooldown 10 (primary) or 20 (offhand). You make a melee attack with a short blade in your primary hand (preferred) or offhand. If you hit, the attack gets +2 to penetration rolls for each negative status effect your opponent suffers from.
+- **[+] [100sp] Tinkering**: You are skilled at examining, building, repairing and modding artifacts.
+- **[-] [100sp] Tinkering**: You are skilled at examining, building, repairing and modding artifacts.
+- **- Gadget Inspector [0sp] 15 Intelligence**: You are much more successful at examining artifacts, and you can deploy wiring.
+- **- Disassemble [100sp] 15 Intelligence**: You can disassemble scrap and artifacts for bits. You get the most significant bit from the item schematic plus a 50% chance to receive each remaining bit.
+- **- Reverse Engineer [100sp] 25 Intelligence, Disassemble**: Whenever you disassemble an item, you have a 25% chance to learn how to build the item. If the item was modded, you also have a 15% chance per mod to learn the mod.
+- **- Scavenger [100sp] 15 Intelligence**: Whenever you step over garbage, you astutely rifle through it and occasionally discover scrap. Additionally, you harvest extra scrap from robots you destroy.
+- **- Repair [100sp] 17 Intelligence**: You may repair broken items with Bits.
+- **- Deploy Turret [100sp] 17 Intelligence**: You may deploy missile weapons as static turrets.
+- **- Lay Mine / Set Bomb [50sp] 17 Intelligence**: You may lay down grenades as mines or set them as bombs.
+- **- Tinker I [100sp] 19 Intelligence**: You may build items from low-tier schematics and you get 1 free schematic. You can also recharge energy cells and capacitors.
+- **- Tinker II [200sp] 23 Intelligence, Tinker I**: You may build items from medium-tier schematics and you get 1 free schematic.
+- **- Tinker III [300sp] 29 Intelligence, Tinker II**: You may build items from high-tier schematics and you get 1 free schematic.

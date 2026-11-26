@@ -1,0 +1,372 @@
+{
+ "name": "stuck_in_tar_is_not_zone_done",
+ "why": "Uumurem 2026-11-26, stratum 4: arrived stuck in asphalt at the stairs; 'nowhere else to explore from here' was taken as the zone being done and handed over. It must struggle free (a move) instead. Fixed the same day.",
+ "script": "explore",
+ "args": {
+  "hand_off": true,
+  "fight": true,
+  "missile": true,
+  "collect": true,
+  "auto_eat": true,
+  "auto_cook": true,
+  "hunt": true,
+  "goal_level": 5,
+  "max_turns": 1500,
+  "raise_hp_fraction": 0.5,
+  "hold": true,
+  "max_hostiles": 2,
+  "accept_kinds": [
+   "dreadroot"
+  ]
+ },
+ "memory": {
+  "announced": "JoppaWorld.11.20.1.1.14",
+  "start_turn": 371113,
+  "level_seen": 4,
+  "seen": {
+   "msgs": [
+    "You are fleeing from a dreadroot!",
+    "You pass by a set of bones.",
+    "You are fleeing from a dreadroot!",
+    "You pass by a set of bones.",
+    "You are fleeing from a dreadroot!",
+    "You pass by a set of bones.",
+    "You pass by a set of bones.",
+    "You pass by some trash.",
+    "You pass by a dreadroot.",
+    "You wade through a pool of brackish water.",
+    "You pass by a set of stairs down.",
+    "You pass by a set of stairs up.",
+    "You are stuck in a pool of slimy asphalt!",
+    "You wade through a pool of slimy asphalt.",
+    "Tar patch, Red Rock, 4 strata deep, Harvest Dawn"
+   ]
+  },
+  "zone_done": true,
+  "collecting": true,
+  "collect": {
+   "tried": [],
+   "taken": [],
+   "steps": 0
+  }
+ },
+ "state": {
+  "seq": 3044,
+  "mode": "run",
+  "wait": "map",
+  "autoact": null,
+  "time": "2026-11-26T01:43:13.571",
+  "turn": 371114,
+  "game": {
+   "id": "9b6c18ef-2e3b-4573-99de-ed8d65ff19e8",
+   "mode": "Roleplay"
+  },
+  "screen": {
+   "w": 80,
+   "h": 25,
+   "rows": [
+    " Uumurem                 │                                                      ",
+    " ST: 23  AG: 18  QN: 100 │                                                      ",
+    " TO: 18  WI: 16  MS: 140 │                                                      ",
+    " IN: 14  EG: 16  T: 23   ┴                                                      ",
+    " AV: 4   DV: -10 MA: 4                                                          ",
+    " XP: 1870 / 1975                                                                ",
+    " Wet,Hungry                                                                     ",
+    " HP: 27 / 27   #141/369                                                         ",
+    "                                                                                ",
+    " 5th of Shwut Ux                                                                ",
+    " Harvest Dawn                                                                   ",
+    "                                                                                ",
+    "                                                                                ",
+    "                         ┬                                                      ",
+    "                         │                                                      ",
+    "                         │                                                      ",
+    "> Tar patch, Red Rock, 4 │                                                      ",
+    "strata deep, Harvest Dawn│                                                      ",
+    "> You wade through a pool│                                                      ",
+    "of slimy asphalt.        ┴                                                      ",
+    "> You are stuck in a pool*                                                      ",
+    "of slimy asphalt!        /                                                      ",
+    "> You pass by a set of   ┬                                                      ",
+    "stairs up.               │                                                      ",
+    "> You pass by a set of   │                                                      "
+   ],
+   "fg": [
+    "kyyyyyyykkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kYYyyCCkkWWyyCCkkyyyyyyykyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kRRyyCCkkGGyyCCkkyyyyyyykyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kBByyCCkkMMyyCCkkyyyyykkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyykkkyyyyyyykyyyyykkkwKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyyyyyKKKKKKKkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kbbbyWWWWWWkkkkkkkkkkkkkkwKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyYYYyyyykkkyyyyyyyykkYKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkYKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyyyyyyyyyyyykkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyyyyyyyyykkkkkkkkkkkkWKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkWKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkbKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "KKCCCCCCCCCCCCCCCCCCCCCCkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "CCCCCCCCCCCCCCCCCCCCCCCCCyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "KKyyyyyyyyyyyyyyyyyyyyyyyyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "yyygggggyKKKKKKKykkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "KKRRRRRRRRRRRRRRRRRRRRRRRWKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "RRRgggggRKKKKKKKRkkkkkkkkWKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "KKyyyyyyyyyyyyyyyyyyyykkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "yyyyyyyyyykkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "KKyyyyyyyyyyyyyyyyyyyykkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK"
+   ]
+  },
+  "player": {
+   "name": "tarry dilute slimy Uumurem",
+   "hp": 27,
+   "maxhp": 27,
+   "level": 4,
+   "av": 4,
+   "dv": 1,
+   "qn": 100,
+   "ms": 60,
+   "food": "Hungry",
+   "water": "Wet",
+   "effects": [
+    "defensive stance",
+    "covered in liquid",
+    "stuck in a pool of slimy dilute brackish asphalt"
+   ],
+   "x": 73,
+   "y": 6,
+   "zone": "JoppaWorld.11.20.1.1.14",
+   "zoneName": "tar patch, Red Rock, 4 strata deep"
+  },
+  "map": {
+   "w": 80,
+   "h": 25,
+   "rows": [
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                        ~~~     ",
+    "                                                                        ~@○     ",
+    "                                                                        ~∙~     ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                "
+   ],
+   "vis": [
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                        111     ",
+    "                                                                        111     ",
+    "                                                                        111     ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                "
+   ],
+   "objects": [
+    {
+     "x": 73,
+     "y": 6,
+     "glyph": "<",
+     "name": "stairs up"
+    },
+    {
+     "x": 73,
+     "y": 7,
+     "glyph": "∙",
+     "name": "slimy tarred small boulder"
+    }
+   ],
+   "features": [
+    {
+     "x": 72,
+     "y": 5,
+     "name": "pool of 1000 drams of slimy asphalt"
+    },
+    {
+     "x": 73,
+     "y": 5,
+     "name": "pool of 1500 drams of tarry dilute brackish slime"
+    },
+    {
+     "x": 74,
+     "y": 5,
+     "name": "pool of 1000 drams of slimy asphalt"
+    },
+    {
+     "x": 72,
+     "y": 6,
+     "name": "pool of 1000 drams of slimy asphalt"
+    },
+    {
+     "x": 73,
+     "y": 6,
+     "name": "pool of 965 drams of slimy dilute brackish asphalt"
+    },
+    {
+     "x": 74,
+     "y": 6,
+     "name": "pool of 1000 drams of slimy asphalt"
+    },
+    {
+     "x": 72,
+     "y": 7,
+     "name": "pool of 500 drams of asphalt"
+    },
+    {
+     "x": 73,
+     "y": 7,
+     "name": "pool of 994 drams of slimy asphalt"
+    },
+    {
+     "x": 74,
+     "y": 7,
+     "name": "pool of 500 drams of asphalt"
+    }
+   ]
+  },
+  "quests": [
+   {
+    "name": "What's Eating the Watervine?",
+    "finished": false,
+    "giver": "Mehmet",
+    "where": "Joppa",
+    "steps": [
+     {
+      "name": "Travel to Red Rock",
+      "text": "Journey two parasangs north of Joppa to Red Rock.",
+      "finished": true
+     },
+     {
+      "name": "Find the Vermin",
+      "text": "Find the creatures that are eating Joppa's watervine.",
+      "finished": false
+     },
+     {
+      "name": "Get a Corpse",
+      "text": "Collect a corpse from one of the creatures.",
+      "finished": false
+     },
+     {
+      "name": "Return with the Corpse",
+      "text": "Return to Joppa with the corpse of the watervine vermin.",
+      "finished": false
+     }
+    ]
+   },
+   {
+    "name": "Fetch Argyve a Knickknack",
+    "finished": false,
+    "giver": "Argyve",
+    "where": "Joppa",
+    "steps": [
+     {
+      "name": "Find a Knickknack",
+      "text": "Search the regions surrounding Joppa for an artifact.",
+      "finished": false
+     },
+     {
+      "name": "Return to Argyve",
+      "text": "Bring the artifact to Argyve.",
+      "finished": false
+     }
+    ]
+   }
+  ],
+  "inventory": [
+   "waterskin [29 drams of fresh water]",
+   "waterskin [empty]",
+   "torch x14 (unburnt)",
+   "waterskin [64 drams of fresh water]",
+   "bear jerky [4 servings]",
+   "witchwood bark x4",
+   "bent metal sheet x2",
+   "fractured microchip",
+   "bedroll",
+   "wooden arrow x12 \u001a4 \u00031d2 (4/1d4)",
+   "dreadroot tuber x5",
+   "flowers",
+   "flowers",
+   "flowers",
+   "flowers",
+   "flowers",
+   "flowers",
+   "flowers",
+   "flowers",
+   "flowers",
+   "blood-stained bronze battle axe \u001a5 \u00031d2",
+   "blood-stained iron dagger \u001a6 \u00031d3",
+   "studded leather armor \u00043 \t-2",
+   "bronze long sword \u001a5 \u00031d3",
+   "short bow \u001a4 [empty]",
+   "staff \u001a5 \u00031d2",
+   "bronze battle axe \u001a5 \u00031d2",
+   "vinewafer",
+   "copper nugget",
+   "water-stained quilted shawl \u00040 \t-1",
+   "blood-stained sooty smock \u00040 \t2",
+   "wide-brimmed hat \u00040 \t1"
+  ],
+  "equipped": [
+   "slimy dilute tarred sturdy studded leather armor \u00043 \t-2",
+   "slimy dilute tarred leather cap \u00041 \t0",
+   "lacquered sun and moon mask \u00040 \t1",
+   "slimy dilute tarred two-handed iron long sword \u001a7 \u00031d8"
+  ],
+  "messages": [
+   "You are fleeing from a dreadroot!",
+   "You pass by a set of bones.",
+   "You are fleeing from a dreadroot!",
+   "You pass by a set of bones.",
+   "You are fleeing from a dreadroot!",
+   "You pass by a set of bones.",
+   "You pass by a set of bones.",
+   "You pass by some trash.",
+   "You pass by a dreadroot.",
+   "You wade through a pool of brackish water.",
+   "You pass by a set of stairs down.",
+   "You pass by a set of stairs up.",
+   "You are stuck in a pool of slimy asphalt!",
+   "You wade through a pool of slimy asphalt.",
+   "Tar patch, Red Rock, 4 strata deep, Harvest Dawn"
+  ]
+ },
+ "expect": {
+  "answer_re": "CMD CmdMove",
+  "answer_not_re": "(STOP|NEXT) zone explored"
+ }
+}

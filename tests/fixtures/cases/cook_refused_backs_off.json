@@ -1,0 +1,305 @@
+{
+ "name": "cook_refused_backs_off",
+ "why": "Uumurem 2026-11-26: 'You can't cook with hostiles nearby' handed over, and the cook retried on the same cell at once. It must back off quietly and note where.",
+ "script": "explore",
+ "args": {
+  "hand_off": true,
+  "fight": true,
+  "missile": true,
+  "collect": true,
+  "auto_eat": true,
+  "auto_cook": true,
+  "hunt": true,
+  "goal_level": 5,
+  "max_turns": 1500,
+  "raise_hp_fraction": 0.5,
+  "hold": true,
+  "max_hostiles": 2,
+  "accept_kinds": [
+   "dreadroot"
+  ]
+ },
+ "memory": {
+  "cook": {
+   "phase": "camp_dir",
+   "fire_key": "Keypad6",
+   "at": [
+    37,
+    20
+   ],
+   "presses": 5
+  },
+  "announced": "JoppaWorld.11.20.1.1.13",
+  "start_turn": 370579,
+  "level_seen": 4
+ },
+ "state": {
+  "seq": 2869,
+  "mode": "run",
+  "wait": "key",
+  "autoact": null,
+  "time": "2026-11-26T01:40:17.278",
+  "turn": 370629,
+  "game": {
+   "id": "9b6c18ef-2e3b-4573-99de-ed8d65ff19e8",
+   "mode": "Roleplay"
+  },
+  "screen": {
+   "w": 80,
+   "h": 25,
+   "rows": [
+    "┌──[ Manage Abilities ]── Control+Tab-sort: custom/by class ───── Esc-exit ────┐",
+    "│                                                                              │",
+    "│     a) Sprint [Toggled off]                Start a campfire for cooking      │",
+    "│     b) Freezing Ray [19 turn cooldown]     meals and preserving foods.       │",
+    "│ >   c) Make Camp                           You can't make camp in            │",
+    "│     d) Butcher Corpses [Toggled on]        combat.                           │",
+    "│     e) Defensive Stance                                                      │",
+    "│     f) Aggressive Stance                                                     │",
+    "│     g) Dismember  █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█                  │",
+    "│     h) Charge [att▌                                       ▐                  │",
+    "│     i) Teleport   ▌ You can't cook with hostiles nearby.  ▐                  │",
+    "│                   ▌                                       ▐                  │",
+    "│                   █▄▄▄▄▄▄▄▄▄▄▄▄▄[press space]▄▄▄▄▄▄▄▄▄▄▄▄▄█                  │",
+    "│                                                                              │",
+    "│                                                                              │",
+    "│                                                                              │",
+    "│                                                                              │",
+    "│                                                                              │",
+    "│                                                                              │",
+    "│                                                                              │",
+    "│                                                                              │",
+    "│                                                                              │",
+    "│                                                                              │",
+    "│                                                                              │",
+    "└─[ Space-Use Ability Insert-Map key Delete-unbind -/+-Change Order ]──────────┘"
+   ],
+   "fg": [
+    "yyyyyWWWWWWWWWWWWWWWWyyyyyWWWWWWWWWWWyyyyyyywwwwwwyyyyyyyyyyyyyyyyWWWyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyywyyyyyyyyyyyyKyyyyyyyyyyyKyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyycyyKyyyyyyyyyyyyyyyyCCyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyYwyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyYyyyyyyyyyyyyyyyyyyyyyKggggggggggKyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyYyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyWyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyWyyyyyyyyyyyyyWWWykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkyyyyyyyyyyyyyyyyyyyy",
+    "yyybyyyyyyyyyyyyyyyyykyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyykkyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyyyyyyykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyWWWWWyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyWWWWWyyyyyyyyyyyyyWWWWWWyyyyyyyyyWWWWWWyyyyyyyyWyWyyyyyyyyyyyyyyyyyyyyyyyyyy"
+   ]
+  },
+  "player": {
+   "name": "Uumurem",
+   "hp": 27,
+   "maxhp": 27,
+   "level": 4,
+   "av": 4,
+   "dv": 1,
+   "qn": 100,
+   "ms": 60,
+   "food": "Hungry",
+   "water": "Wet",
+   "effects": [
+    "defensive stance"
+   ],
+   "x": 37,
+   "y": 20,
+   "zone": "JoppaWorld.11.20.1.1.13",
+   "zoneName": "Red Rock, 3 strata deep"
+  },
+  "map": {
+   "w": 80,
+   "h": 25,
+   "rows": [
+    "                                                         ▒▒▒   ▒▒▒▒▒▒▒▒▒▒ ▒▒▒▒▒▒",
+    "                                 ▒▒▒                     .'.▒▒▒▒%..•.•..▒▒▒....▒",
+    "                               ▒▒▒.▒▒                    ~.•..`..▒▒▒▒▒▒..▒▒....▒",
+    "                               ......▒▒                  ▒~▒▒▒▒.,▒▒   ▒▒.•.....▒",
+    "                               .......▒                  ▒~▒▒▒▒..'▒▒▒▒▒........▒",
+    "                               ...<%..▒▒                .▒~~.≈~≈~.`..•...`.....▒",
+    "                               ...'....▒                ╫'`╫╫╫╫.,%▒▒.....>...▒.▒",
+    "                               ........▒▒▒▒▒            ╫%%╫╫╫╫╫╫.▒▒▒▒▒.%...▒▒▒▒",
+    "                               ..............           ..%`.╫╫╫╫╫~%~~~%•...▒   ",
+    "                               ........▒▒▒▒.▒            ..%%%.╫╫╫▒▒▒▒~▒▒'▒▒▒▒  ",
+    "                               ........▒▒~.~≈     ╫╫╫╫╫╫╫╫╫..%%....▒▒▒~~~~~~.▒  ",
+    "                               ......▒▒▒▒≈~≈~    ......`%.╫╫╫∙.%....▒▒▒▒▒▒▒▒▒▒  ",
+    "                               .....▒▒ ▒..≈~.    ......%.%..╫╫..╫╫..▒▒▒         ",
+    "                               .....▒  ▒▒~~~≈    ....∙]..%...╫%.╫╫%...▒         ",
+    "                               ....▒▒   ▒~...    ..........%∙╫..╫╫....▒         ",
+    "                                ▒▒▒▒     ▒▒.≈    .%....%....╫╫%%╫╫....▒         ",
+    "                                          ▒≈~    ........%╫╫╫..%╫╫....▒         ",
+    "                                          .~▒╫   ╫╫╫╫╫╫.╫╫╫.....◘◘....▒         ",
+    "                                     ▒▒▒▒▒▒▒.╫       ..........╫╫╫..▒▒▒         ",
+    "                                    ▒....▒ ..╫╫      ...%....╫╫╫╫╫..▒▒▒         ",
+    "                                    %@▒▒.. ...╫╫╫     ╫╫,'╫╫╫╫╫╫╫.....▒▒        ",
+    "                                    ▒▒▒▒.. ....'╫╫╫╫╫╫╫╫'.╫╫╫╫╫........▒        ",
+    "                                       ▒.▒▒▒.•..'~.≈≈▒'``.•≈~..........▒        ",
+    "                                       ▒'`..•'.,,`%%~≈~≈.~.≈▒▒▒▒▒......▒        ",
+    "                                        ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒        "
+   ],
+   "vis": [
+    "                                                         000   0000000000 000000",
+    "                                 000                     00000000000000000000000",
+    "                               000000                    00000000000000000000000",
+    "                               00000000                  0000000000   0000000000",
+    "                               00000000                  00000000000000000000000",
+    "                               000000000                000000000000000000000000",
+    "                               000000000                000000000000000000000000",
+    "                               0000000000000            000000000000000000000000",
+    "                               00000000000000           000000000000000000000   ",
+    "                               00000000000000            000000000000000000000  ",
+    "                               00000000000000     0000000000000000000000000000  ",
+    "                               00000000000000    00000000000000000000000000000  ",
+    "                               0000000 000000    0000000000000000000000         ",
+    "                               000000  000000    0000000000000000000000         ",
+    "                               000000   00000    0000000000000000000000         ",
+    "                                0000     0000    0000000000000000000000         ",
+    "                                          000    0000000000000000000000         ",
+    "                                          0000   0000000000000000000000         ",
+    "                                     000000000       000000000000000000         ",
+    "                                    111000 0000      000000000000000000         ",
+    "                                    111000 000000     000000000000000000        ",
+    "                                    111000 00000000000000000000000000000        ",
+    "                                       000000000000000000000000000000000        ",
+    "                                       000000000000000000000000000000000        ",
+    "                                        000000000000000000000   00000000        "
+   ],
+   "objects": [
+    {
+     "x": 36,
+     "y": 20,
+     "glyph": "%",
+     "name": "cave spider corpse"
+    }
+   ],
+   "features": [
+    {
+     "x": 37,
+     "y": 20,
+     "name": "puddle of 1 dram of bloody dilute salt"
+    }
+   ]
+  },
+  "quests": [
+   {
+    "name": "What's Eating the Watervine?",
+    "finished": false,
+    "giver": "Mehmet",
+    "where": "Joppa",
+    "steps": [
+     {
+      "name": "Travel to Red Rock",
+      "text": "Journey two parasangs north of Joppa to Red Rock.",
+      "finished": true
+     },
+     {
+      "name": "Find the Vermin",
+      "text": "Find the creatures that are eating Joppa's watervine.",
+      "finished": false
+     },
+     {
+      "name": "Get a Corpse",
+      "text": "Collect a corpse from one of the creatures.",
+      "finished": false
+     },
+     {
+      "name": "Return with the Corpse",
+      "text": "Return to Joppa with the corpse of the watervine vermin.",
+      "finished": false
+     }
+    ]
+   },
+   {
+    "name": "Fetch Argyve a Knickknack",
+    "finished": false,
+    "giver": "Argyve",
+    "where": "Joppa",
+    "steps": [
+     {
+      "name": "Find a Knickknack",
+      "text": "Search the regions surrounding Joppa for an artifact.",
+      "finished": false
+     },
+     {
+      "name": "Return to Argyve",
+      "text": "Bring the artifact to Argyve.",
+      "finished": false
+     }
+    ]
+   }
+  ],
+  "inventory": [
+   "waterskin [31 drams of fresh water]",
+   "waterskin [empty]",
+   "torch x14 (unburnt)",
+   "waterskin [64 drams of fresh water]",
+   "bear jerky [9 servings]",
+   "witchwood bark x4",
+   "bent metal sheet x2",
+   "fractured microchip",
+   "bedroll",
+   "wooden arrow x11 \u001a4 \u00031d2 (4/1d4)",
+   "dreadroot tuber x5",
+   "flowers",
+   "flowers",
+   "flowers",
+   "flowers",
+   "flowers",
+   "flowers",
+   "flowers",
+   "flowers",
+   "flowers",
+   "blood-stained bronze battle axe \u001a5 \u00031d2",
+   "blood-stained iron dagger \u001a6 \u00031d3",
+   "studded leather armor \u00043 \t-2",
+   "bronze long sword \u001a5 \u00031d3",
+   "short bow \u001a4 [empty]",
+   "staff \u001a5 \u00031d2",
+   "bronze battle axe \u001a5 \u00031d2"
+  ],
+  "equipped": [
+   "sturdy studded leather armor \u00043 \t-2",
+   "leather cap \u00041 \t0",
+   "lacquered sun and moon mask \u00040 \t1",
+   "two-handed iron long sword \u001a7 \u00031d8"
+  ],
+  "messages": [
+   "You pass by some trash.",
+   "You pour fresh water from your waterskin over yourself.",
+   "You wade through a pool of brackish water.",
+   "You wade through a pool of bloody brackish water.",
+   "You wade through a pool of bloody brackish water.",
+   "You pass by a bloody wet snapjaw corpse and a puddle of bloody brackish water.",
+   "You pass by a bloody wet quilted shawl, a bloody wet snapjaw corpse, and a puddle of bloody brackish water.",
+   "You pass by a puddle of bloody dilute salt.",
+   "You pass by a puddle of bloody salt.",
+   "You stop exploring because there is a cave spider in your way.",
+   "The frozen cave spider takes 7 damage from your freezing effect!",
+   "You emit a freezing ray from your hands!",
+   "You hit (x2) for 11 damage with your two-handed iron long sword! [12]",
+   "The frozen cave spider dies!",
+   "You gain 50 XP!"
+  ]
+ },
+ "expect": {
+  "answer_re": "KEY Space",
+  "answer_not_re": "^(STOP|NEXT)",
+  "memory_has": [
+   "cook_refused"
+  ]
+ }
+}

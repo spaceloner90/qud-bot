@@ -1,0 +1,25 @@
+{
+ "_doc": "What the narrator says (live/voice.log, read aloud by tools/narrator.ps1 while live/voice_on exists; F9 toggles). Edit live: read on every brain call. events: which kinds of lines are spoken. repeat_turns: the same line isn't spoken again within this many game turns. repeat_turns_by_event overrides repeat_turns per event (0 = always speak).",
+ "events": {
+  "llm": true,
+  "milestone": true,
+  "handoff": true,
+  "zone": true,
+  "engage": true,
+  "hurt": true,
+  "progress": true
+ },
+ "repeat_turns": 300,
+ "hurt_fraction": 0.6,
+ "speech": {
+  "engine": "onecore",
+  "voice": "Mark",
+  "rate": 1.2,
+  "_doc": "engine onecore (smoother; voices: Mark, David, Zira, George, Hazel, Susan) or sapi (old desktop voices: David, Zira, Hazel). rate: 1.0 normal, up to 3.0. Read for every line."
+ },
+ "repeat_turns_by_event": {
+  "handoff": 0,
+  "llm": 0,
+  "progress": 0
+ }
+}

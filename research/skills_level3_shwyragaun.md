@@ -1,0 +1,12 @@
+- **[+] [100sp] Tinkering**: You are skilled at examining, building, repairing and modding artifacts.
+- **[-] [100sp] Tinkering**: You are skilled at examining, building, repairing and modding artifacts.
+- **- Gadget Inspector [0sp] 15 Intelligence**: You are much more successful at examining artifacts, and you can deploy wiring.
+- **- Disassemble [100sp] 15 Intelligence**: You can disassemble scrap and artifacts for bits. You get the most significant bit from the item schematic plus a 50% chance to receive each remaining bit.
+- **- Reverse Engineer [100sp] 25 Intelligence, Disassemble**: Whenever you disassemble an item, you have a 25% chance to learn how to build the item. If the item was modded, you also have a 15% chance per mod to learn the mod.
+- **- Scavenger [100sp] 15 Intelligence**: Whenever you step over garbage, you astutely rifle through it and occasionally discover scrap. Additionally, you harvest extra scrap from robots you destroy.
+- **- Repair [100sp] 17 Intelligence**: You may repair broken items with Bits.
+- **- Deploy Turret [100sp] 17 Intelligence**: You may deploy missile weapons as static turrets.
+- **- Lay Mine / Set Bomb [50sp] 17 Intelligence**: You may lay down grenades as mines or set them as bombs.
+- **- Tinker I [100sp] 19 Intelligence**: You may build items from low-tier schematics and you get 1 free schematic. You can also recharge energy cells and capacitors.
+- **- Tinker II [200sp] 23 Intelligence, Tinker I**: You may build items from medium-tier schematics and you get 1 free schematic.
+- **- Tinker III [300sp] 29 Intelligence, Tinker II**: You may build items from high-tier schematics and you get 1 free schematic.

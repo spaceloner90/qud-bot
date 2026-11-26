@@ -1,0 +1,7 @@
+- **a) Sprint [Toggled off]**: You move fast for a short duration. Double your move speed for 10 rounds. -5 DV -10 to hit in melee combat. Reduced accuracy with missile weapons. Sprinting ends early if you take a physical action other than move or pass. Cooldown: 100 rounds
+- **b) Freezing Ray**: You emit a ray of frost from your hands. Emits a 9-square ray of frost in the direction of your choice. Damage: 1d3+1 Cooldown: 20 rounds
+- **c) Make Camp**: Start a campfire for cooking meals and preserving foods. You can't make camp in combat.
+- **d) Butcher Corpses [Toggled on]**: You butcher corpses you move over.
+- **e) Dismember**: You make an axe attack against an opponent. If you hit and penetrate, you dismember one of their limbs at random and they start bleeding. Bleed damage: 1d2 per round Bleed save: Toughness 35 Cooldown: 30 rounds
+- **f) Charge [attack]**: You charge forward and make a melee attack with +1 to your penetration roll. Range: 2-3 spaces Cooldown: 15 rounds
+- **g) Teleport**: You teleport to a nearby location. Teleport to a random location within a designated area. Uncertainty radius: 12 Cooldown: 100 rounds

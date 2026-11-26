@@ -1,0 +1,328 @@
+{
+ "name": "close_fight_hands_over",
+ "why": "Uumurem 2026-11-26, stratum 1: a giant centipede (8 HP, level 5) at full HP; estimate ratio 0.64. Close fights go to the LLM, played a turn at a time. (2026-11-26: on replay the same state gave 'kite' with 1.3 a turn, against 2.0 in the run, because the weapon records are pooled by name across characters and kept changing; either hand-over is right.)",
+ "script": "explore",
+ "args": {
+  "hand_off": true,
+  "fight": true,
+  "missile": true,
+  "collect": true,
+  "auto_eat": true,
+  "auto_cook": true,
+  "hunt": true,
+  "goal_level": 5,
+  "max_turns": 1500,
+  "raise_hp_fraction": 0.5,
+  "hold": true,
+  "max_hostiles": 2,
+  "accept_kinds": [
+   "dreadroot"
+  ]
+ },
+ "memory": {
+  "announced": "JoppaWorld.11.20.1.1.11",
+  "start_turn": 366545,
+  "level_seen": 1,
+  "seen": {
+   "msgs": [
+    "You hit (x1) for 1 damage with your painted bronze battle axe! [9]",
+    "The dreadroot dies!",
+    "You are overwhelmed with terror!",
+    "You are fleeing from a dreadroot!",
+    "You pass by a set of sturdy black robes, an iron mace, a short bow, and a snapjaw corpse.",
+    "You hit (x1) for 1 damage with your painted bronze battle axe! [15]",
+    "You don't penetrate the dreadroot's armor with your painted bronze battle axe. [18]",
+    "You hit (x2) for 3 damage with your lit torch! [18]",
+    "The dreadroot dies!",
+    "You pass by a set of sturdy black robes, an iron mace, a short bow, and a snapjaw corpse.",
+    "You take the sturdy black robes.",
+    "You take the iron mace.",
+    "You take the short bow.",
+    "You take the dreadroot tuber from the east.",
+    "You see a giant centipede to the east and stop exploring."
+   ]
+  }
+ },
+ "state": {
+  "seq": 551,
+  "mode": "run",
+  "wait": "map",
+  "autoact": null,
+  "time": "2026-11-26T01:01:29.307",
+  "turn": 366595,
+  "game": {
+   "id": "9b6c18ef-2e3b-4573-99de-ed8d65ff19e8",
+   "mode": "Roleplay"
+  },
+  "screen": {
+   "w": 80,
+   "h": 25,
+   "rows": [
+    " Uumuremss by a set of   │                                                      ",
+    " ST: 22  AG: 18  QN: 100 │                                                      ",
+    " TO: 18  WI: 16  MS: 120 │                                                      ",
+    " IN: 14  EG: 16  T: 22   ┴                                                      ",
+    " AV: 2   DV: 7   MA: 4                                                          ",
+    " XP: 85 / 220                                                                   ",
+    " Wet,Hungry                                                                     ",
+    " HP: 18 / 18   #86/349                                                          ",
+    "                                                                                ",
+    " 1st of Shwut Ux                                                                ",
+    " High Salt Sun                                                                  ",
+    "                         ┬                                                      ",
+    "                         │                                                      ",
+    "                         │                                                      ",
+    "                         │                                                      ",
+    "                         │                                                      ",
+    "centipede to the east and│                                                      ",
+    "stop exploring.          │                                                      ",
+    "> You take the dreadroot │                                                      ",
+    "tuber from the east.     ┴                                                      ",
+    "> You take the short bow.*                                                      ",
+    "> You take the iron mace./                                                      ",
+    "> You take the sturdy    ┬                         █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█",
+    "black robes.             │                         ▌ <autogot> dreadroot tuber ▐",
+    "                         │                         █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█"
+   ],
+   "fg": [
+    "kyyyyyyyyyyyyyyyyyyyyykkkyKKKKKKKKKKKKKKKrrrrrKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kYYyyCCkkWWyyCCkkyyyyyyykyKKKKKKKKKKKKKyyyyYyyywKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kRRyyCCkkGGyyCCkkyyyyyyykyKKKKKKKKKKKKKKKrrrrrKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kBByyCCkkMMyyCCkkyyyyykkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyykkkyyyyykkkyyyyykkkwKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyyyKKKKKKkkkkkkkkkkkkcKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kbbbyWWWWWWkkkkkkkkkkkkkkwKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyYYYyyyykkkyyyyyyykkkYKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkWKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyyyyyyyyyyyykkkkkkkkkWKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyyyyyyyyyykkkkkkkkkkkbKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "yyyyyyyyyyyyyyyyyyyyyyyyyyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "yyyyyyyyyyyyyyykkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkyyyyyyyyyyyyyKKKKKKKKKkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "KKKKKyyyyyyyyyyyyyyykkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "KKyyyyyyyyyyyyyyyyyyyyyyyWKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "KKyyyyyyyyyyyyyyyyyyyyyyyWKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "KKyyyyyyyyyyyyyyyyyyykkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "yyyyyyyyyyyykkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKkyyyyyyyyyyKKKKKKKKKKKKKKKkK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK"
+   ]
+  },
+  "player": {
+   "name": "Uumurem",
+   "hp": 18,
+   "maxhp": 18,
+   "level": 1,
+   "av": 2,
+   "dv": 0,
+   "qn": 100,
+   "ms": 80,
+   "food": "Hungry",
+   "water": "Wet",
+   "effects": [],
+   "x": 43,
+   "y": 1,
+   "zone": "JoppaWorld.11.20.1.1.11",
+   "zoneName": "Red Rock, 1 stratum deep"
+  },
+  "map": {
+   "w": 80,
+   "h": 25,
+   "rows": [
+    "                                 ▒▒▒▒▒▒▒▒▒▒▒▒▒                                  ",
+    "                                 ▒..%......@...i                                ",
+    "                        ▒▒▒▒▒▒▒▒▒▒.▒▒▒▒▒▒▒▒▒▒▒                                  ",
+    "                        ▒.....%.%▒.▒                                            ",
+    "                        ▒.▒▒▒▒▒▒..∙▒                                            ",
+    "                        ▒.▒    ▒▒▒▒▒                                            ",
+    "                        ▒.▒                                                     ",
+    "                        ▒.▒                                                     ",
+    "                        ▒.▒                                                     ",
+    "                      ▒▒▒%▒▒▒                                                   ",
+    "                      ▒..%..▒                                                   ",
+    "                      ▒.....▒                                                   ",
+    "                     ▒..%<...▒                                                  ",
+    "                      ▒.....▒                                                   ",
+    "                      ▒..%..▒                                                   ",
+    "                      ▒▒▒%▒▒▒                                                   ",
+    "                        ...                                                     ",
+    "                      ▒▒▒▒▒▒▒                                                   ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                "
+   ],
+   "vis": [
+    "                                 0000000011111                                  ",
+    "                                 000000111111111                                ",
+    "                        0000000000000000011111                                  ",
+    "                        000000000000                                            ",
+    "                        000000000000                                            ",
+    "                        000    00000                                            ",
+    "                        000                                                     ",
+    "                        000                                                     ",
+    "                        000                                                     ",
+    "                      0000000                                                   ",
+    "                      0000000                                                   ",
+    "                      0000000                                                   ",
+    "                     000000000                                                  ",
+    "                      0000000                                                   ",
+    "                      0000000                                                   ",
+    "                      0000000                                                   ",
+    "                        000                                                     ",
+    "                      0000000                                                   ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                "
+   ],
+   "objects": [
+    {
+     "x": 47,
+     "y": 1,
+     "glyph": "i",
+     "name": "giant centipede",
+     "id": "622",
+     "creature": true,
+     "hostile": true,
+     "seen": true,
+     "av": 2,
+     "dv": 2,
+     "qn": 100,
+     "ms": 100,
+     "lvl": 5,
+     "diff": "{{w|Average}}",
+     "str": 1,
+     "agi": 2,
+     "attacks": [
+      {
+       "name": "bite",
+       "dmg": "1d3",
+       "pen": 0,
+       "cap": 1000,
+       "hit": 0,
+       "part": "Head"
+      }
+     ],
+     "parts": [
+      "Springy",
+      "DarkVision",
+      "ShortBlades",
+      "ShortBlades_Expertise"
+     ],
+     "desc": "Chittering legs in the high dozens figure S-swerve its shining trunk like the spine of a gigantic hominid.",
+     "hp": 8,
+     "maxhp": 8,
+     "mutations": [
+      "Night Vision"
+     ]
+    }
+   ],
+   "features": []
+  },
+  "quests": [
+   {
+    "name": "What's Eating the Watervine?",
+    "finished": false,
+    "giver": "Mehmet",
+    "where": "Joppa",
+    "steps": [
+     {
+      "name": "Travel to Red Rock",
+      "text": "Journey two parasangs north of Joppa to Red Rock.",
+      "finished": true
+     },
+     {
+      "name": "Find the Vermin",
+      "text": "Find the creatures that are eating Joppa's watervine.",
+      "finished": false
+     },
+     {
+      "name": "Get a Corpse",
+      "text": "Collect a corpse from one of the creatures.",
+      "finished": false
+     },
+     {
+      "name": "Return with the Corpse",
+      "text": "Return to Joppa with the corpse of the watervine vermin.",
+      "finished": false
+     }
+    ]
+   },
+   {
+    "name": "Fetch Argyve a Knickknack",
+    "finished": false,
+    "giver": "Argyve",
+    "where": "Joppa",
+    "steps": [
+     {
+      "name": "Find a Knickknack",
+      "text": "Search the regions surrounding Joppa for an artifact.",
+      "finished": false
+     },
+     {
+      "name": "Return to Argyve",
+      "text": "Bring the artifact to Argyve.",
+      "finished": false
+     }
+    ]
+   }
+  ],
+  "inventory": [
+   "waterskin [empty]",
+   "waterskin [empty]",
+   "torch x13 (unburnt)",
+   "waterskin [27 drams of fresh water]",
+   "bear jerky [9 servings]",
+   "witchwood bark x4",
+   "bent metal sheet x2",
+   "staff x2 \u001a5 \u00031d2",
+   "fractured microchip",
+   "bedroll",
+   "bedroll",
+   "hammock",
+   "wooden arrow x4 \u001a4 \u00031d2 (4/1d4)",
+   "bronze dagger \u001a5 \u00031d2",
+   "short bow x2 \u001a4 [empty]",
+   "sturdy black robes \u00040 \t1",
+   "iron mace \u001a6 \u00032",
+   "dreadroot tuber"
+  ],
+  "equipped": [
+   "furs \u00042 \t-1",
+   "lacquered sun and moon mask \u00040 \t1",
+   "painted bronze battle axe \u001a5 \u00031d2",
+   "lit torch (blazing)"
+  ],
+  "messages": [
+   "You hit (x1) for 1 damage with your painted bronze battle axe! [9]",
+   "The dreadroot dies!",
+   "You are overwhelmed with terror!",
+   "You are fleeing from a dreadroot!",
+   "You pass by a set of sturdy black robes, an iron mace, a short bow, and a snapjaw corpse.",
+   "You hit (x1) for 1 damage with your painted bronze battle axe! [15]",
+   "You don't penetrate the dreadroot's armor with your painted bronze battle axe. [18]",
+   "You hit (x2) for 3 damage with your lit torch! [18]",
+   "The dreadroot dies!",
+   "You pass by a set of sturdy black robes, an iron mace, a short bow, and a snapjaw corpse.",
+   "You take the sturdy black robes.",
+   "You take the iron mace.",
+   "You take the short bow.",
+   "You take the dreadroot tuber from the east.",
+   "You see a giant centipede to the east and stop exploring."
+  ]
+ },
+ "expect": {
+  "answer_re": "^(STOP|NEXT) (close fight|kite)"
+ }
+}

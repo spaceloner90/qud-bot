@@ -1,0 +1,385 @@
+{
+ "name": "hard_fight_hands_over",
+ "why": "Uumurem 2026-11-26, stratum 4: a defanged girshling (28 HP, level 9, two 1d6) adjacent with the ray cooling down. Never fought by the script; the LLM waited for the ray.",
+ "script": "explore",
+ "args": {
+  "hand_off": true,
+  "fight": true,
+  "missile": true,
+  "collect": true,
+  "auto_eat": true,
+  "auto_cook": true,
+  "hunt": true,
+  "goal_level": 5,
+  "max_turns": 1500,
+  "raise_hp_fraction": 0.5,
+  "hold": true,
+  "max_hostiles": 2,
+  "accept_kinds": [
+   "dreadroot"
+  ]
+ },
+ "memory": {
+  "announced": "JoppaWorld.11.20.1.1.14",
+  "start_turn": 371119,
+  "level_seen": 4,
+  "seen": {
+   "msgs": [
+    "You pass by a gnawed watervine.",
+    "You pass by a dreadroot.",
+    "You pass by a dreadroot.",
+    "You wade through a pool of asphalt.",
+    "You are stuck in a pool of asphalt!",
+    "You wade through a pool of asphalt.",
+    "You are stuck!",
+    "You break free!",
+    "You wade through a pool of asphalt.",
+    "You stop exploring because you are under attack by a jilted lover.",
+    "The jilted lover misses you with their thorns! [6 vs 8]",
+    "The frozen jilted lover takes 7 damage from your freezing effect!",
+    "The frozen jilted lover dies!",
+    "You gain 25 XP!",
+    "You emit a freezing ray from your hands!"
+   ]
+  }
+ },
+ "state": {
+  "seq": 3119,
+  "mode": "run",
+  "wait": "map",
+  "autoact": null,
+  "time": "2026-11-26T01:44:46.115",
+  "turn": 371169,
+  "game": {
+   "id": "9b6c18ef-2e3b-4573-99de-ed8d65ff19e8",
+   "mode": "Roleplay"
+  },
+  "screen": {
+   "w": 80,
+   "h": 25,
+   "rows": [
+    " Uumurem                 │                                                      ",
+    " ST: 23  AG: 18  QN: 100 │                                                      ",
+    " TO: 18  WI: 16  MS: 140 │                                                      ",
+    " IN: 14  EG: 16  T: 23   ┴                                                      ",
+    " AV: 4   DV: 8   MA: 4                                                          ",
+    " XP: 1920 / 1975                                                                ",
+    " Wet,Hungry                                                                     ",
+    " HP: 27 / 27   #143/369                                                         ",
+    "                                                                                ",
+    " 5th of Shwut Ux                                                                ",
+    " Harvest Dawn                                                                   ",
+    "                                                                                ",
+    "                                                                                ",
+    "                         ┬                                                      ",
+    "                         │                                                      ",
+    "                         │                                                      ",
+    "> You emit a freezing ray│                                                      ",
+    "from your hands!         │                                                      ",
+    "> You gain 25 XP!        │                                                      ",
+    "> The frozen jilted lover┴                                                      ",
+    "dies!                    *                                                      ",
+    "> The frozen jilted lover/                                                      ",
+    "takes 7 damage from your ┬                                                      ",
+    "freezing effect!         │                                                      ",
+    "> The jilted lover misses│                                                      "
+   ],
+   "fg": [
+    "kyyyyyyykkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kYYyyCCkkWWyyCCkkyyyyyyykyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kRRyyCCkkGGyyCCkkyyyyyyykyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kBByyCCkkMMyyCCkkyyyyykkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyykkkyyyyykkkyyyyykkkwKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyyyyyKKKKKKKkkkkkkkkkcKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kbbbyWWWWWWkkkkkkkkkkkkkkwKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyYYYyyyykkkyyyyyyyykkYKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkYKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyyyyyyyyyyyykkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyyyyyyyyykkkkkkkkkkkkWKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkWKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkbKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkGGGGGGGGGGGGGGGGGGGGGGGyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "GGGGGGGGGGGGGGGGkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkyyyyyyyyyCCyyyykkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkGGGGCCCCCCGggggggggggggyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "GGGGGkkkkkkkkkkkkkkkkkkkkWKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkyyyyCCCCCCyggggggggggggWKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "yyyyyyyyyyyyyyyyyyyyyyyykyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "yyyyyyyyyyyyyyyykkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkyyyyggggggggggggyyyyyyyyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK"
+   ]
+  },
+  "player": {
+   "name": "tarred Uumurem",
+   "hp": 27,
+   "maxhp": 27,
+   "level": 4,
+   "av": 4,
+   "dv": 1,
+   "qn": 100,
+   "ms": 60,
+   "food": "Hungry",
+   "water": "Wet",
+   "effects": [
+    "defensive stance",
+    "covered in liquid"
+   ],
+   "x": 70,
+   "y": 11,
+   "zone": "JoppaWorld.11.20.1.1.14",
+   "zoneName": "tar patch, Red Rock, 4 strata deep"
+  },
+  "map": {
+   "w": 80,
+   "h": 25,
+   "rows": [
+    "                                                                          ▒▒▒▒▒ ",
+    "                                                                         ▒▒...▒▒",
+    "                                                                       .▒▒....`▒",
+    "                                                                      ...•.....▒",
+    "                                                                      ~~~~..`'.▒",
+    "                                                                      ~~~.~..•.▒",
+    "                                                                     .~~○<○..•,▒",
+    "                                                                     ▒.~~∙≈~.,'▒",
+    "                                                                     ▒.~~≈~....▒",
+    "                                                                     ~.~○...▒▒▒▒",
+    "                                                                     ~...••▒▒   ",
+    "                                                                     ~@x'.▒▒    ",
+    "                                                                     .≈▒▒▒▒     ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                "
+   ],
+   "vis": [
+    "                                                                          00000 ",
+    "                                                                         0000000",
+    "                                                                       000000000",
+    "                                                                      0000000000",
+    "                                                                      0000000000",
+    "                                                                      0000000000",
+    "                                                                     00000000000",
+    "                                                                     00000000000",
+    "                                                                     00000000000",
+    "                                                                     00000000000",
+    "                                                                     11100000   ",
+    "                                                                     1110000    ",
+    "                                                                     111000     ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                "
+   ],
+   "objects": [
+    {
+     "x": 71,
+     "y": 11,
+     "glyph": "x",
+     "name": "wet defanged girshling",
+     "id": "710",
+     "creature": true,
+     "hostile": true,
+     "seen": true,
+     "av": 4,
+     "dv": 0,
+     "qn": 100,
+     "ms": 100,
+     "lvl": 9,
+     "diff": "{{w|Average}}",
+     "str": -1,
+     "agi": 1,
+     "attacks": [
+      {
+       "name": "claw",
+       "dmg": "1d6",
+       "pen": 0,
+       "cap": 1000,
+       "hit": 0,
+       "part": "Arm"
+      },
+      {
+       "name": "claw",
+       "dmg": "1d6",
+       "pen": 0,
+       "cap": 1000,
+       "hit": 0,
+       "part": "Arm"
+      }
+     ],
+     "parts": [
+      "Springy",
+      "AIKillStuckStuff",
+      "Swarmer",
+      "QuestStepFinisher",
+      "DarkVision",
+      "ShortBlades",
+      "ShortBlades_Expertise"
+     ],
+     "desc": "Star orchid saliva pools in the cavities where its fangs used to be and drips onto pallid leg-things. It shudders in the capture of some pristine ecstasy lost to space and time, and it lets out a proud and piercing whine.\n\n{{rules|Swarmer: This creature receives +1 to hit in melee and +1 to penetrat",
+     "hp": 28,
+     "maxhp": 28,
+     "effects": [
+      "covered in liquid"
+     ],
+     "mutations": [
+      "Night Vision"
+     ]
+    }
+   ],
+   "features": [
+    {
+     "x": 69,
+     "y": 10,
+     "name": "pool of 500 drams of brackish water"
+    },
+    {
+     "x": 69,
+     "y": 11,
+     "name": "pool of 500 drams of brackish water"
+    },
+    {
+     "x": 71,
+     "y": 11,
+     "name": "puddle of 16 drams of brackish water"
+    },
+    {
+     "x": 69,
+     "y": 12,
+     "name": "pool of 500 drams of brackish water"
+    },
+    {
+     "x": 70,
+     "y": 12,
+     "name": "pool of 505 drams of brackish water"
+    }
+   ]
+  },
+  "quests": [
+   {
+    "name": "What's Eating the Watervine?",
+    "finished": false,
+    "giver": "Mehmet",
+    "where": "Joppa",
+    "steps": [
+     {
+      "name": "Travel to Red Rock",
+      "text": "Journey two parasangs north of Joppa to Red Rock.",
+      "finished": true
+     },
+     {
+      "name": "Find the Vermin",
+      "text": "Find the creatures that are eating Joppa's watervine.",
+      "finished": false
+     },
+     {
+      "name": "Get a Corpse",
+      "text": "Collect a corpse from one of the creatures.",
+      "finished": false
+     },
+     {
+      "name": "Return with the Corpse",
+      "text": "Return to Joppa with the corpse of the watervine vermin.",
+      "finished": false
+     }
+    ]
+   },
+   {
+    "name": "Fetch Argyve a Knickknack",
+    "finished": false,
+    "giver": "Argyve",
+    "where": "Joppa",
+    "steps": [
+     {
+      "name": "Find a Knickknack",
+      "text": "Search the regions surrounding Joppa for an artifact.",
+      "finished": false
+     },
+     {
+      "name": "Return to Argyve",
+      "text": "Bring the artifact to Argyve.",
+      "finished": false
+     }
+    ]
+   }
+  ],
+  "inventory": [
+   "waterskin [39 drams of fresh water]",
+   "waterskin [empty]",
+   "torch x14 (unburnt)",
+   "waterskin [64 drams of fresh water]",
+   "bear jerky [4 servings]",
+   "witchwood bark x4",
+   "bent metal sheet x2",
+   "fractured microchip",
+   "bedroll",
+   "wooden arrow x12 \u001a4 \u00031d2 (4/1d4)",
+   "dreadroot tuber x5",
+   "flowers",
+   "flowers",
+   "flowers",
+   "flowers",
+   "flowers",
+   "flowers",
+   "flowers",
+   "flowers",
+   "flowers",
+   "blood-stained bronze battle axe \u001a5 \u00031d2",
+   "blood-stained iron dagger \u001a6 \u00031d3",
+   "studded leather armor \u00043 \t-2",
+   "bronze long sword \u001a5 \u00031d3",
+   "short bow \u001a4 [empty]",
+   "staff \u001a5 \u00031d2",
+   "bronze battle axe \u001a5 \u00031d2",
+   "vinewafer",
+   "copper nugget",
+   "water-stained quilted shawl \u00040 \t-1",
+   "blood-stained sooty smock \u00040 \t2",
+   "wide-brimmed hat \u00040 \t1"
+  ],
+  "equipped": [
+   "slimy tarred sturdy studded leather armor \u00043 \t-2",
+   "leather cap \u00041 \t0",
+   "lacquered sun and moon mask \u00040 \t1",
+   "two-handed iron long sword \u001a7 \u00031d8"
+  ],
+  "messages": [
+   "You pass by a gnawed watervine.",
+   "You pass by a dreadroot.",
+   "You pass by a dreadroot.",
+   "You wade through a pool of asphalt.",
+   "You are stuck in a pool of asphalt!",
+   "You wade through a pool of asphalt.",
+   "You are stuck!",
+   "You break free!",
+   "You wade through a pool of asphalt.",
+   "You stop exploring because you are under attack by a jilted lover.",
+   "The jilted lover misses you with their thorns! [6 vs 8]",
+   "The frozen jilted lover takes 7 damage from your freezing effect!",
+   "The frozen jilted lover dies!",
+   "You gain 25 XP!",
+   "You emit a freezing ray from your hands!"
+  ]
+ },
+ "expect": {
+  "answer_re": "^(STOP|NEXT)"
+ }
+}

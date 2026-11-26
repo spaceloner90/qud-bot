@@ -1,0 +1,6 @@
+{
+ "ask_during_autoact": true,
+ "max_calls_per_run": 100000,
+ "brain_timeout_ms": 20000,
+ "auto_start": false
+}

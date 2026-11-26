@@ -1,0 +1,7 @@
+{
+  "id": "QudBot",
+  "title": "Qud Bot Bridge",
+  "description": "Local project: lets an external brain read the screen and press keys. F6 run, F7 step, F8 report.",
+  "version": "0.1.0",
+  "author": "local"
+}

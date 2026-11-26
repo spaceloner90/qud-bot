@@ -1,0 +1,85 @@
+{
+ "character": "Siwur",
+ "history": [
+  {
+   "turn": 140726,
+   "level": 1,
+   "xp": 0,
+   "attributes": {
+    "Strength": 22,
+    "Agility": 18,
+    "Toughness": 18,
+    "Intelligence": 14,
+    "Willpower": 16,
+    "Ego": 16
+   },
+   "mutations": {
+    "Freezing Ray": "1",
+    "Multiple Legs": "1",
+    "Amphibious": "D",
+    "Teleportation": "1"
+   },
+   "skills": [
+    "Axe",
+    "Axe Proficiency",
+    "Dismember",
+    "Butchery",
+    "Charge",
+    "Make Camp"
+   ],
+   "points": {
+    "skill": 0,
+    "attribute": 0,
+    "mutation": 0
+   },
+   "hp": 18,
+   "maxhp": 18,
+   "equipped": [
+    "furs \u00042 \t-1",
+    "lit torch (blazing)",
+    "bronze battle axe \u001a5 \u00031d2"
+   ],
+   "recorded": "2026-11-26 00:22"
+  }
+ ],
+ "current": {
+  "turn": 140726,
+  "level": 1,
+  "xp": 0,
+  "attributes": {
+   "Strength": 22,
+   "Agility": 18,
+   "Toughness": 18,
+   "Intelligence": 14,
+   "Willpower": 16,
+   "Ego": 16
+  },
+  "mutations": {
+   "Freezing Ray": "1",
+   "Multiple Legs": "1",
+   "Amphibious": "D",
+   "Teleportation": "1"
+  },
+  "skills": [
+   "Axe",
+   "Axe Proficiency",
+   "Dismember",
+   "Butchery",
+   "Charge",
+   "Make Camp"
+  ],
+  "points": {
+   "skill": 0,
+   "attribute": 0,
+   "mutation": 0
+  },
+  "hp": 18,
+  "maxhp": 18,
+  "equipped": [
+   "furs \u00042 \t-1",
+   "lit torch (blazing)",
+   "bronze battle axe \u001a5 \u00031d2"
+  ],
+  "recorded": "2026-11-26 00:22"
+ }
+}

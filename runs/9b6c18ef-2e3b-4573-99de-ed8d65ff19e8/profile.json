@@ -1,0 +1,251 @@
+{
+ "character": "Uumurem",
+ "history": [
+  {
+   "turn": 365126,
+   "level": 1,
+   "xp": 0,
+   "attributes": {
+    "Strength": 22,
+    "Agility": 18,
+    "Toughness": 18,
+    "Intelligence": 14,
+    "Willpower": 16,
+    "Ego": 16
+   },
+   "mutations": {
+    "Freezing Ray": "1",
+    "Multiple Legs": "1",
+    "Amphibious": "D",
+    "Teleportation": "1"
+   },
+   "skills": [
+    "Axe",
+    "Axe Proficiency",
+    "Dismember",
+    "Butchery",
+    "Charge",
+    "Make Camp"
+   ],
+   "points": {
+    "skill": 0,
+    "attribute": 0,
+    "mutation": 0
+   },
+   "hp": 18,
+   "maxhp": 18,
+   "equipped": [
+    "furs \u00042 \t-1",
+    "painted bronze battle axe \u001a5 \u00031d2",
+    "lit torch (blazing)"
+   ],
+   "recorded": "2026-11-26 00:53"
+  },
+  {
+   "turn": 366663,
+   "level": 2,
+   "xp": 220,
+   "attributes": {
+    "Strength": 22,
+    "Agility": 18,
+    "Toughness": 18,
+    "Intelligence": 14,
+    "Willpower": 16,
+    "Ego": 16
+   },
+   "mutations": {
+    "Freezing Ray": "1",
+    "Multiple Legs": "1",
+    "Teleportation": "1"
+   },
+   "skills": [
+    "Axe",
+    "Axe Proficiency",
+    "Dismember",
+    "Butchery",
+    "Charge",
+    "Make Camp"
+   ],
+   "points": {
+    "skill": 66,
+    "attribute": 0,
+    "mutation": 1
+   },
+   "hp": 21,
+   "maxhp": 21,
+   "equipped": [
+    "furs \u00041 \t-1 [cracked]",
+    "lacquered sun and moon mask \u00040 \t1",
+    "painted bronze battle axe \u001a5 \u00031d2",
+    "lit torch (blazing)"
+   ],
+   "recorded": "2026-11-26 01:03"
+  },
+  {
+   "turn": 367127,
+   "level": 3,
+   "xp": 550,
+   "attributes": {
+    "Strength": 23,
+    "Agility": 18,
+    "Toughness": 18,
+    "Intelligence": 14,
+    "Willpower": 16,
+    "Ego": 16
+   },
+   "mutations": {
+    "Freezing Ray": "2",
+    "Multiple Legs": "2",
+    "Teleportation": "1"
+   },
+   "skills": [
+    "Axe",
+    "Axe Proficiency",
+    "Dismember",
+    "Butchery",
+    "Long Blade",
+    "Long Blade Proficiency",
+    "Charge",
+    "Make Camp"
+   ],
+   "points": {
+    "skill": 32,
+    "attribute": 0,
+    "mutation": 0
+   },
+   "hp": 21,
+   "maxhp": 25,
+   "equipped": [
+    "sturdy studded leather armor \u00043 \t-2",
+    "lacquered sun and moon mask \u00040 \t1",
+    "two-handed iron long sword \u001a7 \u00031d8"
+   ],
+   "recorded": "2026-11-26 01:18"
+  },
+  {
+   "turn": 368592,
+   "level": 4,
+   "xp": 1150,
+   "attributes": {
+    "Strength": 23,
+    "Agility": 18,
+    "Toughness": 18,
+    "Intelligence": 14,
+    "Willpower": 16,
+    "Ego": 16
+   },
+   "mutations": {
+    "Freezing Ray": "3",
+    "Multiple Legs": "2",
+    "Teleportation": "1"
+   },
+   "skills": [
+    "Axe",
+    "Axe Proficiency",
+    "Dismember",
+    "Butchery",
+    "Long Blade",
+    "Long Blade Proficiency",
+    "Charge",
+    "Make Camp"
+   ],
+   "points": {
+    "skill": 98,
+    "attribute": 0,
+    "mutation": 0
+   },
+   "hp": 16,
+   "maxhp": 27,
+   "equipped": [
+    "sturdy studded leather armor \u00043 \t-2",
+    "lacquered sun and moon mask \u00040 \t1",
+    "slime-stained two-handed iron long sword \u001a7 \u00031d8"
+   ],
+   "recorded": "2026-11-26 01:32"
+  },
+  {
+   "turn": 371191,
+   "level": 5,
+   "xp": 2010,
+   "attributes": {
+    "Strength": 23,
+    "Agility": 18,
+    "Toughness": 18,
+    "Intelligence": 14,
+    "Willpower": 16,
+    "Ego": 16
+   },
+   "mutations": {
+    "Freezing Ray": "3",
+    "Multiple Legs": "2",
+    "Teleportation": "1"
+   },
+   "skills": [
+    "Axe",
+    "Axe Proficiency",
+    "Dismember",
+    "Butchery",
+    "Long Blade",
+    "Long Blade Proficiency",
+    "Charge",
+    "Make Camp"
+   ],
+   "points": {
+    "skill": 164,
+    "attribute": 0,
+    "mutation": 1
+   },
+   "hp": 30,
+   "maxhp": 30,
+   "equipped": [
+    "slimy tarred sturdy studded leather armor \u00043 \t-2",
+    "leather cap \u00041 \t0",
+    "lacquered sun and moon mask \u00040 \t1",
+    "two-handed iron long sword \u001a7 \u00031d8"
+   ],
+   "recorded": "2026-11-26 01:46"
+  }
+ ],
+ "current": {
+  "turn": 371191,
+  "level": 5,
+  "xp": 2010,
+  "attributes": {
+   "Strength": 23,
+   "Agility": 18,
+   "Toughness": 18,
+   "Intelligence": 14,
+   "Willpower": 16,
+   "Ego": 16
+  },
+  "mutations": {
+   "Freezing Ray": "3",
+   "Multiple Legs": "2",
+   "Teleportation": "1"
+  },
+  "skills": [
+   "Axe",
+   "Axe Proficiency",
+   "Dismember",
+   "Butchery",
+   "Long Blade",
+   "Long Blade Proficiency",
+   "Charge",
+   "Make Camp"
+  ],
+  "points": {
+   "skill": 164,
+   "attribute": 0,
+   "mutation": 1
+  },
+  "hp": 30,
+  "maxhp": 30,
+  "equipped": [
+   "slimy tarred sturdy studded leather armor \u00043 \t-2",
+   "leather cap \u00041 \t0",
+   "lacquered sun and moon mask \u00040 \t1",
+   "two-handed iron long sword \u001a7 \u00031d8"
+  ],
+  "recorded": "2026-11-26 01:46"
+ }
+}

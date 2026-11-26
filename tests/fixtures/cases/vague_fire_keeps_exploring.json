@@ -1,0 +1,329 @@
+{
+ "name": "vague_fire_keeps_exploring",
+ "why": "Uumurem 2026-11-26: 'shooting at you or the shale' with no hit, near miss or direction stopped explore twice in 18 turns; the first two in 100 turns must not hand over.",
+ "script": "explore",
+ "args": {
+  "hand_off": true,
+  "fight": true,
+  "missile": true,
+  "collect": true,
+  "auto_eat": true,
+  "auto_cook": true,
+  "hunt": true,
+  "goal_level": 5,
+  "max_turns": 1500,
+  "raise_hp_fraction": 0.5,
+  "hold": true,
+  "max_hostiles": 2,
+  "accept_kinds": [
+   "dreadroot"
+  ]
+ },
+ "memory": {
+  "announced": "JoppaWorld.11.20.1.1.12",
+  "start_turn": 368138,
+  "level_seen": 3,
+  "seen": {
+   "msgs": [
+    "You wade through a pool of brackish water.",
+    "You wade through a pool of brackish water.",
+    "You wade through a pool of brackish water.",
+    "You wade through a pool of brackish water.",
+    "You wade through a pool of brackish water.",
+    "You wade through a pool of brackish water.",
+    "You wade through a pool of brackish water.",
+    "You wade through a pool of brackish water.",
+    "You wade through a pool of brackish water.",
+    "You wade through a pool of brackish water.",
+    "You wade through a pool of brackish water.",
+    "You wade through a pool of brackish water.",
+    "You wade through a pool of brackish water.",
+    "You wade through a pool of brackish water."
+   ]
+  }
+ },
+ "state": {
+  "seq": 1895,
+  "mode": "run",
+  "wait": "map",
+  "autoact": null,
+  "time": "2026-11-26T01:27:28.334",
+  "turn": 368188,
+  "game": {
+   "id": "9b6c18ef-2e3b-4573-99de-ed8d65ff19e8",
+   "mode": "Roleplay"
+  },
+  "screen": {
+   "w": 80,
+   "h": 25,
+   "rows": [
+    " Uumurem                 │                                                      ",
+    " ST: 23  AG: 18  QN: 100 │                                                      ",
+    " TO: 18  WI: 16  MS: 120 │                                                      ",
+    " IN: 14  EG: 16  T: 23   ┴                                                      ",
+    " AV: 3   DV: 8   MA: 4                                                          ",
+    " XP: 920 / 1060                                                                 ",
+    " Wet,Sated                                                                      ",
+    " HP: 28 / 25   #128/369                                                         ",
+    "                                                                                ",
+    " 2nd of Shwut Ux                                                                ",
+    " Jeweled Dusk                                                                   ",
+    "                                                                                ",
+    "                                                                                ",
+    "                         ┬                                                      ",
+    "                         │                                                      ",
+    "                         │                                                      ",
+    "> You stop exploring     │                                                      ",
+    "because something is     │                                                      ",
+    "shooting at you or the   │                                                      ",
+    "shale.                   ┴                                                      ",
+    "> You wade through a pool*                                                      ",
+    "of brackish water.       /                                                      ",
+    "> You wade through a pool┬                                                      ",
+    "of brackish water.       │                                                      ",
+    "> You wade through a pool│                                                      "
+   ],
+   "fg": [
+    "kyyyyyyykkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kYYyyCCkkWWyyCCkkyyyyyyykyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kRRyyCCkkGGyyCCkkyyyyyyykyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kBByyCCkkMMyyCCkkyyyyykkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyykkkyyyyykkkyyyyykkkwKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyyyyKKKKKKKkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kbbbygggggkkkkkkkkkkkkkkkwKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyYYYyyyykkkyyyyyyyykkYKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkYKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyyyyyyyyyyyykkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyyyyyyyyykkkkkkkkkkkkWKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkWKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkbKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkrrrrrrrrrrrrrrrrrrkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "rrrrrrrrrrrrrrrrrrrrkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "rrrrrrrrrrrrrrrrrrrrrrkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "rrrrrrkkkkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkyyyyyyyyyyyyyyyyyyyyyyyWKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "yyywwwwwwwwyBBBBBykkkkkkkWKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkyyyyyyyyyyyyyyyyyyyyyyyyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "yyywwwwwwwwyBBBBBykkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkyyyyyyyyyyyyyyyyyyyyyyyyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK"
+   ]
+  },
+  "player": {
+   "name": "wet Uumurem",
+   "hp": 28,
+   "maxhp": 25,
+   "level": 3,
+   "av": 3,
+   "dv": 1,
+   "qn": 100,
+   "ms": 80,
+   "food": "Sated",
+   "water": "Wet",
+   "effects": [
+    "defensive stance",
+    "well fed",
+    "covered in liquid",
+    "wading"
+   ],
+   "x": 44,
+   "y": 15,
+   "zone": "JoppaWorld.11.20.1.1.12",
+   "zoneName": "Red Rock, 2 strata deep"
+  },
+  "map": {
+   "w": 80,
+   "h": 25,
+   "rows": [
+    "                      ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                            ",
+    "   ▒▒▒                ▒............................▒▒▒▒▒      ▒▒▒▒▒▒▒▒▒▒▒       ",
+    " ▒▒▒*▒▒▒              ▒.....................▒▒.........▒      ▒.........▒▒      ",
+    " ▒*****▒              ▒....................▒▒▒▒...▒▒▒▒.▒      ▒..........▒      ",
+    "▒▒*****▒▒▒▒▒▒▒        ▒.....▒▒.............▒  ▒▒▒▒▒▒▒▒.▒▒▒▒▒▒▒▒..........▒      ",
+    "▒**.∙.**▒▒.∙∙▒▒       ▒.....▒▒▒...>...▒▒.▒▒▒ ▒▒▒▒▒.......................▒   ▒▒▒",
+    "▒*.∙♦.*.▒.....▒▒▒▒▒▒▒▒▒.▒▒▒▒▒ ▒▒.....▒▒▒▒▒▒▒▒▒..∙..▒▒▒▒▒▒▒▒▒▒▒..........▒▒ ▒▒▒.▒",
+    "▒**...**▒....∙..∙....▒▒.▒      ▒.....▒▒▒▒▒▒`.•.▒▒▒▒▒         ▒..~~▒▒▒▒.▒▒  ▒...▒",
+    "▒*******....∙.▒▒▒▒▒▒....▒      ▒▒▒.▒▒▒......▒▒▒▒             ▒▒▒▒≈~.....▒ ▒▒...▒",
+    "▒▒*****▒▒▒...▒▒    ▒▒▒▒▒▒        ▒▒▒▒..▒▒▒▒▒▒                   ▒▒▒▒▒▒▒.▒▒▒....▒",
+    " ▒**.**▒▒▒.▒▒▒                    ▒▒▒.▒▒                             ▒.........▒",
+    " ▒▒▒▒▒▒▒..∙▒▒                     ▒.,.▒    ..▒                       ▒.▒▒▒▒▒...▒",
+    "      ▒...`.▒                     ▒.▒▒▒   ..'▒                       ▒.▒▒  ▒▒▒.▒",
+    "      ▒.....▒                 ▒▒▒▒▒,▒     ..'▒                       ▒..▒    ▒▒▒",
+    "      ▒..∙..▒                ▒▒..``.▒     .,~~         ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒.▒       ",
+    "      ▒▒...▒▒                ..`▒▒▒▒▒▒▒▒▒▒▒▒@▒        ▒▒................▒       ",
+    "       ▒▒▒▒▒                 .▒~~≈▒▒▒~~.~~▒.~▒   ▒▒▒▒▒▒..▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒       ",
+    "                              ~~≈~.▒▒~▒▒▒~≈~▒▒▒▒▒▒......▒▒▒▒▒.▒▒▒               ",
+    "                              .≈~≈~▒▒.▒ ▒▒▒▒▒▒.....▒▒.▒▒▒▒▒.....▒               ",
+    "                              ~≈~~.▒▒~▒   ▒.....▒▒▒▒▒'....▒.....▒▒              ",
+    "                              ▒.~~.~≈~▒   ▒.....▒   ▒▒▒▒▒....<...▒              ",
+    "                              ▒▒~~~▒▒▒▒   ▒..¿..▒       ▒▒▒.....▒▒              ",
+    "                               ▒▒▒▒▒      ▒.....▒         ▒.....▒               ",
+    "                                          ▒.....▒         ▒▒▒.▒▒▒               ",
+    "                                          ▒▒▒▒▒▒▒           ▒▒▒                 "
+   ],
+   "vis": [
+    "                      000000000000000000000000000000                            ",
+    "   000                0000000000000000000000000000000000      00000000000       ",
+    " 0000000              0000000000000000000000000000000000      000000000000      ",
+    " 0000000              0000000000000000000000000000000000      000000000000      ",
+    "00000000000000        0000000000000000000000  0000000000000000000000000000      ",
+    "000000000000000       0000000000000000000000 00000000000000000000000000000   000",
+    "00000000000000000000000000000 00000000000000000000000000000000000000000000 00000",
+    "0000000000000000000000000      000000000000000000000         000000000000  00000",
+    "0000000000000000000000000      00000000000000000             000000000000 000000",
+    "000000000000000    000000        000000000000                   0000000000000000",
+    " 0000000000000                    000000                             00000000000",
+    " 000000000000                     00000    000                       00000000000",
+    "      0000000                     00000   0000                       0000  00000",
+    "      0000000                 0000000     0000                       0000    000",
+    "      0000000                00000000     0111         000000000000000000       ",
+    "      0000000                00000000000000111        0000000000000000000       ",
+    "       00000                 00000000000000111   000000000000000000000000       ",
+    "                              00000000000000000000000000000000000               ",
+    "                              000000000 0000000000000000000000000               ",
+    "                              000000000   000000000000000000000000              ",
+    "                              000000000   0000000   00000000000000              ",
+    "                              000000000   0000000       0000000000              ",
+    "                               00000      0000000         0000000               ",
+    "                                          0000000         0000000               ",
+    "                                          0000000           000                 "
+   ],
+   "objects": [],
+   "features": [
+    {
+     "x": 43,
+     "y": 14,
+     "name": "puddle of 20 drams of brackish water"
+    },
+    {
+     "x": 44,
+     "y": 14,
+     "name": "pool of 469 drams of brackish water"
+    },
+    {
+     "x": 45,
+     "y": 14,
+     "name": "pool of 500 drams of brackish water"
+    },
+    {
+     "x": 44,
+     "y": 15,
+     "name": "pool of 462 drams of brackish water"
+    },
+    {
+     "x": 43,
+     "y": 16,
+     "name": "pool of 479 drams of brackish water"
+    },
+    {
+     "x": 44,
+     "y": 16,
+     "name": "pool of 500 drams of brackish water"
+    }
+   ]
+  },
+  "quests": [
+   {
+    "name": "What's Eating the Watervine?",
+    "finished": false,
+    "giver": "Mehmet",
+    "where": "Joppa",
+    "steps": [
+     {
+      "name": "Travel to Red Rock",
+      "text": "Journey two parasangs north of Joppa to Red Rock.",
+      "finished": true
+     },
+     {
+      "name": "Find the Vermin",
+      "text": "Find the creatures that are eating Joppa's watervine.",
+      "finished": false
+     },
+     {
+      "name": "Get a Corpse",
+      "text": "Collect a corpse from one of the creatures.",
+      "finished": false
+     },
+     {
+      "name": "Return with the Corpse",
+      "text": "Return to Joppa with the corpse of the watervine vermin.",
+      "finished": false
+     }
+    ]
+   },
+   {
+    "name": "Fetch Argyve a Knickknack",
+    "finished": false,
+    "giver": "Argyve",
+    "where": "Joppa",
+    "steps": [
+     {
+      "name": "Find a Knickknack",
+      "text": "Search the regions surrounding Joppa for an artifact.",
+      "finished": false
+     },
+     {
+      "name": "Return to Argyve",
+      "text": "Bring the artifact to Argyve.",
+      "finished": false
+     }
+    ]
+   }
+  ],
+  "inventory": [
+   "waterskin [empty]",
+   "waterskin [empty]",
+   "torch x14 (unburnt)",
+   "waterskin [49 drams of fresh water]",
+   "bear jerky [9 servings]",
+   "witchwood bark x4",
+   "bent metal sheet x2",
+   "staff x2 \u001a5 \u00031d2",
+   "fractured microchip",
+   "bedroll",
+   "bedroll",
+   "hammock",
+   "wooden arrow x4 \u001a4 \u00031d2 (4/1d4)",
+   "bronze dagger \u001a5 \u00031d2",
+   "short bow x2 \u001a4 [empty]",
+   "sturdy black robes \u00040 \t1",
+   "iron mace \u001a6 \u00032",
+   "dreadroot tuber x2",
+   "furs \u00042 \t-1",
+   "cloth overalls \u00041 \t2",
+   "painted bronze battle axe \u001a5 \u00031d2",
+   "iron dagger \u001a6 \u00031d3"
+  ],
+  "equipped": [
+   "wet sturdy studded leather armor \u00043 \t-2",
+   "lacquered sun and moon mask \u00040 \t1",
+   "wet slime-stained two-handed iron long sword \u001a7 \u00031d8"
+  ],
+  "messages": [
+   "You wade through a pool of brackish water.",
+   "You wade through a pool of brackish water.",
+   "You wade through a pool of brackish water.",
+   "You wade through a pool of brackish water.",
+   "You wade through a pool of brackish water.",
+   "You wade through a pool of brackish water.",
+   "You wade through a pool of brackish water.",
+   "You wade through a pool of brackish water.",
+   "You wade through a pool of brackish water.",
+   "You wade through a pool of brackish water.",
+   "You wade through a pool of brackish water.",
+   "You wade through a pool of brackish water.",
+   "You wade through a pool of brackish water.",
+   "You wade through a pool of brackish water.",
+   "You stop exploring because something is shooting at you or the shale."
+  ]
+ },
+ "expect": {
+  "answer_re": "CmdAutoExplore",
+  "answer_not_re": "^(STOP|NEXT)",
+  "memory_has": [
+   "vague_fire"
+  ]
+ }
+}

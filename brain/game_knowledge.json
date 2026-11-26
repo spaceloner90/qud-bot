@@ -1,0 +1,1110 @@
+{
+ "_about": "Game knowledge, shared by every run: creature kinds (verdicts, what they did to us) and foods safe to eat on our own. World knowledge (places, people, sightings, notes, loot, quests) stays per run in runs/<id>/world.json. brain/world.py reads this file on load and writes it back on save; run files don't store kinds or food. Started from run 7b7d009c (Ushrorooshum), 2026-11-24. Verdicts (verdict, shoot, harmless, difficulty) are judgments for one build, level and gear; observations (max_hit, xp, effects, mobile, ranged...) hold for any character. A different build re-judges verdicts.",
+ "kinds": {
+  "jilted lover": {
+   "verdict": "fight",
+   "effects": [
+    "You are grabbed by"
+   ],
+   "xp": [
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25
+   ],
+   "max_hit": 5,
+   "difficulty": "Average",
+   "mobile": false,
+   "kills": 20,
+   "obs": {
+    "attacks": 45,
+    "hits": 24,
+    "dmg": 62,
+    "mult": 26,
+    "av": 59,
+    "av_n": 24,
+    "turns": 35,
+    "last_turn": 371000
+   }
+  },
+  "seed-spitting vine": {
+   "verdict": "fight",
+   "effects": [],
+   "xp": [
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25
+   ],
+   "max_hit": 6,
+   "difficulty": "Average",
+   "mobile": false,
+   "ranged": true,
+   "engage_hp_fraction": 0.9,
+   "kills": 7,
+   "obs": {
+    "attacks": 16,
+    "hits": 16,
+    "dmg": 42,
+    "mult": 24,
+    "av": 37,
+    "av_n": 15,
+    "turns": 16,
+    "last_turn": 204949
+   }
+  },
+  "cave spider": {
+   "verdict": "fight",
+   "effects": [],
+   "xp": [
+    50,
+    50,
+    50,
+    50,
+    50,
+    50,
+    50,
+    50
+   ],
+   "max_hit": 4,
+   "difficulty": "Average",
+   "mobile": true,
+   "kills": 8,
+   "obs": {
+    "attacks": 69,
+    "hits": 47,
+    "dmg": 75,
+    "mult": 49,
+    "av": 102,
+    "av_n": 47,
+    "turns": 53,
+    "last_turn": 371016
+   }
+  },
+  "giant centipede": {
+   "verdict": "fight",
+   "effects": [],
+   "xp": [
+    125,
+    125,
+    125,
+    125,
+    125,
+    125,
+    125,
+    125,
+    125
+   ],
+   "max_hit": 4,
+   "difficulty": "Average",
+   "mobile": true,
+   "kills": 9,
+   "obs": {
+    "attacks": 27,
+    "hits": 20,
+    "dmg": 44,
+    "mult": 24,
+    "av": 47,
+    "av_n": 19,
+    "turns": 22,
+    "last_turn": 370321
+   }
+  },
+  "croc": {
+   "verdict": "fight",
+   "effects": [],
+   "xp": [
+    75,
+    75,
+    75,
+    75,
+    75,
+    75,
+    75,
+    75,
+    75,
+    75,
+    75
+   ],
+   "max_hit": 4,
+   "difficulty": "Average",
+   "mobile": true,
+   "kills": 11,
+   "obs": {
+    "attacks": 18,
+    "hits": 10,
+    "dmg": 24,
+    "mult": 11,
+    "av": 23,
+    "av_n": 10,
+    "turns": 18,
+    "last_turn": 161325
+   }
+  },
+  "giant amoeba": {
+   "verdict": "fight",
+   "effects": [],
+   "xp": [
+    12
+   ],
+   "max_hit": 8,
+   "difficulty": "Average",
+   "mobile": true,
+   "note": "four slimy pseudopods; ray 4 dmg left it Fine; slow, gives up when out of sight",
+   "max_turn_damage": 21,
+   "freeze_turns": 1,
+   "shoot": true,
+   "kills": 2,
+   "obs": {
+    "attacks": 58,
+    "hits": 30,
+    "dmg": 112,
+    "mult": 55,
+    "av": 94,
+    "av_n": 30,
+    "turns": 42,
+    "last_turn": 367699
+   }
+  },
+  "bat": {
+   "verdict": "fight",
+   "effects": [],
+   "xp": [
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10
+   ],
+   "max_hit": 2,
+   "prey": true,
+   "mobile": true,
+   "kills": 12,
+   "obs": {
+    "attacks": 6,
+    "hits": 4,
+    "dmg": 5,
+    "mult": 5,
+    "av": 12,
+    "av_n": 4,
+    "turns": 6,
+    "last_turn": 368529
+   }
+  },
+  "dreadroot": {
+   "verdict": "fight",
+   "effects": [
+    "You are fleeing from",
+    "You are overwhelmed with terror"
+   ],
+   "xp": [],
+   "max_hit": 0,
+   "mobile": false,
+   "difficulty": "Average",
+   "xp_note": "died to 2 damage, gave no XP",
+   "harmless": true,
+   "kills": 61
+  },
+  "snapjaw scavenger": {
+   "verdict": "fight",
+   "effects": [],
+   "xp": [
+    10,
+    10,
+    10,
+    5,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10
+   ],
+   "max_hit": 4,
+   "mobile": true,
+   "difficulty": "Easy",
+   "swarmer": true,
+   "kills": 25,
+   "obs": {
+    "attacks": 28,
+    "hits": 17,
+    "dmg": 38,
+    "mult": 18,
+    "av": 30,
+    "av_n": 17,
+    "turns": 22,
+    "last_turn": 366714
+   }
+  },
+  "young ivory": {
+   "verdict": "fight",
+   "effects": [
+    "You begin bleeding",
+    "begins bleeding"
+   ],
+   "xp": [],
+   "max_hit": 0,
+   "mobile": false,
+   "kills": 0
+  },
+  "defanged girshling": {
+   "verdict": "fight",
+   "effects": [],
+   "xp": [
+    90
+   ],
+   "max_hit": 6,
+   "mobile": true,
+   "difficulty": "Average",
+   "swarmer": true,
+   "shoot": true,
+   "kills": 1,
+   "obs": {
+    "attacks": 47,
+    "hits": 15,
+    "dmg": 53,
+    "mult": 15,
+    "av": 60,
+    "av_n": 15,
+    "turns": 22,
+    "last_turn": 52449
+   }
+  },
+  "feral dog": {
+   "verdict": "fight",
+   "effects": [],
+   "xp": [
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    10
+   ],
+   "max_hit": 3,
+   "mobile": true,
+   "difficulty": "Easy",
+   "swarmer": true,
+   "kills": 12,
+   "obs": {
+    "attacks": 51,
+    "hits": 23,
+    "dmg": 40,
+    "mult": 23,
+    "av": 92,
+    "av_n": 23,
+    "turns": 40,
+    "last_turn": 54888
+   }
+  },
+  "irritable tortoise": {
+   "verdict": "fight",
+   "effects": [],
+   "xp": [],
+   "max_hit": 0,
+   "mobile": true,
+   "shoot": false,
+   "difficulty": "level5",
+   "ray_only": true,
+   "note": "carapace tightens: musket slugs fail 4x in a row, axe rarely penetrates; ray only or leave",
+   "kills": 0,
+   "obs": {
+    "attacks": 26,
+    "hits": 15,
+    "dmg": 29,
+    "mult": 15,
+    "av": 60,
+    "av_n": 15,
+    "turns": 21,
+    "last_turn": 54497
+   }
+  },
+  "horned chameleon": {
+   "verdict": "fight",
+   "effects": [],
+   "xp": [],
+   "max_hit": 0,
+   "mobile": true,
+   "difficulty": "level5",
+   "kills": 0,
+   "obs": {
+    "attacks": 1,
+    "hits": 0,
+    "dmg": 0,
+    "mult": 0,
+    "av": 0,
+    "av_n": 0,
+    "turns": 1,
+    "last_turn": 54405
+   }
+  },
+  "guard dog": {
+   "verdict": "fight",
+   "effects": [],
+   "xp": [],
+   "max_hit": 8,
+   "mobile": true,
+   "note": "one bite did 8 (killed us at 5 HP); Ithri-Sehian family guard at Maggatum",
+   "difficulty": "Average",
+   "shoot": true,
+   "kills": 0,
+   "obs": {
+    "attacks": 10,
+    "hits": 8,
+    "dmg": 38,
+    "mult": 9,
+    "av": 32,
+    "av_n": 8,
+    "turns": 9,
+    "last_turn": 54933
+   }
+  },
+  "burrowing girshling": {
+   "verdict": "fight",
+   "effects": [],
+   "xp": [],
+   "max_hit": 0,
+   "difficulty": "Hard",
+   "shoot": true,
+   "kills": 0
+  },
+  "wahwahuhummumm umerummerer": {
+   "verdict": "ask",
+   "obs": {
+    "attacks": 8,
+    "hits": 6,
+    "dmg": 9,
+    "mult": 6,
+    "av": 12,
+    "av_n": 6,
+    "turns": 6,
+    "last_turn": 49507
+   }
+  },
+  "grugrouluuhoubuofba, the stalwart snapjaw bear-baiter": {
+   "verdict": "avoid",
+   "effects": [],
+   "kills": 0,
+   "xp": [],
+   "max_hit": 0,
+   "difficulty": "hero"
+  },
+  "snapjaw hunter": {
+   "verdict": "fight",
+   "effects": [],
+   "kills": 3,
+   "xp": [
+    25,
+    25
+   ],
+   "max_hit": 2,
+   "difficulty": "Easy",
+   "obs": {
+    "attacks": 5,
+    "hits": 2,
+    "dmg": 3,
+    "mult": 2,
+    "av": 4,
+    "av_n": 2,
+    "turns": 4,
+    "last_turn": 432789
+   },
+   "ranged": true
+  },
+  "hulking baboon": {
+   "verdict": "fight",
+   "effects": [
+    "The hulking baboon hits with a small boulder (x5) for 9 damage"
+   ],
+   "kills": 0,
+   "xp": [],
+   "max_hit": 9,
+   "obs": {
+    "attacks": 1,
+    "hits": 1,
+    "dmg": 9,
+    "mult": 5,
+    "av": 2,
+    "av_n": 1,
+    "turns": 1,
+    "last_turn": 28578
+   },
+   "ranged": true
+  },
+  "tumbling pod": {
+   "verdict": "avoid",
+   "effects": [
+    "explodes when killed: 8 and 14 damage at level 1 (two pods chained), turn 159967"
+   ],
+   "kills": 0,
+   "xp": [],
+   "max_hit": 0,
+   "difficulty": "Tough"
+  },
+  "cannibal": {
+   "verdict": "fight",
+   "effects": [],
+   "kills": 0,
+   "xp": [],
+   "max_hit": 2,
+   "difficulty": "Average",
+   "obs": {
+    "attacks": 1,
+    "hits": 1,
+    "dmg": 2,
+    "mult": 1,
+    "av": 1,
+    "av_n": 1,
+    "turns": 1,
+    "last_turn": 433176
+   }
+  },
+  "scar-uhoago-uf-ob, the stalwart snapjaw king": {
+   "verdict": "avoid",
+   "effects": [],
+   "kills": 0,
+   "xp": [],
+   "max_hit": 0,
+   "difficulty": "hero"
+  },
+  "acid weep": {
+   "verdict": "avoid",
+   "effects": [],
+   "kills": 0,
+   "xp": [],
+   "max_hit": 0,
+   "difficulty": "Very Tough",
+   "mobile": false
+  },
+  "slime weep": {
+   "verdict": "avoid",
+   "effects": [],
+   "kills": 0,
+   "xp": [],
+   "max_hit": 0,
+   "difficulty": "Very Tough",
+   "mobile": false
+  },
+  "glowfish": {
+   "verdict": "fight",
+   "effects": [],
+   "kills": 26,
+   "xp": [
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25
+   ],
+   "max_hit": 3,
+   "prey": true,
+   "difficulty": "Average",
+   "obs": {
+    "attacks": 39,
+    "hits": 9,
+    "dmg": 15,
+    "mult": 9,
+    "av": 18,
+    "av_n": 9,
+    "turns": 37,
+    "last_turn": 206890
+   }
+  },
+  "giant dragonfly": {
+   "verdict": "fight",
+   "effects": [],
+   "kills": 0,
+   "xp": [],
+   "max_hit": 0,
+   "prey": true,
+   "difficulty": "Average",
+   "obs": {
+    "attacks": 1,
+    "hits": 0,
+    "dmg": 0,
+    "mult": 0,
+    "av": 0,
+    "av_n": 0,
+    "turns": 1,
+    "last_turn": 141372
+   }
+  },
+  "glowpad": {
+   "verdict": "fight",
+   "effects": [],
+   "kills": 46,
+   "xp": [
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25
+   ],
+   "max_hit": 4,
+   "prey": true,
+   "difficulty": "Average",
+   "obs": {
+    "attacks": 518,
+    "hits": 144,
+    "dmg": 272,
+    "mult": 145,
+    "av": 331,
+    "av_n": 144,
+    "turns": 375,
+    "last_turn": 207249
+   },
+   "mobile": false
+  },
+  "brooding goldpuff": {
+   "verdict": "avoid",
+   "effects": [],
+   "kills": 0,
+   "xp": [],
+   "max_hit": 0,
+   "difficulty": "Impossible"
+  },
+  "fork-horned gnu": {
+   "verdict": "avoid",
+   "effects": [],
+   "kills": 0,
+   "xp": [],
+   "max_hit": 0,
+   "difficulty": "Very Tough"
+  },
+  "chitinous puma": {
+   "verdict": "avoid",
+   "effects": [],
+   "kills": 0,
+   "xp": [],
+   "max_hit": 0,
+   "difficulty": "Very Tough"
+  },
+  "watervine farmer": {
+   "verdict": "ask",
+   "effects": [],
+   "kills": 0,
+   "xp": [],
+   "max_hit": 0,
+   "prey": false,
+   "note": "townsfolk parts: AmbientSoundGenerator, CookingAndGathering_Harvestry"
+  },
+  "goat": {
+   "verdict": "fight",
+   "effects": [],
+   "kills": 0,
+   "xp": [],
+   "max_hit": 0,
+   "prey": false,
+   "difficulty": "Average"
+  },
+  "salt-encrusted bat": {
+   "verdict": "ask",
+   "effects": [],
+   "kills": 1,
+   "xp": [
+    10
+   ],
+   "max_hit": 0
+  },
+  "snapjaw warlord": {
+   "verdict": "fight",
+   "effects": [],
+   "kills": 0,
+   "xp": [],
+   "max_hit": 0,
+   "difficulty": "Average",
+   "obs": {
+    "attacks": 1,
+    "hits": 0,
+    "dmg": 0,
+    "mult": 0,
+    "av": 0,
+    "av_n": 0,
+    "turns": 1,
+    "last_turn": 368586
+   }
+  },
+  "salt-encrusted cave spider": {
+   "verdict": "ask",
+   "effects": [],
+   "kills": 1,
+   "xp": [
+    50
+   ],
+   "max_hit": 0
+  },
+  "ugouluofoz, the fleet-footed snapjaw king": {
+   "verdict": "avoid",
+   "effects": [],
+   "kills": 0,
+   "xp": [],
+   "max_hit": 0,
+   "difficulty": "Average"
+  },
+  "ray cat": {
+   "verdict": "ask",
+   "effects": [],
+   "kills": 0,
+   "xp": [],
+   "max_hit": 0,
+   "prey": false,
+   "note": "townsfolk parts: Pettable"
+  }
+ },
+ "food": [
+  "bear jerky"
+ ],
+ "weapons": {
+  "sturdy steel battle axe": {
+   "hits": 6,
+   "misses": 0,
+   "dmg": 38,
+   "mult": 12,
+   "av": 13,
+   "av_n": 6
+  },
+  "bronze battle axe": {
+   "hits": 312,
+   "misses": 16,
+   "dmg": 1012,
+   "mult": 691,
+   "av": 125,
+   "av_n": 312
+  },
+  "iron long sword": {
+   "hits": 131,
+   "misses": 13,
+   "dmg": 855,
+   "mult": 346,
+   "av": 69,
+   "av_n": 131
+  },
+  "sap-stained bronze battle axe": {
+   "hits": 0,
+   "misses": 0,
+   "dmg": 0,
+   "mult": 0,
+   "av": 0,
+   "av_n": 0
+  },
+  "steel hand axe": {
+   "hits": 40,
+   "misses": 2,
+   "dmg": 354,
+   "mult": 119,
+   "av": 2,
+   "av_n": 40
+  },
+  "painted bronze battle axe": {
+   "hits": 4,
+   "misses": 0,
+   "dmg": 7,
+   "mult": 4,
+   "av": 9,
+   "av_n": 4
+  },
+  "two-handed iron long sword": {
+   "hits": 5,
+   "misses": 10,
+   "dmg": 45,
+   "mult": 9,
+   "av": 11,
+   "av_n": 5
+  }
+ },
+ "messages": {
+  "You pour fresh water from your waterskin over yourself": "Amphibious, the defect every character of our setup (Mutated Human Marauder) has: when we dry out, the game pours fresh water from a skin over us. Happens on every world-map step and sometimes in town; the water status reads 'Wet'. Water is a core resource: about 4 drams per 1000 turns plus one per world-map step (research/character.md, research/design.md). Not a danger, not a mystery."
+ },
+ "_about_messages": "Game messages we have explained, keyed by their text: look here (tools/known.py) before calling a message new or unexplained.",
+ "liquid_kinds": {
+  "water": {
+   "note": "salty/brackish/pool water: not drinkable fresh water; wading only (deep pools: swimming, avoid)",
+   "turn": 371191
+  },
+  "fresh water": {
+   "note": "drinkable and the currency: fill every empty waterskin from it",
+   "turn": 371191
+  },
+  "cider": {
+   "note": "a weep or puddle of cider: worth filling empty containers and selling (the user: a cider weep could have solved starting money)",
+   "turn": 371191
+  },
+  "wine": {
+   "note": "a weep or puddle of wine: worth filling empty containers and selling (the user, 2026-11-26)",
+   "turn": 371191
+  },
+  "salt": {
+   "note": "dilute salt puddles: nothing to use",
+   "turn": 371191
+  },
+  "blood": {
+   "note": "blood: nothing to use",
+   "turn": 371191
+  },
+  "sap": {
+   "note": "sap pools make you stuck for a few turns: walk around",
+   "turn": 371191
+  },
+  "asphalt": {
+   "note": "asphalt/tar pools make you stuck: struggle free (explore does), walk around",
+   "turn": 371191
+  },
+  "slime": {
+   "note": "slime: you can slip; walk around",
+   "turn": 371191
+  }
+ },
+ "feature_kinds": {
+  "alchemist's table": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "bed": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "bizarre contraption": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "bizarre contraption [broken]": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "blood-and-sap-stained watervine": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "blood-stained brinestalk": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "blood-stained watervine": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "book table": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "bridge": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "brinestalk": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "campfire": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "campfire remains": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "chair": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "clay oven": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "dirt path": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "dogthorn tree": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "dresser": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "duhummcalummmah": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "engraved chair": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "engraved floor cushion": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "floor cushion": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "frozen deep pool of 3960 drams of brackish water": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "frozen deep pool of 3968 drams of salty water": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "frozen watervine": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "graffitied woven basket": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "huuhwahcal": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "huummchuummmahum": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "lacquered bed": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "lacquered floor cushion": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "mannequin": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "metal workbench": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "packed dirt floor": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "painting": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "salt-encrusted brinestalk": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "salt-encrusted watervine": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "sap-and-blood-stained watervine": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "sap-and-water-stained brinestalk": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "sap-and-water-stained watervine": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "sap-stained brinestalk": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "sap-stained watervine": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "shrine to resheph, the last sultan": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "sliding drawer cabinet": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "sparking baetyl": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "starapple tree": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "strange furniture": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "sturdy floor cushion": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "table": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "tombstone": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "torch sconce": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "ummduhummercha": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "umwuhwahwahum": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "wahchuwahmah": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "waheruhum": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "watervine": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "web": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "willowy chair": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "willowy floor cushion": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "witchwood tree": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "wooden bookshelf": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "woven basket": {
+   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
+   "turn": 371191
+  },
+  "cider weep": {
+   "note": "a spring of cider: fill every empty container and sell it (the user, 2026-11-26: could have solved starting money)",
+   "turn": 371191
+  },
+  "wine weep": {
+   "note": "a spring of wine: fill every empty container and sell it (the user, 2026-11-26)",
+   "turn": 371191
+  }
+ }
+}

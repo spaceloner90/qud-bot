@@ -1,0 +1,292 @@
+{
+ "name": "shot_from_view_hands_over",
+ "why": "Uumurem 2026-11-26, stratum 2: 'A seed hits you (x1) from the west' from an unseen vine. A real hit hands over at once, with the direction.",
+ "script": "explore",
+ "args": {
+  "hand_off": true,
+  "fight": true,
+  "missile": true,
+  "collect": true,
+  "auto_eat": true,
+  "auto_cook": true,
+  "hunt": true,
+  "goal_level": 5,
+  "max_turns": 1500,
+  "raise_hp_fraction": 0.5,
+  "hold": true,
+  "max_hostiles": 2,
+  "accept_kinds": [
+   "dreadroot"
+  ]
+ },
+ "memory": {
+  "announced": "JoppaWorld.11.20.1.1.12",
+  "start_turn": 367446,
+  "level_seen": 3,
+  "seen": {
+   "msgs": [
+    "You stop bleeding.",
+    "You hit (x2) for 14 damage with your slime-stained two-handed iron long sword! [12]",
+    "The cave spider dies!",
+    "You gain 50 XP!",
+    "You miss with your slime-stained two-handed iron long sword! [6 vs 10]",
+    "The giant centipede critically hits (x2) for 4 damage with its bite. [23]",
+    "You begin bleeding!",
+    "You take no damage from bleeding.",
+    "You hit (x4) for 22 damage with your slime-stained two-handed iron long sword! [14]",
+    "The giant centipede dies!",
+    "You gain 125 XP!",
+    "You take 1 damage from bleeding.",
+    "You stop bleeding.",
+    "You stop exploring because you see something shooting at you."
+   ]
+  }
+ },
+ "state": {
+  "seq": 1581,
+  "mode": "run",
+  "wait": "map",
+  "autoact": null,
+  "time": "2026-11-26T01:21:15.916",
+  "turn": 367496,
+  "game": {
+   "id": "9b6c18ef-2e3b-4573-99de-ed8d65ff19e8",
+   "mode": "Roleplay"
+  },
+  "screen": {
+   "w": 80,
+   "h": 25,
+   "rows": [
+    " Uumuremant centipede    │                                                      ",
+    " ST: 23  AG: 18  QN: 100 │                                                      ",
+    " TO: 18  WI: 16  MS: 140 │                                                      ",
+    " IN: 14  EG: 16  T: 23   ┴                                                      ",
+    " AV: 3   DV: 8   MA: 4                                                          ",
+    " XP: 750 / 1060                                                                 ",
+    " Wet,Sated                                                                      ",
+    " HP: 22 / 25   #122/369                                                         ",
+    "                                                                                ",
+    " 2nd of Shwut Ux                                                                ",
+    " The Shallows                                                                   ",
+    "                                                                                ",
+    "                                                                                ",
+    "                         ┬                                                      ",
+    "                         │                                                      ",
+    "                         │                                                      ",
+    "damage!                  │                                                      ",
+    "> You stop exploring     │                                                      ",
+    "because you see something│                                                      ",
+    "shooting at you.         ┴                                                      ",
+    "> You stop bleeding.     *                                                      ",
+    "> You take 1 damage from /                                                      ",
+    "bleeding.                ┬                                                      ",
+    "                         │                                                      ",
+    "> You gain 125 XP!       │                                                      "
+   ],
+   "fg": [
+    "kyyyyyyyGGGGGGGGGGGGGkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kYYyyCCkkWWyyCCkkyyyyyyykyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kRRyyCCkkGGyyCCkkyyyyyyykyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kBByyCCkkMMyyCCkkyyyyykkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyykkkyyyyykkkyyyyykkkwKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyyyyKKKKKKKkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kbbbygggggkkkkkkkkkkkkkkkwKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyGGGyyyykkkyyyyyyyykkYKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkYKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyyyyyyyyyyyykkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kyyyyyyyyyyyykkkkkkkkkkkkWKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkWKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkbKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "rrrrrrrkkkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkrrrrrrrrrrrrrrrrrrkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "rrrrrrrrrrrrrrrrrrrrrrrrryKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "rrrrrrrrrrrrrrrrkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "KKGGGGGGGGGGGGGGGGGGkkkkkWKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "KKrrrrrrrrrrrrrrrrrrrrrrkWKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "rrrrrrrrrkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    "KKyyyyyyyyyCCCyyyykkkkkkkyKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK"
+   ]
+  },
+  "player": {
+   "name": "bloody Uumurem",
+   "hp": 22,
+   "maxhp": 25,
+   "level": 3,
+   "av": 3,
+   "dv": 1,
+   "qn": 100,
+   "ms": 60,
+   "food": "Sated",
+   "water": "Wet",
+   "effects": [
+    "defensive stance",
+    "covered in liquid"
+   ],
+   "x": 53,
+   "y": 17,
+   "zone": "JoppaWorld.11.20.1.1.12",
+   "zoneName": "Red Rock, 2 strata deep"
+  },
+  "map": {
+   "w": 80,
+   "h": 25,
+   "rows": [
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                    ▒▒▒     ▒▒▒                 ",
+    "                                                    .@.    ▒▒.▒▒▒               ",
+    "                                                    ▒.▒▒▒▒▒.....▒               ",
+    "                                                    ▒'....▒.....▒               ",
+    "                                                    ▒▒▒▒▒....<...               ",
+    "                                                         ▒▒..'..▒               ",
+    "                                                          ▒...,.▒               ",
+    "                                                          ▒▒▒•▒▒                ",
+    "                                                            ▒▒▒                 "
+   ],
+   "vis": [
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                                                ",
+    "                                                    111     000                 ",
+    "                                                    111    000000               ",
+    "                                                    1110000000000               ",
+    "                                                    0000000000000               ",
+    "                                                    0000000000000               ",
+    "                                                         00000000               ",
+    "                                                          0000000               ",
+    "                                                          000000                ",
+    "                                                            000                 "
+   ],
+   "objects": [],
+   "features": []
+  },
+  "quests": [
+   {
+    "name": "What's Eating the Watervine?",
+    "finished": false,
+    "giver": "Mehmet",
+    "where": "Joppa",
+    "steps": [
+     {
+      "name": "Travel to Red Rock",
+      "text": "Journey two parasangs north of Joppa to Red Rock.",
+      "finished": true
+     },
+     {
+      "name": "Find the Vermin",
+      "text": "Find the creatures that are eating Joppa's watervine.",
+      "finished": false
+     },
+     {
+      "name": "Get a Corpse",
+      "text": "Collect a corpse from one of the creatures.",
+      "finished": false
+     },
+     {
+      "name": "Return with the Corpse",
+      "text": "Return to Joppa with the corpse of the watervine vermin.",
+      "finished": false
+     }
+    ]
+   },
+   {
+    "name": "Fetch Argyve a Knickknack",
+    "finished": false,
+    "giver": "Argyve",
+    "where": "Joppa",
+    "steps": [
+     {
+      "name": "Find a Knickknack",
+      "text": "Search the regions surrounding Joppa for an artifact.",
+      "finished": false
+     },
+     {
+      "name": "Return to Argyve",
+      "text": "Bring the artifact to Argyve.",
+      "finished": false
+     }
+    ]
+   }
+  ],
+  "inventory": [
+   "waterskin [empty]",
+   "waterskin [empty]",
+   "torch x14 (unburnt)",
+   "waterskin [24 drams of fresh water]",
+   "bear jerky [9 servings]",
+   "witchwood bark x4",
+   "bent metal sheet x2",
+   "staff x2 \u001a5 \u00031d2",
+   "fractured microchip",
+   "bedroll",
+   "bedroll",
+   "hammock",
+   "wooden arrow x4 \u001a4 \u00031d2 (4/1d4)",
+   "bronze dagger \u001a5 \u00031d2",
+   "short bow x2 \u001a4 [empty]",
+   "sturdy black robes \u00040 \t1",
+   "iron mace \u001a6 \u00032",
+   "dreadroot tuber x2",
+   "furs \u00042 \t-1",
+   "cloth overalls \u00041 \t2",
+   "painted bronze battle axe \u001a5 \u00031d2",
+   "iron dagger \u001a6 \u00031d3"
+  ],
+  "equipped": [
+   "slime-stained sturdy studded leather armor \u00043 \t-2",
+   "lacquered sun and moon mask \u00040 \t1",
+   "slime-stained two-handed iron long sword \u001a7 \u00031d8"
+  ],
+  "messages": [
+   "You stop bleeding.",
+   "You hit (x2) for 14 damage with your slime-stained two-handed iron long sword! [12]",
+   "The cave spider dies!",
+   "You gain 50 XP!",
+   "You miss with your slime-stained two-handed iron long sword! [6 vs 10]",
+   "The giant centipede critically hits (x2) for 4 damage with its bite. [23]",
+   "You begin bleeding!",
+   "You take no damage from bleeding.",
+   "You hit (x4) for 22 damage with your slime-stained two-handed iron long sword! [14]",
+   "The giant centipede dies!",
+   "You gain 125 XP!",
+   "You take 1 damage from bleeding.",
+   "You stop bleeding.",
+   "You stop exploring because you see something shooting at you.",
+   "A seed hits you (x1) from the west for 3 damage!"
+  ]
+ },
+ "expect": {
+  "answer_re": "(STOP|NEXT) under fire from out of view \\(from the west\\)"
+ }
+}

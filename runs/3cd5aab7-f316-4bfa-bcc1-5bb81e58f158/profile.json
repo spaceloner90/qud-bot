@@ -1,0 +1,207 @@
+{
+ "character": "Oshwoshwuur",
+ "history": [
+  {
+   "turn": 203475,
+   "level": 1,
+   "xp": 0,
+   "attributes": {
+    "Strength": 22,
+    "Agility": 18,
+    "Toughness": 18,
+    "Intelligence": 14,
+    "Willpower": 16,
+    "Ego": 16
+   },
+   "mutations": {
+    "Freezing Ray": "1",
+    "Multiple Legs": "1",
+    "Amphibious": "D",
+    "Teleportation": "1"
+   },
+   "skills": [
+    "Axe",
+    "Axe Proficiency",
+    "Dismember",
+    "Butchery",
+    "Charge",
+    "Make Camp"
+   ],
+   "points": {
+    "skill": 0,
+    "attribute": 0,
+    "mutation": 0
+   },
+   "hp": 18,
+   "maxhp": 18,
+   "equipped": [
+    "leather armor \u00042 \t0",
+    "bronze battle axe \u001a5 \u00031d2",
+    "lit torch (blazing)"
+   ],
+   "recorded": "2026-11-25 16:42"
+  },
+  {
+   "turn": 204719,
+   "level": 2,
+   "xp": 275,
+   "attributes": {
+    "Strength": 22,
+    "Agility": 18,
+    "Toughness": 18,
+    "Intelligence": 14,
+    "Willpower": 16,
+    "Ego": 16
+   },
+   "mutations": {
+    "Freezing Ray": "2",
+    "Multiple Legs": "1",
+    "Teleportation": "1"
+   },
+   "skills": [
+    "Axe",
+    "Axe Proficiency",
+    "Dismember",
+    "Butchery",
+    "Charge",
+    "Make Camp"
+   ],
+   "points": {
+    "skill": 66,
+    "attribute": 0,
+    "mutation": 0
+   },
+   "hp": 20,
+   "maxhp": 20,
+   "equipped": [
+    "leather armor \u00042 \t0",
+    "bronze battle axe \u001a5 \u00031d2",
+    "lit torch (blazing)"
+   ],
+   "recorded": "2026-11-25 16:57"
+  },
+  {
+   "turn": 205389,
+   "level": 3,
+   "xp": 515,
+   "attributes": {
+    "Strength": 23,
+    "Agility": 18,
+    "Toughness": 18,
+    "Intelligence": 14,
+    "Willpower": 16,
+    "Ego": 16
+   },
+   "mutations": {
+    "Freezing Ray": "2",
+    "Multiple Legs": "2",
+    "Teleportation": "1"
+   },
+   "skills": [
+    "Acrobatics",
+    "Swift Reflexes",
+    "Axe",
+    "Axe Proficiency",
+    "Dismember",
+    "Butchery",
+    "Charge",
+    "Make Camp"
+   ],
+   "points": {
+    "skill": 57,
+    "attribute": 0,
+    "mutation": 0
+   },
+   "hp": 22,
+   "maxhp": 22,
+   "equipped": [
+    "leather armor \u00042 \t0",
+    "leather cap \u00041 \t0",
+    "bronze battle axe \u001a5 \u00031d2",
+    "lit torch (blazing)"
+   ],
+   "recorded": "2026-11-25 17:10"
+  },
+  {
+   "turn": 206031,
+   "level": 4,
+   "xp": 1180,
+   "attributes": {
+    "Strength": 23,
+    "Agility": 18,
+    "Toughness": 18,
+    "Intelligence": 14,
+    "Willpower": 16,
+    "Ego": 16
+   },
+   "mutations": {
+    "Freezing Ray": "3",
+    "Multiple Legs": "2",
+    "Teleportation": "1"
+   },
+   "skills": [
+    "Acrobatics",
+    "Swift Reflexes",
+    "Spry",
+    "Axe",
+    "Axe Proficiency",
+    "Dismember",
+    "Butchery",
+    "Charge",
+    "Make Camp"
+   ],
+   "points": {
+    "skill": 23,
+    "attribute": 0,
+    "mutation": 0
+   },
+   "hp": 26,
+   "maxhp": 26,
+   "equipped": [
+    "studded leather armor \u00043 \t-2",
+    "leather cap \u00041 \t0",
+    "steel hand axe \u001a7 \u00031d3+1",
+    "lit torch (bright)"
+   ],
+   "recorded": "2026-11-25 17:21"
+  },
+  {
+   "turn": 207459,
+   "level": null,
+   "xp": 1980,
+   "attributes": {},
+   "mutations": {},
+   "skills": [],
+   "points": null,
+   "hp": 29,
+   "maxhp": 29,
+   "equipped": [
+    "wet studded leather armor \u00043 \t-2",
+    "wet leather cap \u00041 \t0",
+    "wet steel hand axe \u001a7 \u00031d3+1",
+    "lit torch (bright)",
+    "musket \u001a8 \u00031d8 [lead slug]"
+   ],
+   "recorded": "2026-11-25 17:53"
+  }
+ ],
+ "current": {
+  "turn": 207459,
+  "level": null,
+  "xp": 1980,
+  "attributes": {},
+  "mutations": {},
+  "skills": [],
+  "points": null,
+  "hp": 29,
+  "maxhp": 29,
+  "equipped": [
+   "wet studded leather armor \u00043 \t-2",
+   "wet leather cap \u00041 \t0",
+   "wet steel hand axe \u001a7 \u00031d3+1",
+   "lit torch (bright)",
+   "musket \u001a8 \u00031d8 [lead slug]"
+  ],
+  "recorded": "2026-11-25 17:53"
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "label": "Uumurem: the girshling by hand",
+ "objective": "new character to level 5 (the recording)",
+ "goal": "hold while the LLM fights",
+ "stages": [
+  {
+   "script": "remote",
+   "args": {
+    "poll_seconds": 10,
+    "map_poll_seconds": 1
+   }
+  }
+ ]
+}
