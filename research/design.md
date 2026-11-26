@@ -508,3 +508,20 @@ plus offline cases for each trigger.
   `python tools/world.py evaluate liquid|feature "<kind>" "<note>"`; `world.py pending` lists them.
   Seeded: the liquids seen so far with verdicts, the feature kinds seen so far as mundane.
 - Tests: tools/replay_tests.py (multiline matching; `known_bug` cases) and tests/unit_checks.py.
+
+## After the Gemini/Antigravity handover (2026-11-26)
+
+- **Feature kinds are world-neutral.** The game keeps capitals on proper names, so `feature_kind` ends
+  the kind where one starts ("shrine to Nathritafa, the Cerulean Bane of Namritara" -> "shrine"). A name
+  that is only a proper name is "named place". Passing states are dropped like the liquid mixers are
+  ("frozen", "sap-and-blood-stained", "salt-encrusted"). The liquid test also matches "frozen deep pool of"
+  and "painted vase [...]". Game knowledge's 63 feature kinds were re-keyed to 49: watervine and
+  brinestalk variants merged, shrines merged, two frozen pools moved to the liquid water. World-specific
+  detail goes in the run's world notes. Proper-name-only kinds evaluated before the fix
+  ("duhummcalummmah"...) stay, because their original capitals weren't kept.
+- **`tools/brief.py`**: the hand-over digest in one call, in the order of the decision-point checklist.
+  Read-only, so it's safe with or without a run.
+- **`--say` / `--think`** on send, walk and next_zone (`say.take_narration`): the narration plays before
+  the action, in the same call. say.py and think.py are importable (`say()`, `think()`).
+- **`tools/help.py`**: the tools index, generated from the docstrings. **`research/controls.md`**: the
+  core moves (game shortcuts and tools), required reading.

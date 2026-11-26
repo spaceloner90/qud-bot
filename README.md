@@ -15,7 +15,7 @@ This is an unofficial fan project, not affiliated with the game's developers. No
 - **`brain/plan.json`** is the top-level decision: which script to run, with which arguments. The LLM writes it after assessing the game, and also writes and refines the scripts.
 - **`brain/scripts/`** are the routines that carry a plan out over many calls. They stop and hand back when they reach something they can't handle. So far: `explore` (the game's autoexplore, stopping at hostiles, popups, low HP, no progress, the turn budget or the goal; with `fight` it hands hostiles to `fight`), `fight` (routine melee against kinds the world file marks "fight"; raises the LLM for new enemies, low HP, unexpected messages, long fights), `remote` (the LLM sends keys live), `keys` and `idle`.
 - **`runs/<game id>/world.json`** is the world file: what this run has shown us (zones, people and things at their last known place, quests, notes). Scripts may rely on it; `tools/world.py` shows it and adds notes.
-- **`research/`** holds what we've learned: `lessons.md` (standing lessons), `game_facts.md`, `narrate.md`, `design.md` (the design and why), `playbook_level5.md`, the retros, and `unvetted.md` (changes not yet seen working in a live run).
+- **`research/`** holds what we've learned: `lessons.md` (standing lessons), `game_facts.md`, `controls.md` (the core moves), `narrate.md`, `design.md` (the design and why), `playbook_level5.md`, the retros, and `unvetted.md` (changes not yet seen working in a live run).
 
 The loop: the player presses **F1** in game, the bot plays until a script stops, and then the LLM reads `live/log.jsonl`, reassesses, and updates the plan and the scripts.
 
@@ -35,6 +35,7 @@ With `brain/plan.json` set to the `remote` script, a run started with F1 plays w
 - `tools/deploy_mod.ps1` compile-checks the mod and installs it in the game's Mods folder. `tools/dump_types.ps1` dumps the game's type signatures, or IL with `-IL -Filter`, to `research/`.
 - `tools/analyze.py` turns the log into a findings report (progress, stops, zones, creatures, objects, quests, gear, messages), printed and written to `live/findings.md`. `--last-run` or `--since <seq>` narrow it.
 - `tools/send.py` sends lines to a remote run and prints the resulting map, or the latest snapshot when given no lines.
+- `tools/brief.py` prints the hand-over digest; `tools/help.py` prints the tools index from their docstrings.
 - `tools/win.py` is the raw window capture/keys test from the first session. It is unreliable with the game in the background.
 - `research/design.md` explains the design and why.
 

@@ -878,15 +878,11 @@
    "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
    "turn": 371191
   },
-  "blood-and-sap-stained watervine": {
+  "watervine": {
    "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
    "turn": 371191
   },
-  "blood-stained brinestalk": {
-   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
-   "turn": 371191
-  },
-  "blood-stained watervine": {
+  "brinestalk": {
    "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
    "turn": 371191
   },
@@ -895,10 +891,6 @@
    "turn": 371191
   },
   "bridge": {
-   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
-   "turn": 371191
-  },
-  "brinestalk": {
    "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
    "turn": 371191
   },
@@ -946,18 +938,6 @@
    "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
    "turn": 371191
   },
-  "frozen deep pool of 3960 drams of brackish water": {
-   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
-   "turn": 371191
-  },
-  "frozen deep pool of 3968 drams of salty water": {
-   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
-   "turn": 371191
-  },
-  "frozen watervine": {
-   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
-   "turn": 371191
-  },
   "graffitied woven basket": {
    "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
    "turn": 371191
@@ -994,37 +974,9 @@
    "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
    "turn": 371191
   },
-  "salt-encrusted brinestalk": {
-   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
-   "turn": 371191
-  },
-  "salt-encrusted watervine": {
-   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
-   "turn": 371191
-  },
-  "sap-and-blood-stained watervine": {
-   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
-   "turn": 371191
-  },
-  "sap-and-water-stained brinestalk": {
-   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
-   "turn": 371191
-  },
-  "sap-and-water-stained watervine": {
-   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
-   "turn": 371191
-  },
-  "sap-stained brinestalk": {
-   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
-   "turn": 371191
-  },
-  "sap-stained watervine": {
-   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
-   "turn": 371191
-  },
-  "shrine to resheph, the last sultan": {
-   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
-   "turn": 371191
+  "shrine": {
+   "note": "a shrine to a sultan: reading it reveals a historic site in the journal, a lead to a named location (Siwur, 2026-11-26); worth a look when passing, not a detour",
+   "turn": 141899
   },
   "sliding drawer cabinet": {
    "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
@@ -1074,10 +1026,6 @@
    "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
    "turn": 371191
   },
-  "watervine": {
-   "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
-   "turn": 371191
-  },
   "web": {
    "note": "seen before evaluation started (2026-11-26); mundane unless a note says otherwise",
    "turn": 371191
@@ -1109,10 +1057,6 @@
   "wine weep": {
    "note": "a spring of wine: fill every empty container and sell it (the user, 2026-11-26)",
    "turn": 371191
-  },
-  "shrine to nathritafa, the cerulean bane of namritara": {
-   "note": "Sultan shrine; reveals a historic site in the journal (Namritara Glassfold).",
-   "turn": 141899
   }
  }
 }

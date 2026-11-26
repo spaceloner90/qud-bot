@@ -10,8 +10,12 @@ the LLM records a note with `python tools/world.py evaluate liquid|feature "<kin
 """
 import re
 
-LIQUID = re.compile(r"^(?:deep |frozen )?(?:pool|puddle|vase)\b")
+# A container of liquid: "pool of ...", "frozen deep pool of ...", "painted vase [4 drams of oil]".
+LIQUID = re.compile(r"^(?:[\w-]+ )*?(?:pool|puddle|vase)\b(?: of\b|\s*\[)")
 MIXERS = {"salty", "brackish", "dilute", "bloody", "slimy", "tarry", "sappy", "wet", "oily", "muddy", "sugary"}
+# A passing state on a feature, not its kind: "frozen watervine", "sap-and-blood-stained brinestalk",
+# "salt-encrusted watervine" are all watervine or brinestalk.
+STATE = re.compile(r"^(?:frozen|burning|[\w-]+-(?:stained|encrusted|covered|soaked))$")
 
 
 def base_liquid(name):
@@ -29,11 +33,29 @@ def base_liquid(name):
     return " ".join(words) or None
 
 
+PROPER = "named place"  # the kind for a feature that is only a proper name ("Erummumm", "Namritara Glassfold")
+LINKS = {"to", "of", "the", "for", "and", "in", "at", "from"}
+
+
 def feature_kind(name):
-    """A non-liquid feature's kind: the name without a leading 'wet '/'sappy ' etc."""
-    words = (name or "").lower().split()
-    while words and words[0] in MIXERS:
+    """A non-liquid feature's kind, the same in every world: the name without passing states ('wet',
+    'frozen', 'sap-stained') and without the proper name a generated world gives it. The game keeps capitals
+    on proper names, so the kind ends where one starts: 'shrine to Nathritafa, the Cerulean Bane of
+    Namritara' -> 'shrine' (2026-11-26: the whole name went into shared game knowledge). A name that is
+    only a proper name is PROPER. Lower-cased input can't show where a proper name starts: only a comma
+    cuts it there, so pass the name as the snapshot gives it."""
+    raw = (name or "").strip()
+    if raw[:1].isupper():
+        return PROPER
+    words = []
+    for w in raw.replace(",", " , ").split():
+        if w == "," or w[:1].isupper():
+            break
+        words.append(w.lower())
+    while words and (words[0] in MIXERS or STATE.match(words[0])):
         words.pop(0)
+    while words and words[-1] in LINKS:
+        words.pop()
     return " ".join(words)
 
 

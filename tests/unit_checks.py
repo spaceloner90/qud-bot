@@ -157,10 +157,28 @@ def new_liquids_and_features_are_listed():
     assert features.scan(st, type("W2", (), {"data": {}})()) == [], "world-map tiles are not features"
 
 
+def feature_kinds_are_world_neutral():
+    """Siwur 2026-11-26: 'shrine to Nathritafa, the Cerulean Bane of Namritara' went into shared game
+    knowledge as a kind; stained and frozen watervine were each a kind; a frozen deep pool was a feature."""
+    import features as F
+    cases = {"shrine to Nathritafa, the Cerulean Bane of Namritara": "shrine",
+             "shrine to Ithri-Seh III, the Platinum Altimeter": "shrine",
+             "Namritara Glassfold": F.PROPER,
+             "sap-and-blood-stained watervine": "watervine", "frozen watervine": "watervine",
+             "salt-encrusted brinestalk": "brinestalk", "wet cider weep": "cider weep",
+             "alchemist's table": "alchemist's table", "torch sconce": "torch sconce"}
+    for name, kind in cases.items():
+        assert F.feature_kind(name) == kind, (name, F.feature_kind(name))
+    assert F.base_liquid("frozen deep pool of 3960 drams of brackish water") == "water"
+    assert F.base_liquid("painted vase [4 drams of oil]") == "oil"
+    assert F.base_liquid("vase [honey]") == "honey"
+    assert F.base_liquid("pool table") is None
+
+
 CHECKS = [(f.__name__, f) for f in (proficiency_counts_in_to_hit, weapon_records_are_per_character,
                                      missile_weapon_fills_empty_slot, new_liquids_and_features_are_listed,
                                      sword_estimate_not_zero, torch_miss_is_not_the_weapons,
                                      thrown_hit_parses_and_is_ranged, rest_when_only_rooted_far,
                                      owned_item_is_declined, popup_never_gets_a_bare_pass,
                                      rewritten_plan_is_new, flying_prey_is_not_hunted,
-                                     charge_only_from_three_cells)]
+                                     charge_only_from_three_cells, feature_kinds_are_world_neutral)]

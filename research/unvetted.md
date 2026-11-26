@@ -18,10 +18,13 @@ re-validated here; this is only what hasn't been seen yet.
 | Camp walk up to 80 steps | reaches a fire spot round walls |
 | Fight heal(): rest when only rooted hostiles are 2+ away | rests in one call; falls back to waits when refused |
 | Silent-attack guard (2 silent swings at prey: skip it) | doesn't fire on normal misses |
+| World-neutral feature kinds (features.feature_kind, re-keyed game knowledge) | a shrine or named place in a new world lists as "shrine" / "named place", not its full name; stained and frozen plants don't list as new |
+| Hand-over digest (tools/brief.py) | each section matches the game (cooldowns against the abilities list, XP against the sidebar); nothing a hand-over needed was missing |
+| --say / --think on send, walk, next_zone | the line plays before the action; the tool's own arguments still parse |
 
 ## Seen working
 
 - **Mod v0.26: autoexplore prey interrupt (`live/interrupt.txt`)** — Siwur (`1f19697d`), turn ~141094: hunted and killed both wet glowfish in `JoppaWorld.11.22.2.2.10` without manual intervention.
 - **Mod v0.27: `inventory_ids` / `equipped_ids`** — Siwur (`1f19697d`), turn 141071 onward: present in `live/state.json`.
-- **New liquids and features listed (`features.py`)** — Siwur (`1f19697d`), turn 141899: `[new to evaluate: shrine to nathritafa, the cerulean bane of namritara ...]` appeared on hand-over and `tools/world.py evaluate feature` queued cleanly.
+- **New liquids and features listed (`features.py`)** — Siwur (`1f19697d`), turn 141899: `[new to evaluate: shrine to nathritafa, the cerulean bane of namritara ...]` appeared on hand-over and `tools/world.py evaluate feature` queued cleanly. (2026-11-26, Claude: the listing worked, but it filed that world-specific name as a shared kind; fixed, see the table above.)
 - **Plan mtime counts as a new plan (`step.py`)** — Siwur (`1f19697d`), turns 141071 & 141899: rewriting `brain/plan.json` after popup/hand-over resumed `explore` cleanly.

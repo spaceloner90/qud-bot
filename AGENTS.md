@@ -6,8 +6,10 @@ the person running the game and setting the goals. Read this file in full before
 any loss of context (a compacted conversation is a lossy digest: it once dropped the route, the town
 conversations and several rules, and a recording had to restart).
 
-Also required reading, always: [`research/lessons.md`](research/lessons.md) (every standing lesson) and
-[`research/game_facts.md`](research/game_facts.md) (facts and how-tos, known bot defects).
+Also required reading, always: [`research/lessons.md`](research/lessons.md) (every standing lesson),
+[`research/game_facts.md`](research/game_facts.md) (facts and how-tos, known bot defects) and
+[`research/controls.md`](research/controls.md) (the core moves: what the game and our tools already do for
+you, such as `CmdMoveD`/`CmdMoveU` walking to the nearest stairs on their own).
 
 ## What this is
 
@@ -67,15 +69,19 @@ owner sets each next goal.
    with identical text.
 2. **Start `python tools/watch_handover.py` in the background every time** (`--live` while waiting for
    F1). It wakes you at a hand-over, a stop, a stall or a held plan. Never leave a plan running unwatched.
-3. At a hand-over: read `live/state.json`, `live/narration.log` and the reason (it ends with
-   "[new to evaluate: ...]" when new liquids or features are pending), run the decision-point checklist
-   below, act, write the next plan, restart the watcher.
+3. At a hand-over: `python tools/brief.py` gives the reason, the character, abilities and cooldowns, the
+   map, every creature with our verdict and estimate, what's still to evaluate, the whole pack, quests and
+   the last messages and narration in one call (the raw `live/state.json` is mostly screen buffer). Run
+   the decision-point checklist below, act, write the next plan, restart the watcher.
 4. Drive by hand through the remote stage: `tools/send.py`, `tools/walk.py`, `tools/menu.py`,
-   `tools/wait.py`, `tools/next_zone.py`. Read each tool's docstring before using it; never call one from
-   memory.
+   `tools/wait.py`, `tools/next_zone.py`. `python tools/help.py` prints every core tool's usage from its
+   docstring in one call; read a tool's docstring before using it, never call one from memory. Before
+   doing something step by step, check [`research/controls.md`](research/controls.md): the game or a tool
+   may already do it.
 5. Narrate while the voice is on (`live/voice_on`): `tools/say.py` for what you're doing and why,
    `tools/think.py` for decisions (the panel reads as a thought train: objective, goal, reasons, not
-   commands). The rules are in [`research/narrate.md`](research/narrate.md).
+   commands). `send.py`, `walk.py` and `next_zone.py` take `--say "..."` and `--think "..."` to narrate in
+   the same call as the action. The rules are in [`research/narrate.md`](research/narrate.md).
 
 ## At every decision point (hand-over, level-up, take stock, town visit)
 

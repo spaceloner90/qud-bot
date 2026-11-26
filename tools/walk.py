@@ -3,9 +3,10 @@ its own every call (no LLM round trip per step) and stops at anything unexpected
 HP dropping, a bad effect, a popup, a zone change, blocked, a known danger nearer, a shot from out of
 view, a new status, a level-up) or on arrival. Prints why it stopped and what's around.
 
-  python tools/walk.py <x> <y> [--ignore "<kind>"] [--timeout 300]
+  python tools/walk.py <x> <y> [--ignore "<kind>"] [--timeout 300] [--say "<line>"] [--think "<line>"]
 
 --ignore: a kind that doesn't stop the walk (walking up to a rooted one to kill it: tools/kill.py).
+--say / --think: narrate in the same call (voice / panel thought), before the walk starts.
 Importable: walk(x, y, ignore=None) -> (reason, state). Needs a live run in the remote stage.
 """
 import argparse, json, sys, time
@@ -69,7 +70,8 @@ def main():
     ap.add_argument("y", type=int)
     ap.add_argument("--ignore", default=None)
     ap.add_argument("--timeout", type=float, default=300)
-    a = ap.parse_args()
+    import say as _say
+    a = ap.parse_args(_say.take_narration(sys.argv[1:]))
     reason, s = walk(a.x, a.y, a.ignore, a.timeout)
     report(reason, s)
     return 0 if reason == "arrived" else 2

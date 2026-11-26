@@ -5,6 +5,8 @@ Silence for minutes reads as "broken". Two channels, not 1:1:
 
 - **Voice**: `python tools/say.py "<line>"`, spoken aloud. Short, plain speech, one or two sentences.
 - **Panel log**: `python tools/think.py "<line>"`, the written train of thought. Can be longer and carry numbers.
+- **With an action**: `send.py`, `walk.py` and `next_zone.py` take `--say "<line>"` and `--think "<line>"`,
+  played before the action in the same call (2026-11-26): one call instead of three.
 
 ## When to speak (voice)
 

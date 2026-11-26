@@ -3,6 +3,7 @@ there (keeping the current plan's explore args when it has them). Made 2026-11-2
 zones around Joppa zone by zone.
 
   python tools/next_zone.py W        (N S E W)
+  python tools/next_zone.py W --say "Marsh west next: more prey." --think "Zone cleared; hunting west."
 
 Exit 2 when the walk to the edge or the crossing doesn't go as expected (the plan is then left in the
 remote stage, so nothing acts on its own).
@@ -23,7 +24,8 @@ REMOTE = {"script": "remote", "args": {"poll_seconds": 10, "map_poll_seconds": 1
 
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
-    d = (sys.argv[1:] or ["W"])[0].upper()
+    import say as _say
+    d = (_say.take_narration(sys.argv[1:]) or ["W"])[0].upper()
     s = walk.state()
     p = s["player"]
     plan = json.loads(PLAN.read_text(encoding="utf-8"))

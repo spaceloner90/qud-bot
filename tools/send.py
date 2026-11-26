@@ -4,6 +4,8 @@
   python tools/send.py                            just print the latest snapshot
   --screen                                        print the text screen instead of the map
   -m "text"                                       also send a SAY line (goes to the bot panel and live/narration.log, not the game log)
+  --say "line" / --think "line"                   narrate in the same call: the voice (tools/say.py) and/or
+                                                  the panel's thought train (tools/think.py), before the keys play
 Verbs accepted: KEY CMD GOTO AIM WALK SAY VOICE STOP WAIT PASS; lines with quote characters are refused, so pass each
 key as its own plain argument.
 
@@ -78,8 +80,9 @@ def run_status():
 
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
+    import say as _say
     screen_too = "--screen" in sys.argv
-    args = [a for a in sys.argv[1:] if a != "--screen"]
+    args = _say.take_narration([a for a in sys.argv[1:] if a != "--screen"])
     lines = []
     while args:
         a = args.pop(0)
