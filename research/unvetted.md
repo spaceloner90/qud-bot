@@ -20,6 +20,22 @@ re-validated here; this is only what hasn't been seen yet.
 | Silent-attack guard (2 silent swings at prey: skip it) | doesn't fire on normal misses |
 | World-neutral feature kinds (features.feature_kind, re-keyed game knowledge) | a shrine or named place in a new world lists as "shrine" / "named place", not its full name; stained and frozen plants don't list as new |
 | Hand-over digest (tools/brief.py) | each section matches the game (cooldowns against the abilities list, XP against the sidebar); nothing a hand-over needed was missing |
+| Fight commitment to an out-of-view target (fight.engage, 2026-11-27) | no A-B-A-B walks between rooted targets; it never walks past a mobile or shooting hostile in view |
+| Pacing hand-over (8 approach steps on 2 cells) | hands over in a real loop; never fires while a fight is making progress |
+| Sighting stops restart autoexplore (sighting_retries) | a zone full of dragonflies gets explored to the end; a real blockage still hands over |
+| Unreachable loot kept per zone; swim prompt gives the item up | no walk back to the same loot after a plan change; no stall at the swim prompt |
+| Auto-loot opens containers (collect.chest_step) | chests opened and emptied in the sweep; no stray keys in menus; empty ones closed with n |
+| Walk: stops before deep water; rooted dangers 2+ off don't stop it | no swimming on walks; walks past pools of glowpads |
+| Swim for loot when safe (explore.swim_safe, collect deep list) | swims only in a quiet zone at full HP; deep items fetched later, named in the zone report |
+| Torch relight (scripts/light.py) | a fresh torch lit after a swim; no stray keys in the inventory |
+| Chest menu after the last item (no picking up the chest) | containers emptied, never taken themselves |
+| Unreachable give-ups expire after 300 turns | retried later, without a walk loop |
+| Mobile avoid kinds: zone-wide danger (explore.mobile_dangers) | stops in a zone with a fresh mobile avoid sighting; not for routine kinds or accept_kinds |
+| Stale sightings dropped after 500 turns (known_threats) | camping and swimming not blocked by old records; rooted shooters still remembered |
+| Pacing failsafe in step.py | hands over a real loop; never during a normal walk or fight |
+| Script exception holds the run instead of stopping | a broken script hands over and the run stays live |
+| profile.py expands every skill group | the full skills list, whatever state the page was left in |
+| Mod v0.28: features nearest first, cap 1200 | deep water round us always listed; snapshot size still fine |
 | --say / --think on send, walk, next_zone | the line plays before the action; the tool's own arguments still parse |
 
 ## Seen working

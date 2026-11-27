@@ -1,0 +1,1008 @@
+{
+ "name": "camp_meal_text_is_ordinary",
+ "why": "Siwur 2026-11-27, salt marsh: the camp meal's own text ('You gather whatever you can find for your meal: ... You toss them in a pot and stir.') handed over as unexpected. It's ours, not news.",
+ "script": "explore",
+ "args": {
+  "hand_off": true,
+  "fight": true,
+  "missile": true,
+  "collect": true,
+  "auto_eat": true,
+  "auto_cook": true,
+  "hunt": true,
+  "goal_level": 5,
+  "max_turns": 1500,
+  "raise_hp_fraction": 0.5,
+  "hold": true,
+  "max_hostiles": 2,
+  "accept_kinds": [
+   "dreadroot"
+  ]
+ },
+ "memory": {
+  "start_turn": 145111,
+  "fight": {
+   "active": true,
+   "msgs": [
+    "You pass by a deep pool of salty water.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a deep pool of salty water.",
+    "You make camp."
+   ]
+  }
+ },
+ "state": {
+  "seq": 2962,
+  "mode": "run",
+  "wait": "map",
+  "autoact": null,
+  "time": "2026-11-27T00:21:02.118",
+  "turn": 145121,
+  "game": {
+   "id": "1f19697d-7a0e-4bbc-8a1c-b1efd156ea8d",
+   "mode": "Roleplay"
+  },
+  "screen": {
+   "w": 80,
+   "h": 25,
+   "rows": [
+    "....  .... .        .. ..   ......      ..... ........... ..      ..............",
+    ".......  . ............ .   .....        ............. .....       .............",
+    "...........  ............                     ..............      .  ........ ..",
+    "..............  .......                             ........     . .. .... .....",
+    "..................                                      ....     ...............",
+    "  .............                 .. .                              .  ...........",
+    ".          ...                   . ..   .......                  ... ...........",
+    "    ..........              .     .................              ...............",
+    "    ......            ........     ......... ..............   .    .............",
+    "..............        .........      ......................          ...........",
+    "...............                       ..  ...... . ...  ...          ...........",
+    " ...........                                  . ........   . .       ... ..... .",
+    " ......       ...                                 ......    ...     .... ..... .",
+    "...............  .. .......                       ..............   .............",
+    "............      ....... .......                 .   ...... ..... .. . ..... . ",
+    ".   ....          ......   .....     ... ...      ................... .. ... ...",
+    " ....          .. ......  ......    ......        ... .........  .       .... ..",
+    "..        .   .. ...............   ....           ..... ..........   .      . ..",
+    "     .       ......... ........                  ......  ...... ....  .       ..",
+    "           .              ....                 ........  ...........          ..",
+    "        ....                                ...  .................... .  .   ...",
+    "   .........                             ..        .  ......... ......      ....",
+    "............                         .  .  . .  .... .............. ...... ... .",
+    " .  ........                        .      .  .  ............... ...... ... ... ",
+    " ...........                                 . .. .... ... ....................."
+   ],
+   "fg": [
+    "kkkkykkkkkkkkkkkkkkkkkykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "kkkkkkkyykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "kkkkkkkkkkkyykkkkkkkkkkkkkkkkkkkkkkkkRkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "kkkkkkkkkkkkkkykkkkkkkkkkkkkkkkkkkkkYkYkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "yykkkkkkkkkkkkkkkykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkYkYkkkkkkkkkkkk",
+    "kyyyyyyyyykkkkkkkkkkkkkkkkkkkkkkkkkkkYYkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "yyykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "yyykkkkkkkyyykyykkkkykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkYkkkkkYkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "kkkkkkkkkkkkyykkkkkkkkWkkkkkkkkkkkkBkkkYYkYkkkkYkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkYk",
+    "kkkkkkkyyyyyykkkkkkkkkkkkkkkkkkkkkkkkkYkkkkkkkkkkkkkkkkkkkkkkkkYkkkkkkkkYkkkkkYk",
+    "kkkkkkkkkkkkkkkykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "kkkkkkkkkkkkyyykykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "kyykkkkkyyyyyyyyykkkkkkkkkkkkkkkkkkkkkkkYkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "ykkkkyyyyyyyyyykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "kkyyyyyyyykyykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "yyyykkkyyyyykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "yyyyyyyyyykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkWYWkkk",
+    "yyyyyyyykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkWkkkkk",
+    "yyykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "kkykkkkkkkkkkkkkkkkkkYRYkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "ykkkkkkkkkkkykkkkkkyykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+   ]
+  },
+  "player": {
+   "name": "Siwur",
+   "hp": 30,
+   "maxhp": 30,
+   "level": 4,
+   "av": 4,
+   "dv": 0,
+   "qn": 100,
+   "ms": 60,
+   "food": "Sated",
+   "water": "Wet",
+   "effects": [
+    "defensive stance"
+   ],
+   "x": 35,
+   "y": 11,
+   "zone": "JoppaWorld.11.21.0.1.10",
+   "zoneName": "salt marsh, surface"
+  },
+  "map": {
+   "w": 80,
+   "h": 25,
+   "rows": [
+    "*... ¥....⌠.⌠⌠¥⌠⌠⌠⌠⌠.. ..···******≈~.~.~***..¥...........¥...~~~~≈..............",
+    ".......  .⌠............¥*···*****~≈...≈≈¥**...........¥.....~~~..~¥.............",
+    "...........  ..**********·###~~~.≈~~~*~≈~¥≈.~...............≈.~..~.¥¥........¥..",
+    ".............. ¥*******.~#####~¥.≈≈≈%~%≈.≈..~~≈~~~~~........~~~~~.¥..¥....¥.....",
+    ".............*****..~~~~~≈#####~~≈.~¥≈≈.¥≈.~~~.~≈.¥¥~~≈~.....~≈~≈...............",
+    "  ...........**.~ ¥~.~~~≈~.##¥#·**¥*.~~~≈¥¥~≈~¥~.~~~~≈~..~¥..≈≈~≈%.%%...........",
+    ".         ¥..*~~~≈~≈≈~.~.~≈≈·····*¥.*%%¥**.....≈≈.≈.≈~≈≈~≈~≈≈.≈~....¥...........",
+    "   ¥........**≈~~.~..~~.≈.~≈*·····...******........≈~.~..≈..~~..~...............",
+    "   ¥......   ¥  ¥~≈~ ¥..******·····...******¥..............¥⌠⌠.~~~..............",
+    "...........***..≈.~≈.~...******······...********...........⌠⌠⌠~≈¥~~≈............",
+    "...........****~~~~~~~≈%.~~~≈~~~···∙··..%\\******¥*¥***⌠⌠...⌠⌠⌠~≈~~~≈≈...........",
+    "¥..........*  ¥~..~≈~.■∙%~~~~~≈~≈##@###%%≈%~≈.*%*******.⌠⌠⌠.⌠.¥≈~.¥~~...¥.....%.",
+    "¥......      ¥*..~~~≈≈.%≈~~≈≈~≈~.≈.###%.~≈¥~~~~.~~******⌠⌠⌠⌠...%.≈≈≈....%.....%.",
+    "...........***. ¥..⌠.......≈.≈~~.~#####¥≈.~~~.~~≈~*******.......~~~.............",
+    "............   ¥ ¥.......%.......··###~.¥~.≈.≈~~~..⌠¥%****..¥.....¥..⌠.⌠.....¥.⌠",
+    ".  ¥....         ¥......%∙%.....·····...%...≈≈≈~≈~....*****..........⌠..⌠...¥.**",
+    " ....          ..%......¥%......····......≈...≈~.≈...¥.*****...⌠⌠.⌠⌠⌠⌠⌠⌠¥....⌠**",
+    "..        .  ¥..¥...............···....~≈≈~~~~..~¥.....⌠**********⌠⌠⌠.⌠⌠⌠¥⌠⌠.⌠**",
+    "    ¥.%     ¥.........¥........····~≈.¥≈~~≈.~~≈~¥......⌠¥******¥***.⌠⌠.⌠⌠⌠⌠%⌠⌠**",
+    "          ¥..≈~~~~~~~~..~≈....··###≈¥~≈~~.≈≈≈~≈........⌠¥.**********⌠¥⌠⌠⌠⌠■∙■¥**",
+    "        ....~~~≈~¥~~≈...~.~~.#####~≈≈~.≈¥.~≈...⌠⌠..........***..*****⌠.≈≈.⌠%⌠***",
+    "   ...........~...≈~¥~..≈≈≈.##¥##≈~≈~~~.⌠..⌠⌠⌠⌠⌠⌠⌠¥.⌠⌠.........¥.*****⌠≈~.~⌠****",
+    "............≈.~.~≈≈⌠⌠.~.~.~#####≈¥≈.~.⌠⌠.⌠⌠.⌠.⌠⌠....¥.............*¥******.***¥*",
+    "¥. ¥........≈¥~~~≈~⌠¥%*%.#¥####.≈.~⌠.⌠⌠⌠⌠⌠⌠.⌠⌠.¥¥...............¥..****¥***¥***⌠",
+    " ........... ¥~¥≈≈.  ¥~≈.#·###.~.~~⌠⌠⌠⌠¥.¥≈.⌠.⌠..⌠....⌠...⌠.........**********.."
+   ],
+   "vis": [
+    "0000 00000000000000000 000000000000000000000000000000000000000000000000000000000",
+    "0000000  00000000000000000000000000000100000000000000000000000000000000000000000",
+    "00000000000  0000000000000000000000101010000000000000000000000000000000000000000",
+    "00000000000000 00000000000000000000001100000000000000000000000000000000000000000",
+    "00000000000000000000000000000000000001000000000000000000000000000000000000000000",
+    "  000000000000000 00000000000000000000000000000000000000000000000000000000000000",
+    "0         0000000000000000000000000000000000000000000000000000000000000000000000",
+    "   00000000000000000000000000000000100000000000000000000000000000000000000000000",
+    "   0000000   0  0000 00000000000011111000000000000000000000000000000000000000000",
+    "00000000000000000000000000000000111111100000000000000000000000000000000000000000",
+    "00000000000000000000000000000000111111100000000000000000000000000000000000000000",
+    "000000000000  000000000000000001111111110000000000000000000000000000000000000000",
+    "0000000      0000000000000000000111111100000000000000000000000000000000000000000",
+    "000000000000000 0000000000000000111111100000000000000000000000000000000000000000",
+    "000000000000   0 000000000000000011111000000000000000000000000000000000000000000",
+    "0  00000         000000000000000000100000000000000000000000000000000000000000000",
+    " 0000          00000000000000000000000000000000000000000000000000000000000000000",
+    "00        0  0000000000000000000000000000000000000000000000000000000000000000000",
+    "    000     00000000000000000000000000000000000000000000000000000000000000000000",
+    "          0000000000000000000000000000000000000000000000000000000000000010000000",
+    "        000000000000000000000000000000000000000000000000000000000000000000001000",
+    "   00000000000000000001000000000000000000000000000000000000000000000000000000000",
+    "00000000000000000000011100000000000000000000000000000000000000000000000000000000",
+    "00 00000000000000000011110000000000000000000000000000000000000000000000000000000",
+    " 00000000000 000000  11100000000000000000000000000000000000000000000000000000000"
+   ],
+   "objects": [
+    {
+     "x": 37,
+     "y": 2,
+     "glyph": "*",
+     "name": "bloody wet glowpad",
+     "id": "836",
+     "creature": true,
+     "hostile": true,
+     "seen": true,
+     "av": 0,
+     "dv": 0,
+     "qn": 100,
+     "ms": 130,
+     "lvl": 1,
+     "diff": "{{w|Average}}",
+     "str": -3,
+     "agi": 2,
+     "attacks": [
+      {
+       "name": "bite",
+       "dmg": "1d3",
+       "pen": 0,
+       "cap": 1000,
+       "hit": 0,
+       "part": "Head"
+      },
+      {
+       "name": "manipulator",
+       "dmg": "1d2-1",
+       "pen": 0,
+       "cap": 1000,
+       "hit": 0,
+       "part": "Hand"
+      },
+      {
+       "name": "manipulator",
+       "dmg": "1d2-1",
+       "pen": 0,
+       "cap": 1000,
+       "hit": 0,
+       "part": "Hand"
+      }
+     ],
+     "parts": [
+      "Springy",
+      "PlantProperties",
+      "LightSource",
+      "Aquatic",
+      "Gills"
+     ],
+     "desc": "A leaf disc gleams through luminous veins.",
+     "hp": 50,
+     "maxhp": 50,
+     "resist": {
+      "heat": 25
+     },
+     "effects": [
+      "covered in liquid"
+     ],
+     "mutations": [
+      "Gills"
+     ]
+    },
+    {
+     "x": 38,
+     "y": 3,
+     "glyph": "]",
+     "name": "wet gentling mask"
+    },
+    {
+     "x": 38,
+     "y": 3,
+     "glyph": "\\",
+     "name": "wet club"
+    },
+    {
+     "x": 38,
+     "y": 3,
+     "glyph": "%",
+     "name": "wet snapjaw corpse"
+    },
+    {
+     "x": 39,
+     "y": 11,
+     "glyph": "%",
+     "name": "wet glowfish corpse"
+    },
+    {
+     "x": 38,
+     "y": 12,
+     "glyph": "\\",
+     "name": "iron dagger"
+    },
+    {
+     "x": 38,
+     "y": 12,
+     "glyph": "}",
+     "name": "wooden buckler"
+    },
+    {
+     "x": 38,
+     "y": 12,
+     "glyph": "%",
+     "name": "snapjaw corpse"
+    },
+    {
+     "x": 21,
+     "y": 23,
+     "glyph": "%",
+     "name": "wet snapjaw corpse"
+    },
+    {
+     "x": 22,
+     "y": 23,
+     "glyph": "*",
+     "name": "wet glowpad",
+     "id": "855",
+     "creature": true,
+     "hostile": true,
+     "seen": true,
+     "av": 0,
+     "dv": 0,
+     "qn": 100,
+     "ms": 130,
+     "lvl": 1,
+     "diff": "{{w|Average}}",
+     "str": -4,
+     "agi": 2,
+     "attacks": [
+      {
+       "name": "bite",
+       "dmg": "1d3",
+       "pen": 0,
+       "cap": 1000,
+       "hit": 0,
+       "part": "Head"
+      },
+      {
+       "name": "manipulator",
+       "dmg": "1d2-1",
+       "pen": 0,
+       "cap": 1000,
+       "hit": 0,
+       "part": "Hand"
+      },
+      {
+       "name": "manipulator",
+       "dmg": "1d2-1",
+       "pen": 0,
+       "cap": 1000,
+       "hit": 0,
+       "part": "Hand"
+      }
+     ],
+     "parts": [
+      "Springy",
+      "PlantProperties",
+      "LightSource",
+      "Aquatic",
+      "Gills"
+     ],
+     "desc": "A leaf disc gleams through luminous veins.",
+     "hp": 50,
+     "maxhp": 50,
+     "resist": {
+      "heat": 25
+     },
+     "effects": [
+      "covered in liquid"
+     ],
+     "mutations": [
+      "Gills"
+     ]
+    },
+    {
+     "x": 23,
+     "y": 23,
+     "glyph": "]",
+     "name": "wet woven tunic"
+    },
+    {
+     "x": 23,
+     "y": 23,
+     "glyph": "\\",
+     "name": "wet iron battle axe"
+    },
+    {
+     "x": 23,
+     "y": 23,
+     "glyph": "\\",
+     "name": "wet bronze long sword"
+    },
+    {
+     "x": 23,
+     "y": 23,
+     "glyph": "%",
+     "name": "wet snapjaw corpse"
+    }
+   ],
+   "features": [
+    {
+     "x": 38,
+     "y": 1,
+     "name": "[Widget]"
+    },
+    {
+     "x": 38,
+     "y": 1,
+     "name": "[Widget]"
+    },
+    {
+     "x": 38,
+     "y": 1,
+     "name": "[Widget]"
+    },
+    {
+     "x": 38,
+     "y": 1,
+     "name": "deep pool of 4000 drams of salty water"
+    },
+    {
+     "x": 35,
+     "y": 2,
+     "name": "deep pool of 4003 drams of bloody brackish water"
+    },
+    {
+     "x": 37,
+     "y": 2,
+     "name": "deep pool of 3984 drams of bloody brackish water"
+    },
+    {
+     "x": 39,
+     "y": 2,
+     "name": "deep pool of 4002 drams of bloody brackish water"
+    },
+    {
+     "x": 37,
+     "y": 3,
+     "name": "[Widget]"
+    },
+    {
+     "x": 37,
+     "y": 3,
+     "name": "deep pool of 4004 drams of bloody brackish water"
+    },
+    {
+     "x": 38,
+     "y": 3,
+     "name": "deep pool of 3984 drams of brackish water"
+    },
+    {
+     "x": 38,
+     "y": 3,
+     "name": "wet brinestalk"
+    },
+    {
+     "x": 37,
+     "y": 4,
+     "name": "blood-and-sap-stained [Widget]"
+    },
+    {
+     "x": 37,
+     "y": 4,
+     "name": "sap-and-blood-stained [Widget]"
+    },
+    {
+     "x": 37,
+     "y": 4,
+     "name": "deep pool of 4018 drams of brackish sugary water"
+    },
+    {
+     "x": 33,
+     "y": 8,
+     "name": "dirt path"
+    },
+    {
+     "x": 34,
+     "y": 8,
+     "name": "dirt path"
+    },
+    {
+     "x": 32,
+     "y": 9,
+     "name": "dirt path"
+    },
+    {
+     "x": 33,
+     "y": 9,
+     "name": "dirt path"
+    },
+    {
+     "x": 34,
+     "y": 9,
+     "name": "dirt path"
+    },
+    {
+     "x": 35,
+     "y": 9,
+     "name": "dirt path"
+    },
+    {
+     "x": 36,
+     "y": 9,
+     "name": "dirt path"
+    },
+    {
+     "x": 32,
+     "y": 10,
+     "name": "dirt path"
+    },
+    {
+     "x": 33,
+     "y": 10,
+     "name": "dirt path"
+    },
+    {
+     "x": 34,
+     "y": 10,
+     "name": "dirt path"
+    },
+    {
+     "x": 35,
+     "y": 10,
+     "name": "dirt path"
+    },
+    {
+     "x": 35,
+     "y": 10,
+     "name": "campfire"
+    },
+    {
+     "x": 36,
+     "y": 10,
+     "name": "dirt path"
+    },
+    {
+     "x": 37,
+     "y": 10,
+     "name": "dirt path"
+    },
+    {
+     "x": 31,
+     "y": 11,
+     "name": "deep pool of 4000 drams of salty water"
+    },
+    {
+     "x": 32,
+     "y": 11,
+     "name": "deep pool of 4000 drams of salty water"
+    },
+    {
+     "x": 33,
+     "y": 11,
+     "name": "deep pool of 4000 drams of salty water"
+    },
+    {
+     "x": 33,
+     "y": 11,
+     "name": "bridge"
+    },
+    {
+     "x": 34,
+     "y": 11,
+     "name": "deep pool of 4008 drams of salty water"
+    },
+    {
+     "x": 34,
+     "y": 11,
+     "name": "bridge"
+    },
+    {
+     "x": 35,
+     "y": 11,
+     "name": "deep pool of 4001 drams of salty water"
+    },
+    {
+     "x": 35,
+     "y": 11,
+     "name": "bridge"
+    },
+    {
+     "x": 36,
+     "y": 11,
+     "name": "deep pool of 4005 drams of salty water"
+    },
+    {
+     "x": 36,
+     "y": 11,
+     "name": "bridge"
+    },
+    {
+     "x": 37,
+     "y": 11,
+     "name": "deep pool of 4006 drams of salty water"
+    },
+    {
+     "x": 37,
+     "y": 11,
+     "name": "bridge"
+    },
+    {
+     "x": 38,
+     "y": 11,
+     "name": "deep pool of 4000 drams of salty water"
+    },
+    {
+     "x": 38,
+     "y": 11,
+     "name": "bridge"
+    },
+    {
+     "x": 39,
+     "y": 11,
+     "name": "deep pool of 3951 drams of brackish water"
+    },
+    {
+     "x": 32,
+     "y": 12,
+     "name": "deep pool of 4000 drams of salty water"
+    },
+    {
+     "x": 33,
+     "y": 12,
+     "name": "deep pool of 3999 drams of salty water"
+    },
+    {
+     "x": 34,
+     "y": 12,
+     "name": "deep pool of 4000 drams of salty water"
+    },
+    {
+     "x": 35,
+     "y": 12,
+     "name": "deep pool of 4001 drams of salty water"
+    },
+    {
+     "x": 35,
+     "y": 12,
+     "name": "bridge"
+    },
+    {
+     "x": 36,
+     "y": 12,
+     "name": "deep pool of 4000 drams of salty water"
+    },
+    {
+     "x": 36,
+     "y": 12,
+     "name": "bridge"
+    },
+    {
+     "x": 37,
+     "y": 12,
+     "name": "deep pool of 4000 drams of salty water"
+    },
+    {
+     "x": 37,
+     "y": 12,
+     "name": "bridge"
+    },
+    {
+     "x": 38,
+     "y": 12,
+     "name": "deep pool of 4000 drams of salty water"
+    },
+    {
+     "x": 38,
+     "y": 12,
+     "name": "bridge"
+    },
+    {
+     "x": 32,
+     "y": 13,
+     "name": "deep pool of 3947 drams of salty water"
+    },
+    {
+     "x": 33,
+     "y": 13,
+     "name": "deep pool of 4000 drams of salty water"
+    },
+    {
+     "x": 34,
+     "y": 13,
+     "name": "deep pool of 4000 drams of salty water"
+    },
+    {
+     "x": 34,
+     "y": 13,
+     "name": "bridge"
+    },
+    {
+     "x": 35,
+     "y": 13,
+     "name": "deep pool of 4002 drams of salty water"
+    },
+    {
+     "x": 35,
+     "y": 13,
+     "name": "bridge"
+    },
+    {
+     "x": 36,
+     "y": 13,
+     "name": "deep pool of 4000 drams of salty water"
+    },
+    {
+     "x": 36,
+     "y": 13,
+     "name": "bridge"
+    },
+    {
+     "x": 37,
+     "y": 13,
+     "name": "deep pool of 4000 drams of salty water"
+    },
+    {
+     "x": 37,
+     "y": 13,
+     "name": "bridge"
+    },
+    {
+     "x": 38,
+     "y": 13,
+     "name": "deep pool of 4036 drams of salty water"
+    },
+    {
+     "x": 38,
+     "y": 13,
+     "name": "bridge"
+    },
+    {
+     "x": 33,
+     "y": 14,
+     "name": "dirt path"
+    },
+    {
+     "x": 34,
+     "y": 14,
+     "name": "dirt path"
+    },
+    {
+     "x": 35,
+     "y": 14,
+     "name": "deep pool of 4001 drams of salty water"
+    },
+    {
+     "x": 35,
+     "y": 14,
+     "name": "bridge"
+    },
+    {
+     "x": 36,
+     "y": 14,
+     "name": "deep pool of 4000 drams of salty water"
+    },
+    {
+     "x": 36,
+     "y": 14,
+     "name": "bridge"
+    },
+    {
+     "x": 37,
+     "y": 14,
+     "name": "deep pool of 4001 drams of salty water"
+    },
+    {
+     "x": 37,
+     "y": 14,
+     "name": "bridge"
+    },
+    {
+     "x": 35,
+     "y": 15,
+     "name": "dirt path"
+    },
+    {
+     "x": 72,
+     "y": 19,
+     "name": "watervine"
+    },
+    {
+     "x": 76,
+     "y": 20,
+     "name": "watervine"
+    },
+    {
+     "x": 22,
+     "y": 21,
+     "name": "deep pool of 4000 drams of salty water"
+    },
+    {
+     "x": 21,
+     "y": 22,
+     "name": "deep pool of 4001 drams of bloody brackish water"
+    },
+    {
+     "x": 22,
+     "y": 22,
+     "name": "deep pool of 4002 drams of bloody brackish water"
+    },
+    {
+     "x": 23,
+     "y": 22,
+     "name": "deep pool of 4000 drams of salty water"
+    },
+    {
+     "x": 21,
+     "y": 23,
+     "name": "pool of 463 drams of salty water"
+    },
+    {
+     "x": 21,
+     "y": 23,
+     "name": "wet brinestalk"
+    },
+    {
+     "x": 22,
+     "y": 23,
+     "name": "pool of 469 drams of salty water"
+    },
+    {
+     "x": 23,
+     "y": 23,
+     "name": "pool of 492 drams of salty water"
+    },
+    {
+     "x": 24,
+     "y": 23,
+     "name": "deep pool of 4003 drams of bloody brackish water"
+    },
+    {
+     "x": 21,
+     "y": 24,
+     "name": "pool of 480 drams of salty water"
+    },
+    {
+     "x": 21,
+     "y": 24,
+     "name": "wet brinestalk"
+    },
+    {
+     "x": 22,
+     "y": 24,
+     "name": "pool of 500 drams of salty water"
+    },
+    {
+     "x": 23,
+     "y": 24,
+     "name": "pool of 503 drams of bloody brackish water"
+    }
+   ]
+  },
+  "quests": [
+   {
+    "name": "What's Eating the Watervine?",
+    "finished": false,
+    "giver": "Mehmet",
+    "where": "Joppa",
+    "steps": [
+     {
+      "name": "Travel to Red Rock",
+      "text": "Journey two parasangs north of Joppa to Red Rock.",
+      "finished": true
+     },
+     {
+      "name": "Find the Vermin",
+      "text": "Find the creatures that are eating Joppa's watervine.",
+      "finished": false
+     },
+     {
+      "name": "Get a Corpse",
+      "text": "Collect a corpse from one of the creatures.",
+      "finished": false
+     },
+     {
+      "name": "Return with the Corpse",
+      "text": "Return to Joppa with the corpse of the watervine vermin.",
+      "finished": false
+     }
+    ]
+   },
+   {
+    "name": "Fetch Argyve a Knickknack",
+    "finished": false,
+    "giver": "Argyve",
+    "where": "Joppa",
+    "steps": [
+     {
+      "name": "Find a Knickknack",
+      "text": "Search the regions surrounding Joppa for an artifact.",
+      "finished": true
+     },
+     {
+      "name": "Return to Argyve",
+      "text": "Bring the artifact to Argyve.",
+      "finished": false
+     }
+    ]
+   },
+   {
+    "name": "Visit the Namritara Glassfold",
+    "finished": false,
+    "giver": null,
+    "where": "outskirts, Joppa",
+    "steps": [
+     {
+      "name": "Travel to the historical site of the Namritara Glassfold",
+      "text": "",
+      "finished": false
+     }
+    ]
+   },
+   {
+    "name": "Visit Ekavuh",
+    "finished": false,
+    "giver": null,
+    "where": "Red Rock, 2 strata deep",
+    "steps": [
+     {
+      "name": "Travel to the historical site of Ekavuh",
+      "text": "",
+      "finished": false
+     }
+    ]
+   }
+  ],
+  "inventory": [
+   "waterskin [empty]",
+   "waterskin [empty]",
+   "torch x10 (unburnt)",
+   "waterskin [16 drams of fresh water]",
+   "bear jerky [8 servings]",
+   "witchwood bark x4",
+   "copper nugget x3",
+   "bent metal sheet x2",
+   "fractured microchip",
+   "bedroll",
+   "bedroll",
+   "dreadroot tuber x6",
+   "failed energy relay x2",
+   "small violet tube",
+   "cave spider's right hindleg",
+   "cave spider's left mid-hindleg",
+   "blood-stained neck-ring \u00040 \t0",
+   "bronze battle axe x3 \u001a5 \u00031d2",
+   "furs \u00042 \t-1",
+   "bronze two-handed sword \u001a6 \u00031d6",
+   "short bow \u001a4 [empty]",
+   "bronze dagger \u001a5 \u00031d2",
+   "beaded bracelet x2 \u00040 \t0",
+   "leather armor \u00042 \t0",
+   "wooden arrow x5 \u001a4 \u00031d2 (4/1d4)",
+   "iron long sword \u001a6 \u00031d4",
+   "iron battle axe \u001a6 \u00031d2+1",
+   "steel arrow \u001a4 \u00031d2 (4/1d3+1)"
+  ],
+  "equipped": [
+   "studded leather armor \u00043 \t-2",
+   "leather cap \u00041 \t0",
+   "lit torch (bright)",
+   "iron long sword \u001a6 \u00031d4"
+  ],
+  "inventory_ids": [
+   "576",
+   "577",
+   "549",
+   "578",
+   "579",
+   "580",
+   "581",
+   "582",
+   "583",
+   "584",
+   "585",
+   "708",
+   "714",
+   "715",
+   "721",
+   "722",
+   "749",
+   "587",
+   "586",
+   "767",
+   "770",
+   "773",
+   "790",
+   "791",
+   "796",
+   "797",
+   "860",
+   "861"
+  ],
+  "equipped_ids": [
+   "766",
+   "765",
+   "550",
+   "750"
+  ],
+  "messages": [
+   "You pass by a deep pool of salty water.",
+   "You pass by a deep pool of salty water.",
+   "You pass by a deep pool of salty water.",
+   "You pass by a deep pool of salty water.",
+   "You pass by a deep pool of salty water.",
+   "You pass by a deep pool of salty water.",
+   "You pass by a deep pool of salty water.",
+   "You pass by a deep pool of salty water.",
+   "You pass by a deep pool of salty water.",
+   "You pass by a deep pool of salty water.",
+   "You pass by a deep pool of salty water.",
+   "You pass by a deep pool of salty water.",
+   "You make camp.",
+   "You gather whatever you can find for your meal: some philosophical dragonfly thorax, a puff of corrosive gas, and some dragonfly thorax.\n\nYou toss them in a pot and stir.",
+   "You eat the meal."
+  ]
+ },
+ "expect": {
+  "answer_not_re": "unexpected"
+ }
+}

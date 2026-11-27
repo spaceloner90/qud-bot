@@ -34,15 +34,23 @@ def main():
     xp = re.search(r"XP: (\d+)", text)
     M.send("KEY Keypad7")
     skills = []
-    for _ in range(12):  # page through the skills list (owned ones have no [cost])
+    # One row at a time, expanding every collapsed group ([+]) the cursor lands on: a collapsed group hides
+    # its skills, and once the profile listed only Long Blade (Siwur, 2026-11-26, after the groups had been
+    # collapsed to find it). Owned ones carry no [cost], a group header included ("[+] Axe" owned).
+    same = 0
+    for _ in range(400):
         rows = M.rows()
         for r in rows[2:22]:
-            m = re.search(r"(?:\[-\]|-)\s+([A-Z][A-Za-z' !-]+?)\s*(\[\d+sp\].*)?\s*[│|]?$", r.strip("│ >"))
+            m = re.search(r"(?:\[[-+]\]|-)\s+([A-Z][A-Za-z' !-]+?)\s*(\[\d+sp\].*)?\s*[│|]?$", r.strip("│ >"))
             if m and not m.group(2) and m.group(1).strip() not in skills and "sp remaining" not in r:
                 skills.append(m.group(1).strip())
-        before = rows
-        M.send(*["KEY Keypad2"] * 3)
-        if M.rows() == before:
+        cursor = next((r for r in rows[2:22] if r.strip("│ ").startswith(">")), "")
+        if "[+]" in cursor:
+            M.send("KEY Keypad6")
+            continue
+        M.send("KEY Keypad2")
+        same = same + 1 if M.rows() == rows else 0
+        if same >= 2:  # the cursor stopped moving: the end of the list
             break
     M.escape_to_map()
     prof = {"turn": s.get("turn"), "level": int(lvl.group(1)) if lvl else None, "xp": int(xp.group(1)) if xp else None,

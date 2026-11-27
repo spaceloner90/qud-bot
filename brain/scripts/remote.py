@@ -76,6 +76,10 @@ def walk_check(state, w):
     hurt = [m for m in new if FIRE.search(m)]
     if hurt:
         return "message: " + hurt[-1][:120]
+    # Never into deep water (AGENTS.md): the game's path step asks "Move ... again to enter it and start
+    # swimming", and the walk's next step went in (2026-11-27, to a chest: it swam, and the torch went out).
+    if not w.get("swim") and (any("start swimming" in m for m in new) or "swimming" in (p.get("effects") or [])):
+        return "deep water ahead: the path goes swimming (walk.py --swim to allow it)"
     bad = [e for e in p.get("effects") or [] if e in explore.BAD_EFFECTS]
     if bad:
         return "effect: " + ", ".join(bad)
@@ -104,6 +108,13 @@ def walk_check(state, w):
     # Known dangers out of view: one that wasn't within the radius when the walk began, or that we're
     # now closer to than then (walking towards it).
     for k, d in threats_near(state).items():
+        # The same exemptions as for hostiles in view (2026-11-27: a walk to a chest stopped 9 cells from a
+        # glowpad rooted in its pool, though the walk ignored glowpads): the kind the walk ignores, and a
+        # rooted melee kind 2+ cells off, can't stop it.
+        name = k.rsplit("@", 1)[0]
+        kd = (_w.CURRENT.kind(name) if getattr(_w, "CURRENT", None) is not None else None) or {}
+        if (w.get("ignore") and _w.kind_name(name) == w["ignore"]) or (kd.get("mobile") is False and not kd.get("ranged") and d >= 2):
+            continue
         if k not in w.get("threats", {}) or d < w["threats"][k]:
             return f"near known danger: {k}, {d} away"
     status = explore.needs_status(state, accept=w.get("status") or ())
@@ -128,13 +139,17 @@ def walk_start(line, state, memory):
     """WALK x y: walk there one step per call without asking the LLM, until something unexpected."""
     p = state.get("player") or {}
     parts = line.split()
+    # "+swim" anywhere after the coordinates lets this walk into deep water (tools/walk.py --swim; the
+    # LLM's call when the zone is under control, 2026-11-27)
+    swim = "+swim" in parts[3:]
+    parts = [x for x in parts if x != "+swim"]
     from scripts import explore
     memory["walk"] = {"x": int(parts[1]), "y": int(parts[2]), "zone": p.get("zone"), "hp": p.get("hp", 0),
                       "seq": state.get("seq"), "level": p.get("level") or 0,
                       # what's already known at the start doesn't stop the walk; anything new or closer does
                       "threats": threats_near(state), "status": (explore.needs_status(state) or "").split(","),
                       "seen": {"msgs": list(state.get("messages") or [])},
-                      "ignore": parts[3].replace("_", " ") if len(parts) > 3 else None,
+                      "ignore": parts[3].replace("_", " ") if len(parts) > 3 else None, "swim": swim,
                       "hostiles_at_start": {f"{o['name']}@{o['x']},{o['y']}": max(abs(o["x"] - p.get("x", 0)), abs(o["y"] - p.get("y", 0)))
                                             for o in (state.get("map") or {}).get("objects", []) if o.get("creature") and o.get("hostile")}}
     memory.pop("walk_result", None)

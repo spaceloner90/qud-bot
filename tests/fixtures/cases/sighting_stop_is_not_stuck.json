@@ -1,0 +1,7700 @@
+{
+ "name": "sighting_stop_is_not_stuck",
+ "why": "Siwur 2026-11-27, salt marsh: the game halts autoexplore whenever a creature comes into view ('You see a giant dragonfly to the south and stop acting.'); with dragonflies all over, explore handed over as stuck again and again and the zone was abandoned. The same state three times must restart autoexplore, not stop.",
+ "script": "explore",
+ "args": {
+  "hand_off": true,
+  "fight": true,
+  "missile": true,
+  "collect": false,
+  "auto_eat": true,
+  "auto_cook": true,
+  "hunt": true,
+  "goal_level": 5,
+  "max_turns": 400,
+  "raise_hp_fraction": 0.5,
+  "hold": true,
+  "max_hostiles": 2,
+  "accept_kinds": [
+   "dreadroot"
+  ]
+ },
+ "memory": {},
+ "states": [
+  {
+   "seq": 4239,
+   "mode": "run",
+   "wait": "map",
+   "autoact": null,
+   "time": "2026-11-27T00:34:02.227",
+   "turn": 145746,
+   "game": {
+    "id": "1f19697d-7a0e-4bbc-8a1c-b1efd156ea8d",
+    "mode": "Roleplay"
+   },
+   "screen": {
+    "w": 80,
+    "h": 25,
+    "rows": [
+     "..... .... .        .....   ......      ..... ........... ..      ..............",
+     ".......... ............ .   .....        ............. .....       .............",
+     "..................... ...                     ..............      .  ........ ..",
+     "............... .......                             ........     . .. .... .....",
+     "..................                                      ....     ...............",
+     "...............                 .. .                              .  ...........",
+     "........ . ...                   . ..   .......                  ... ...........",
+     ".   ..........              .     .................              ...............",
+     "... ...... ..       . ........     ......... ..............   .    .............",
+     "..............        ...... ..      ......................          ...........",
+     "...............                       ..  ...... . ...  ...          ...........",
+     " .............                                . ........   . .       ... ..... .",
+     " ............ ...                                 ......    ...     .... ..... .",
+     "...............  .. .......                       ........... ..    ............",
+     "............... . .......  ......                 .   ...... ..... .. . ..... . ",
+     "..  ............. ......   .....     ... ...      ................... .. ... ...",
+     "................. ......  ......    ......        ... .........  .       .... ..",
+     "............   .  ..............   ....           ..... ..........   .      . ..",
+     "...  . ....  ..   .... ........                  ......  ...... ....  .       ..",
+     ".   .....  .              ....                 ........  ...........          ..",
+     "............                                ...  .................... .  .   ...",
+     "............                             ..        .  ......... ......      ....",
+     "............                         .  .  . .  .... .............. ...... ... .",
+     " .. ........                        .      .  .  ............... ...... ... ... ",
+     "............                                 . .. .... ... ....................."
+    ],
+    "fg": [
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkGkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkYkYkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkGkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkYkYkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkYYkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kyykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkBkkkkkYkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkWkkkkkkkkkkkkkkkkYYkYkkkkYkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkYk",
+     "kkkkkkkkkkkkkkkkkkGkkkkkkkkkkkkkkkkkkkYkkkkkkkkkkkkkkkkkkkkkkkkYkkkkkkkkYkkkkkYk",
+     "kkkkkkkkkkkkkkkykkkGkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkGkkkkkGkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkGkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkYkkkkkGkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkykkkkkkkykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kyykkkkkkykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkWYWkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkWkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkGkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkYkYkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkykkkkkkyykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+    ]
+   },
+   "player": {
+    "name": "Siwur",
+    "hp": 30,
+    "maxhp": 30,
+    "level": 4,
+    "av": 4,
+    "dv": 0,
+    "qn": 100,
+    "ms": 60,
+    "food": "Sated",
+    "water": "Wet",
+    "effects": [
+     "defensive stance"
+    ],
+    "x": 35,
+    "y": 10,
+    "zone": "JoppaWorld.11.21.0.1.10",
+    "zoneName": "salt marsh, surface"
+   },
+   "map": {
+    "w": 80,
+    "h": 25,
+    "rows": [
+     "*....¥....⌠.⌠⌠¥⌠⌠⌠⌠⌠.....···******~.~≈.~***..¥...........¥..~.≈~~~..............",
+     "..........⌠............¥*···*****~~.~≈~≈¥**...........¥.....~..≈~~¥.............",
+     "...............******i***·###≈~~≈~~≈~~~~~¥≈.................~.~≈~..¥¥........¥..",
+     "..............*¥*******.≈#####~¥~~~~%~%~~~≈≈~≈.~.~.≈.........~~~~.¥..¥....¥.....",
+     ".............*****~~~≈~~.≈#####~≈~..¥~≈~¥≈≈..≈≈~≈~i¥~~~~....~~.~~...............",
+     ".............**≈≈~¥≈.~~.~~.##¥#·**¥*..~~~¥¥~.≈¥.~≈.~~~~~..¥≈~≈~~~%.%%...........",
+     "........¥.¥..*≈~~~..≈~≈.~≈.~·····*¥.*%%¥**.....≈~~~~..~≈.~.~~...≈...¥...........",
+     ".  ¥........**.~≈~.≈~≈≈≈≈~≈≈*·····...******........~~...~≈~~≈.~~~...............",
+     "...¥......⌠.*¥~.¥≈~≈*¥..******·····...******¥..............¥⌠⌠.~~~~.............",
+     "...........***.~≈.≈≈~~...***`**'·····...********...........⌠⌠⌠.≈¥.~≈≈...........",
+     "...........****.~~.~~≈≈%.≈~≈≈~~≈··'@··..%\\******¥*¥***⌠⌠...⌠⌠⌠.~....~...........",
+     "¥........,.***¥≈~~.~.~■∙%..~~≈~~~######%%≈%.~~*%*******.⌠⌠⌠.⌠.¥~~~¥.≈...¥.....%.",
+     "¥..........**¥*..≈i~.~.%≈.~.≈~~~.≈~###%~.~¥.≈.~.≈~******⌠⌠⌠⌠...%≈≈~~....%.....%.",
+     "...........***. ¥..i.......≈.≈.≈~~#####¥~~~~≈~~~~≈*******....i..≈.≈i............",
+     "...............¥.¥.......%i......··###≈≈¥.≈.....~..⌠¥%****..¥.....¥..⌠.⌠.....¥.⌠",
+     ".. ¥.............¥......%∙%.....·····...%....~i~.~....*****..........⌠..⌠...¥.**",
+     ".................%......¥%......··'·......≈~..≈~≈~...¥.*****...⌠⌠.⌠⌠⌠⌠⌠⌠¥....⌠**",
+     "............ ¥••¥•..............···.....≈~~.≈≈≈~~¥.....⌠**********⌠⌠⌠.⌠⌠⌠¥⌠⌠.⌠**",
+     "... ¥.%.... ¥',•''....¥........·,··~~~¥~~~..~≈.≈¥......⌠¥******¥***.⌠⌠.⌠⌠⌠⌠%⌠⌠**",
+     ".  ¥..... ¥.~~≈..~≈≈~~.≈.~....'`###~¥...~~~..~~........⌠¥.**********⌠¥⌠⌠⌠⌠■∙■¥**",
+     "............~~.~.¥..≈~~~~≈~..#####~~~~~.¥~.~...⌠⌠..........***..*****⌠.~~.⌠%⌠***",
+     "............~≈≈≈≈.~≈¥~~~.~~~##¥##~~~~≈~~⌠..⌠⌠⌠⌠⌠⌠⌠¥.⌠⌠.........¥.*****⌠~≈.~⌠****",
+     "............≈.~≈.~.⌠⌠~~~.~~#####~¥~.~.i⌠.⌠⌠.⌠.⌠⌠....¥.............*¥******~***¥*",
+     "¥..¥........~¥~≈~≈.⌠¥%~%≈#¥####≈≈~~⌠.⌠⌠⌠⌠⌠⌠.⌠⌠.¥¥...............¥..****¥***¥***⌠",
+     "............ ¥≈¥≈..  ¥~≈~#·###~~~~~⌠⌠⌠⌠¥~¥≈~⌠.⌠..⌠....⌠...⌠.........**********.."
+    ],
+    "vis": [
+     "00000000011110111111100001111011001100100000000000011110000000000111000000000000",
+     "11000000000011111111111100111101000100101100000001111000000000111110000000000000",
+     "11111000000000111111111110011101000100001100000011100000000111110000000000000000",
+     "11111111100000011111111111001111100101111000001110000000111110000000000000000000",
+     "00111111111110000111111111110111100111111000011000100111100000000000000000000000",
+     "00000000111111111011111111111111110111110111111011111000000000000111100000000000",
+     "00000000000001111111111111111111111111111111111111000000000111111111100001000000",
+     "0  00000000000000001111111111111111111111111110000000111111111110000000000000000",
+     "00011100000000001000011111111111111111111111100111111111111100000001111111000000",
+     "11111111111111111111111111111111111111111111111111111111111110000000000000000000",
+     "11111111111111111111111111111111111111111111111110000000000000000000000000000000",
+     "00000000000000111111111111111111111111111111111111111111111110000000000000000000",
+     "00000000000001111111111111111111111111111110011111111111111111111111111000000000",
+     "000000000111100 1111111111111111111111111111000001111111111111111111111111111111",
+     "11111000000000000111111111111111111111110011111000000001111110001110000111111100",
+     "00 00000000000000111111111111111111111111001111110000000000011100000000000000000",
+     "00000000000000001111111111111111111111111100011111110000000000000111100000000000",
+     "000000000000 1101111110011111111111111111110000111011110000000000000011111000000",
+     "000 0000000 00011111001111111111111111111111000011000111100000000000000000110000",
+     "0  000000 0001111100001111111111111111011111100000010001100000000000000000000000",
+     "00000000001111110000111111111111111101101111111000000100010000000000000000000000",
+     "00000000111111000001111111111111111101100011111100000001000100000000000000000000",
+     "00000111111100000100111111111001111100100011111110000000110001000000000000000000",
+     "00011111110000001001111111111011101100110001111111000000001100010000000000000000",
+     "001111110000 011011  11110110011101100110001111100100000000011000000000000000000"
+    ],
+    "objects": [
+     {
+      "x": 21,
+      "y": 2,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "825",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 1,
+      "agi": 5,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 38,
+      "y": 3,
+      "glyph": "]",
+      "name": "wet gentling mask"
+     },
+     {
+      "x": 38,
+      "y": 3,
+      "glyph": "\\",
+      "name": "wet club"
+     },
+     {
+      "x": 38,
+      "y": 3,
+      "glyph": "%",
+      "name": "wet snapjaw corpse"
+     },
+     {
+      "x": 50,
+      "y": 4,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "840",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 1,
+      "agi": 5,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 65,
+      "y": 5,
+      "glyph": "%",
+      "name": "giant dragonfly corpse"
+     },
+     {
+      "x": 65,
+      "y": 5,
+      "glyph": "]",
+      "name": "slender cloth robe"
+     },
+     {
+      "x": 65,
+      "y": 5,
+      "glyph": "\\",
+      "name": "counterweighted bronze dagger"
+     },
+     {
+      "x": 65,
+      "y": 5,
+      "glyph": "¿",
+      "name": "waterskin"
+     },
+     {
+      "x": 65,
+      "y": 5,
+      "glyph": "%",
+      "name": "snapjaw corpse"
+     },
+     {
+      "x": 67,
+      "y": 5,
+      "glyph": "\\",
+      "name": "bronze long sword"
+     },
+     {
+      "x": 67,
+      "y": 5,
+      "glyph": "%",
+      "name": "snapjaw corpse"
+     },
+     {
+      "x": 68,
+      "y": 5,
+      "glyph": "%",
+      "name": "trash"
+     },
+     {
+      "x": 37,
+      "y": 6,
+      "glyph": "]",
+      "name": "studded leather armor"
+     },
+     {
+      "x": 37,
+      "y": 6,
+      "glyph": "\\",
+      "name": "staff"
+     },
+     {
+      "x": 37,
+      "y": 6,
+      "glyph": "%",
+      "name": "snapjaw corpse"
+     },
+     {
+      "x": 38,
+      "y": 6,
+      "glyph": "%",
+      "name": "sappy snapjaw corpse"
+     },
+     {
+      "x": 23,
+      "y": 10,
+      "glyph": "%",
+      "name": "wet trash"
+     },
+     {
+      "x": 40,
+      "y": 10,
+      "glyph": "%",
+      "name": "trash"
+     },
+     {
+      "x": 41,
+      "y": 10,
+      "glyph": "]",
+      "name": "studded leather armor x2"
+     },
+     {
+      "x": 41,
+      "y": 10,
+      "glyph": "\\",
+      "name": "bronze long sword"
+     },
+     {
+      "x": 41,
+      "y": 10,
+      "glyph": "%",
+      "name": "snapjaw corpse"
+     },
+     {
+      "x": 41,
+      "y": 10,
+      "glyph": "\\",
+      "name": "slender bronze two-handed sword"
+     },
+     {
+      "x": 22,
+      "y": 11,
+      "glyph": "%",
+      "name": "wet trash"
+     },
+     {
+      "x": 22,
+      "y": 11,
+      "glyph": "■",
+      "name": "wet chest"
+     },
+     {
+      "x": 24,
+      "y": 11,
+      "glyph": "%",
+      "name": "wet trash"
+     },
+     {
+      "x": 39,
+      "y": 11,
+      "glyph": "%",
+      "name": "wet glowfish corpse"
+     },
+     {
+      "x": 40,
+      "y": 11,
+      "glyph": "%",
+      "name": "wet glowfish corpse"
+     },
+     {
+      "x": 42,
+      "y": 11,
+      "glyph": "%",
+      "name": "wet glowfish corpse"
+     },
+     {
+      "x": 47,
+      "y": 11,
+      "glyph": "]",
+      "name": "slender wool kilt"
+     },
+     {
+      "x": 47,
+      "y": 11,
+      "glyph": "\\",
+      "name": "two-handed iron long sword"
+     },
+     {
+      "x": 47,
+      "y": 11,
+      "glyph": "%",
+      "name": "snapjaw corpse"
+     },
+     {
+      "x": 18,
+      "y": 12,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "822",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 1,
+      "agi": 6,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 23,
+      "y": 12,
+      "glyph": "%",
+      "name": "wet trash"
+     },
+     {
+      "x": 38,
+      "y": 12,
+      "glyph": "\\",
+      "name": "iron dagger"
+     },
+     {
+      "x": 38,
+      "y": 12,
+      "glyph": "}",
+      "name": "wooden buckler"
+     },
+     {
+      "x": 38,
+      "y": 12,
+      "glyph": "%",
+      "name": "snapjaw corpse"
+     },
+     {
+      "x": 63,
+      "y": 12,
+      "glyph": "%",
+      "name": "wet glowfish corpse"
+     },
+     {
+      "x": 19,
+      "y": 13,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "857",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 1,
+      "agi": 5,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 61,
+      "y": 13,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "824",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 1,
+      "agi": 6,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 67,
+      "y": 13,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "839",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 0,
+      "agi": 6,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 25,
+      "y": 14,
+      "glyph": "%",
+      "name": "trash"
+     },
+     {
+      "x": 26,
+      "y": 14,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "862",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 1,
+      "agi": 6,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 24,
+      "y": 15,
+      "glyph": "%",
+      "name": "trash"
+     },
+     {
+      "x": 26,
+      "y": 15,
+      "glyph": "%",
+      "name": "trash"
+     },
+     {
+      "x": 40,
+      "y": 15,
+      "glyph": "\\",
+      "name": "weird artifact"
+     },
+     {
+      "x": 40,
+      "y": 15,
+      "glyph": "%",
+      "name": "snapjaw corpse"
+     },
+     {
+      "x": 46,
+      "y": 15,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "851",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 1,
+      "agi": 5,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 17,
+      "y": 16,
+      "glyph": "%",
+      "name": "trash"
+     },
+     {
+      "x": 25,
+      "y": 16,
+      "glyph": "%",
+      "name": "trash"
+     },
+     {
+      "x": 75,
+      "y": 18,
+      "glyph": "%",
+      "name": "trash"
+     },
+     {
+      "x": 38,
+      "y": 22,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "850",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 1,
+      "agi": 5,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 21,
+      "y": 23,
+      "glyph": "%",
+      "name": "wet snapjaw corpse"
+     },
+     {
+      "x": 23,
+      "y": 23,
+      "glyph": "]",
+      "name": "wet woven tunic"
+     },
+     {
+      "x": 23,
+      "y": 23,
+      "glyph": "%",
+      "name": "wet snapjaw corpse"
+     }
+    ],
+    "features": [
+     {
+      "x": 10,
+      "y": 0,
+      "name": "watervine"
+     },
+     {
+      "x": 12,
+      "y": 0,
+      "name": "watervine"
+     },
+     {
+      "x": 14,
+      "y": 0,
+      "name": "watervine"
+     },
+     {
+      "x": 14,
+      "y": 0,
+      "name": "brinestalk"
+     },
+     {
+      "x": 15,
+      "y": 0,
+      "name": "watervine"
+     },
+     {
+      "x": 16,
+      "y": 0,
+      "name": "watervine"
+     },
+     {
+      "x": 17,
+      "y": 0,
+      "name": "watervine"
+     },
+     {
+      "x": 18,
+      "y": 0,
+      "name": "watervine"
+     },
+     {
+      "x": 19,
+      "y": 0,
+      "name": "watervine"
+     },
+     {
+      "x": 25,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 25,
+      "y": 0,
+      "name": "dirt path"
+     },
+     {
+      "x": 26,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 26,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 26,
+      "y": 0,
+      "name": "dirt path"
+     },
+     {
+      "x": 27,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 0,
+      "name": "dirt path"
+     },
+     {
+      "x": 28,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 28,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 30,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 30,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 31,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 31,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 31,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 34,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 34,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 34,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 34,
+      "y": 0,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 35,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 0,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 38,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 38,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 38,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 38,
+      "y": 0,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 65,
+      "y": 0,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 23,
+      "y": 1,
+      "name": "brinestalk"
+     },
+     {
+      "x": 26,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 26,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 26,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 26,
+      "y": 1,
+      "name": "dirt path"
+     },
+     {
+      "x": 27,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 1,
+      "name": "dirt path"
+     },
+     {
+      "x": 28,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 28,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 28,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 29,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 29,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 29,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 31,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 31,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 31,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 1,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 38,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 38,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 38,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 38,
+      "y": 1,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 40,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 40,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 40,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 40,
+      "y": 1,
+      "name": "brinestalk"
+     },
+     {
+      "x": 41,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 41,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 62,
+      "y": 1,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 63,
+      "y": 1,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 64,
+      "y": 1,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 65,
+      "y": 1,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 66,
+      "y": 1,
+      "name": "brinestalk"
+     },
+     {
+      "x": 15,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 16,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 16,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 17,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 17,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 17,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 2,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 27,
+      "y": 2,
+      "name": "bridge"
+     },
+     {
+      "x": 28,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 28,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 28,
+      "y": 2,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 28,
+      "y": 2,
+      "name": "bridge"
+     },
+     {
+      "x": 29,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 29,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 29,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 29,
+      "y": 2,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 31,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 31,
+      "y": 2,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 35,
+      "y": 2,
+      "name": "deep pool of 4003 drams of bloody brackish water"
+     },
+     {
+      "x": 40,
+      "y": 2,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 41,
+      "y": 2,
+      "name": "deep pool of 3980 drams of salty water"
+     },
+     {
+      "x": 41,
+      "y": 2,
+      "name": "wet brinestalk"
+     },
+     {
+      "x": 60,
+      "y": 2,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 61,
+      "y": 2,
+      "name": "deep pool of 3974 drams of salty water"
+     },
+     {
+      "x": 62,
+      "y": 2,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 63,
+      "y": 2,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 15,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 15,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 15,
+      "y": 3,
+      "name": "brinestalk"
+     },
+     {
+      "x": 16,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 16,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 16,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 17,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 17,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 17,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 24,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 25,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 25,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 25,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 25,
+      "y": 3,
+      "name": "bridge"
+     },
+     {
+      "x": 28,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 28,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 28,
+      "y": 3,
+      "name": "bridge"
+     },
+     {
+      "x": 29,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 29,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 29,
+      "y": 3,
+      "name": "bridge"
+     },
+     {
+      "x": 30,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 30,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 31,
+      "y": 3,
+      "name": "deep pool of 3980 drams of salty water"
+     },
+     {
+      "x": 31,
+      "y": 3,
+      "name": "wet brinestalk"
+     },
+     {
+      "x": 32,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 32,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 35,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 3,
+      "name": "deep pool of 4006 drams of bloody brackish water"
+     },
+     {
+      "x": 37,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 37,
+      "y": 3,
+      "name": "deep pool of 4004 drams of bloody brackish water"
+     },
+     {
+      "x": 38,
+      "y": 3,
+      "name": "deep pool of 3986 drams of brackish water"
+     },
+     {
+      "x": 38,
+      "y": 3,
+      "name": "wet brinestalk"
+     },
+     {
+      "x": 39,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 40,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 46,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 47,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 48,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 60,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 17,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 17,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 17,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 19,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 20,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 21,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 22,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 23,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 24,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 25,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 25,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 26,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 26,
+      "y": 4,
+      "name": "bridge"
+     },
+     {
+      "x": 27,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 27,
+      "y": 4,
+      "name": "bridge"
+     },
+     {
+      "x": 29,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 29,
+      "y": 4,
+      "name": "bridge"
+     },
+     {
+      "x": 30,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 30,
+      "y": 4,
+      "name": "bridge"
+     },
+     {
+      "x": 31,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 31,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 32,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 32,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 32,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 35,
+      "y": 4,
+      "name": "blood-stained [Widget]"
+     },
+     {
+      "x": 35,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 4,
+      "name": "deep pool of 3968 drams of bloody brackish water"
+     },
+     {
+      "x": 36,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 36,
+      "y": 4,
+      "name": "sap-stained [Widget]"
+     },
+     {
+      "x": 36,
+      "y": 4,
+      "name": "sap-stained [Widget]"
+     },
+     {
+      "x": 36,
+      "y": 4,
+      "name": "deep pool of 3982 drams of brackish water"
+     },
+     {
+      "x": 36,
+      "y": 4,
+      "name": "wet brinestalk"
+     },
+     {
+      "x": 37,
+      "y": 4,
+      "name": "blood-and-sap-stained [Widget]"
+     },
+     {
+      "x": 37,
+      "y": 4,
+      "name": "sap-and-blood-stained [Widget]"
+     },
+     {
+      "x": 37,
+      "y": 4,
+      "name": "deep pool of 4018 drams of brackish sugary water"
+     },
+     {
+      "x": 38,
+      "y": 4,
+      "name": "sap-and-blood-stained [Widget]"
+     },
+     {
+      "x": 38,
+      "y": 4,
+      "name": "deep pool of 4010 drams of brackish sugary water"
+     },
+     {
+      "x": 39,
+      "y": 4,
+      "name": "deep pool of 4003 drams of bloody brackish water"
+     },
+     {
+      "x": 40,
+      "y": 4,
+      "name": "deep pool of 3980 drams of salty water"
+     },
+     {
+      "x": 40,
+      "y": 4,
+      "name": "wet brinestalk"
+     },
+     {
+      "x": 45,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 46,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 50,
+      "y": 4,
+      "name": "deep pool of 3980 drams of salty water"
+     },
+     {
+      "x": 50,
+      "y": 4,
+      "name": "wet brinestalk"
+     },
+     {
+      "x": 53,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 54,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 55,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 13,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 13,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 14,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 14,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 14,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 15,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 15,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 15,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 15,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 16,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 16,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 18,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 5,
+      "name": "deep pool of 3980 drams of salty water"
+     },
+     {
+      "x": 18,
+      "y": 5,
+      "name": "wet brinestalk"
+     },
+     {
+      "x": 19,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 20,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 21,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 22,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 23,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 24,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 25,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 25,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 26,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 27,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 27,
+      "y": 5,
+      "name": "bridge"
+     },
+     {
+      "x": 28,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 28,
+      "y": 5,
+      "name": "bridge"
+     }
+    ]
+   },
+   "quests": [
+    {
+     "name": "What's Eating the Watervine?",
+     "finished": false,
+     "giver": "Mehmet",
+     "where": "Joppa",
+     "steps": [
+      {
+       "name": "Travel to Red Rock",
+       "text": "Journey two parasangs north of Joppa to Red Rock.",
+       "finished": true
+      },
+      {
+       "name": "Find the Vermin",
+       "text": "Find the creatures that are eating Joppa's watervine.",
+       "finished": false
+      },
+      {
+       "name": "Get a Corpse",
+       "text": "Collect a corpse from one of the creatures.",
+       "finished": false
+      },
+      {
+       "name": "Return with the Corpse",
+       "text": "Return to Joppa with the corpse of the watervine vermin.",
+       "finished": false
+      }
+     ]
+    },
+    {
+     "name": "Fetch Argyve a Knickknack",
+     "finished": false,
+     "giver": "Argyve",
+     "where": "Joppa",
+     "steps": [
+      {
+       "name": "Find a Knickknack",
+       "text": "Search the regions surrounding Joppa for an artifact.",
+       "finished": true
+      },
+      {
+       "name": "Return to Argyve",
+       "text": "Bring the artifact to Argyve.",
+       "finished": false
+      }
+     ]
+    },
+    {
+     "name": "Visit the Namritara Glassfold",
+     "finished": false,
+     "giver": null,
+     "where": "outskirts, Joppa",
+     "steps": [
+      {
+       "name": "Travel to the historical site of the Namritara Glassfold",
+       "text": "",
+       "finished": false
+      }
+     ]
+    },
+    {
+     "name": "Visit Ekavuh",
+     "finished": false,
+     "giver": null,
+     "where": "Red Rock, 2 strata deep",
+     "steps": [
+      {
+       "name": "Travel to the historical site of Ekavuh",
+       "text": "",
+       "finished": false
+      }
+     ]
+    }
+   ],
+   "inventory": [
+    "waterskin [empty]",
+    "waterskin [empty]",
+    "torch x9 (unburnt)",
+    "waterskin [13 drams of fresh water]",
+    "bear jerky [8 servings]",
+    "witchwood bark x4",
+    "copper nugget x4",
+    "bent metal sheet x2",
+    "fractured microchip",
+    "bedroll",
+    "bedroll",
+    "dreadroot tuber x6",
+    "failed energy relay x3",
+    "small violet tube",
+    "cave spider's right hindleg",
+    "cave spider's left mid-hindleg",
+    "blood-stained neck-ring \u00040 \t0",
+    "bronze battle axe x3 \u001a5 \u00031d2",
+    "furs \u00042 \t-1",
+    "bronze two-handed sword \u001a6 \u00031d6",
+    "short bow \u001a4 [empty]",
+    "bronze dagger \u001a5 \u00031d2",
+    "beaded bracelet x2 \u00040 \t0",
+    "leather armor \u00042 \t0",
+    "iron long sword \u001a6 \u00031d4",
+    "iron battle axe x2 \u001a6 \u00031d2+1",
+    "steel arrow \u001a4 \u00031d2 (4/1d3+1)",
+    "vinewafer",
+    "wooden arrow x4 \u001a4 \u00031d2 (4/1d4)",
+    "torch (half-burnt)",
+    "bronze long sword \u001a5 \u00031d3"
+   ],
+   "equipped": [
+    "studded leather armor \u00043 \t-2",
+    "leather cap \u00041 \t0",
+    "lit torch (blazing)",
+    "iron long sword \u001a6 \u00031d4",
+    "short bow \u001a4 \u00031d4 [wooden arrow]"
+   ],
+   "inventory_ids": [
+    "576",
+    "577",
+    "549",
+    "578",
+    "579",
+    "580",
+    "581",
+    "582",
+    "583",
+    "584",
+    "585",
+    "708",
+    "714",
+    "715",
+    "721",
+    "722",
+    "749",
+    "587",
+    "586",
+    "767",
+    "770",
+    "773",
+    "790",
+    "791",
+    "797",
+    "860",
+    "861",
+    "864",
+    "868",
+    "550",
+    "872"
+   ],
+   "equipped_ids": [
+    "766",
+    "765",
+    "869",
+    "750",
+    "865"
+   ],
+   "messages": [
+    "You pass by a deep pool of salty water.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a puddle of dilute salt.",
+    "You pass by some studded leather armor, a staff, and a snapjaw corpse.",
+    "You pass by some studded leather armor, a staff, and a snapjaw corpse.",
+    "You pass by some studded leather armor, a staff, and a snapjaw corpse.",
+    "You pass by some studded leather armor, a staff, and a snapjaw corpse.",
+    "There is a deep pool of brackish sugary water that way. Move northeast again to enter it and start swimming.",
+    "You pass by a set of campfire remains.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a set of campfire remains.",
+    "You see a giant dragonfly to the southeast and stop acting."
+   ]
+  },
+  {
+   "seq": 4239,
+   "mode": "run",
+   "wait": "map",
+   "autoact": null,
+   "time": "2026-11-27T00:34:02.227",
+   "turn": 145746,
+   "game": {
+    "id": "1f19697d-7a0e-4bbc-8a1c-b1efd156ea8d",
+    "mode": "Roleplay"
+   },
+   "screen": {
+    "w": 80,
+    "h": 25,
+    "rows": [
+     "..... .... .        .....   ......      ..... ........... ..      ..............",
+     ".......... ............ .   .....        ............. .....       .............",
+     "..................... ...                     ..............      .  ........ ..",
+     "............... .......                             ........     . .. .... .....",
+     "..................                                      ....     ...............",
+     "...............                 .. .                              .  ...........",
+     "........ . ...                   . ..   .......                  ... ...........",
+     ".   ..........              .     .................              ...............",
+     "... ...... ..       . ........     ......... ..............   .    .............",
+     "..............        ...... ..      ......................          ...........",
+     "...............                       ..  ...... . ...  ...          ...........",
+     " .............                                . ........   . .       ... ..... .",
+     " ............ ...                                 ......    ...     .... ..... .",
+     "...............  .. .......                       ........... ..    ............",
+     "............... . .......  ......                 .   ...... ..... .. . ..... . ",
+     "..  ............. ......   .....     ... ...      ................... .. ... ...",
+     "................. ......  ......    ......        ... .........  .       .... ..",
+     "............   .  ..............   ....           ..... ..........   .      . ..",
+     "...  . ....  ..   .... ........                  ......  ...... ....  .       ..",
+     ".   .....  .              ....                 ........  ...........          ..",
+     "............                                ...  .................... .  .   ...",
+     "............                             ..        .  ......... ......      ....",
+     "............                         .  .  . .  .... .............. ...... ... .",
+     " .. ........                        .      .  .  ............... ...... ... ... ",
+     "............                                 . .. .... ... ....................."
+    ],
+    "fg": [
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkGkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkYkYkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkGkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkYkYkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkYYkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kyykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkBkkkkkYkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkWkkkkkkkkkkkkkkkkYYkYkkkkYkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkYk",
+     "kkkkkkkkkkkkkkkkkkGkkkkkkkkkkkkkkkkkkkYkkkkkkkkkkkkkkkkkkkkkkkkYkkkkkkkkYkkkkkYk",
+     "kkkkkkkkkkkkkkkykkkGkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkGkkkkkGkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkGkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkYkkkkkGkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkykkkkkkkykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kyykkkkkkykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkWYWkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkWkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkGkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkYkYkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkykkkkkkyykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+    ]
+   },
+   "player": {
+    "name": "Siwur",
+    "hp": 30,
+    "maxhp": 30,
+    "level": 4,
+    "av": 4,
+    "dv": 0,
+    "qn": 100,
+    "ms": 60,
+    "food": "Sated",
+    "water": "Wet",
+    "effects": [
+     "defensive stance"
+    ],
+    "x": 35,
+    "y": 10,
+    "zone": "JoppaWorld.11.21.0.1.10",
+    "zoneName": "salt marsh, surface"
+   },
+   "map": {
+    "w": 80,
+    "h": 25,
+    "rows": [
+     "*....¥....⌠.⌠⌠¥⌠⌠⌠⌠⌠.....···******~.~≈.~***..¥...........¥..~.≈~~~..............",
+     "..........⌠............¥*···*****~~.~≈~≈¥**...........¥.....~..≈~~¥.............",
+     "...............******i***·###≈~~≈~~≈~~~~~¥≈.................~.~≈~..¥¥........¥..",
+     "..............*¥*******.≈#####~¥~~~~%~%~~~≈≈~≈.~.~.≈.........~~~~.¥..¥....¥.....",
+     ".............*****~~~≈~~.≈#####~≈~..¥~≈~¥≈≈..≈≈~≈~i¥~~~~....~~.~~...............",
+     ".............**≈≈~¥≈.~~.~~.##¥#·**¥*..~~~¥¥~.≈¥.~≈.~~~~~..¥≈~≈~~~%.%%...........",
+     "........¥.¥..*≈~~~..≈~≈.~≈.~·····*¥.*%%¥**.....≈~~~~..~≈.~.~~...≈...¥...........",
+     ".  ¥........**.~≈~.≈~≈≈≈≈~≈≈*·····...******........~~...~≈~~≈.~~~...............",
+     "...¥......⌠.*¥~.¥≈~≈*¥..******·····...******¥..............¥⌠⌠.~~~~.............",
+     "...........***.~≈.≈≈~~...***`**'·····...********...........⌠⌠⌠.≈¥.~≈≈...........",
+     "...........****.~~.~~≈≈%.≈~≈≈~~≈··'@··..%\\******¥*¥***⌠⌠...⌠⌠⌠.~....~...........",
+     "¥........,.***¥≈~~.~.~■∙%..~~≈~~~######%%≈%.~~*%*******.⌠⌠⌠.⌠.¥~~~¥.≈...¥.....%.",
+     "¥..........**¥*..≈i~.~.%≈.~.≈~~~.≈~###%~.~¥.≈.~.≈~******⌠⌠⌠⌠...%≈≈~~....%.....%.",
+     "...........***. ¥..i.......≈.≈.≈~~#####¥~~~~≈~~~~≈*******....i..≈.≈i............",
+     "...............¥.¥.......%i......··###≈≈¥.≈.....~..⌠¥%****..¥.....¥..⌠.⌠.....¥.⌠",
+     ".. ¥.............¥......%∙%.....·····...%....~i~.~....*****..........⌠..⌠...¥.**",
+     ".................%......¥%......··'·......≈~..≈~≈~...¥.*****...⌠⌠.⌠⌠⌠⌠⌠⌠¥....⌠**",
+     "............ ¥••¥•..............···.....≈~~.≈≈≈~~¥.....⌠**********⌠⌠⌠.⌠⌠⌠¥⌠⌠.⌠**",
+     "... ¥.%.... ¥',•''....¥........·,··~~~¥~~~..~≈.≈¥......⌠¥******¥***.⌠⌠.⌠⌠⌠⌠%⌠⌠**",
+     ".  ¥..... ¥.~~≈..~≈≈~~.≈.~....'`###~¥...~~~..~~........⌠¥.**********⌠¥⌠⌠⌠⌠■∙■¥**",
+     "............~~.~.¥..≈~~~~≈~..#####~~~~~.¥~.~...⌠⌠..........***..*****⌠.~~.⌠%⌠***",
+     "............~≈≈≈≈.~≈¥~~~.~~~##¥##~~~~≈~~⌠..⌠⌠⌠⌠⌠⌠⌠¥.⌠⌠.........¥.*****⌠~≈.~⌠****",
+     "............≈.~≈.~.⌠⌠~~~.~~#####~¥~.~.i⌠.⌠⌠.⌠.⌠⌠....¥.............*¥******~***¥*",
+     "¥..¥........~¥~≈~≈.⌠¥%~%≈#¥####≈≈~~⌠.⌠⌠⌠⌠⌠⌠.⌠⌠.¥¥...............¥..****¥***¥***⌠",
+     "............ ¥≈¥≈..  ¥~≈~#·###~~~~~⌠⌠⌠⌠¥~¥≈~⌠.⌠..⌠....⌠...⌠.........**********.."
+    ],
+    "vis": [
+     "00000000011110111111100001111011001100100000000000011110000000000111000000000000",
+     "11000000000011111111111100111101000100101100000001111000000000111110000000000000",
+     "11111000000000111111111110011101000100001100000011100000000111110000000000000000",
+     "11111111100000011111111111001111100101111000001110000000111110000000000000000000",
+     "00111111111110000111111111110111100111111000011000100111100000000000000000000000",
+     "00000000111111111011111111111111110111110111111011111000000000000111100000000000",
+     "00000000000001111111111111111111111111111111111111000000000111111111100001000000",
+     "0  00000000000000001111111111111111111111111110000000111111111110000000000000000",
+     "00011100000000001000011111111111111111111111100111111111111100000001111111000000",
+     "11111111111111111111111111111111111111111111111111111111111110000000000000000000",
+     "11111111111111111111111111111111111111111111111110000000000000000000000000000000",
+     "00000000000000111111111111111111111111111111111111111111111110000000000000000000",
+     "00000000000001111111111111111111111111111110011111111111111111111111111000000000",
+     "000000000111100 1111111111111111111111111111000001111111111111111111111111111111",
+     "11111000000000000111111111111111111111110011111000000001111110001110000111111100",
+     "00 00000000000000111111111111111111111111001111110000000000011100000000000000000",
+     "00000000000000001111111111111111111111111100011111110000000000000111100000000000",
+     "000000000000 1101111110011111111111111111110000111011110000000000000011111000000",
+     "000 0000000 00011111001111111111111111111111000011000111100000000000000000110000",
+     "0  000000 0001111100001111111111111111011111100000010001100000000000000000000000",
+     "00000000001111110000111111111111111101101111111000000100010000000000000000000000",
+     "00000000111111000001111111111111111101100011111100000001000100000000000000000000",
+     "00000111111100000100111111111001111100100011111110000000110001000000000000000000",
+     "00011111110000001001111111111011101100110001111111000000001100010000000000000000",
+     "001111110000 011011  11110110011101100110001111100100000000011000000000000000000"
+    ],
+    "objects": [
+     {
+      "x": 21,
+      "y": 2,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "825",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 1,
+      "agi": 5,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 38,
+      "y": 3,
+      "glyph": "]",
+      "name": "wet gentling mask"
+     },
+     {
+      "x": 38,
+      "y": 3,
+      "glyph": "\\",
+      "name": "wet club"
+     },
+     {
+      "x": 38,
+      "y": 3,
+      "glyph": "%",
+      "name": "wet snapjaw corpse"
+     },
+     {
+      "x": 50,
+      "y": 4,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "840",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 1,
+      "agi": 5,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 65,
+      "y": 5,
+      "glyph": "%",
+      "name": "giant dragonfly corpse"
+     },
+     {
+      "x": 65,
+      "y": 5,
+      "glyph": "]",
+      "name": "slender cloth robe"
+     },
+     {
+      "x": 65,
+      "y": 5,
+      "glyph": "\\",
+      "name": "counterweighted bronze dagger"
+     },
+     {
+      "x": 65,
+      "y": 5,
+      "glyph": "¿",
+      "name": "waterskin"
+     },
+     {
+      "x": 65,
+      "y": 5,
+      "glyph": "%",
+      "name": "snapjaw corpse"
+     },
+     {
+      "x": 67,
+      "y": 5,
+      "glyph": "\\",
+      "name": "bronze long sword"
+     },
+     {
+      "x": 67,
+      "y": 5,
+      "glyph": "%",
+      "name": "snapjaw corpse"
+     },
+     {
+      "x": 68,
+      "y": 5,
+      "glyph": "%",
+      "name": "trash"
+     },
+     {
+      "x": 37,
+      "y": 6,
+      "glyph": "]",
+      "name": "studded leather armor"
+     },
+     {
+      "x": 37,
+      "y": 6,
+      "glyph": "\\",
+      "name": "staff"
+     },
+     {
+      "x": 37,
+      "y": 6,
+      "glyph": "%",
+      "name": "snapjaw corpse"
+     },
+     {
+      "x": 38,
+      "y": 6,
+      "glyph": "%",
+      "name": "sappy snapjaw corpse"
+     },
+     {
+      "x": 23,
+      "y": 10,
+      "glyph": "%",
+      "name": "wet trash"
+     },
+     {
+      "x": 40,
+      "y": 10,
+      "glyph": "%",
+      "name": "trash"
+     },
+     {
+      "x": 41,
+      "y": 10,
+      "glyph": "]",
+      "name": "studded leather armor x2"
+     },
+     {
+      "x": 41,
+      "y": 10,
+      "glyph": "\\",
+      "name": "bronze long sword"
+     },
+     {
+      "x": 41,
+      "y": 10,
+      "glyph": "%",
+      "name": "snapjaw corpse"
+     },
+     {
+      "x": 41,
+      "y": 10,
+      "glyph": "\\",
+      "name": "slender bronze two-handed sword"
+     },
+     {
+      "x": 22,
+      "y": 11,
+      "glyph": "%",
+      "name": "wet trash"
+     },
+     {
+      "x": 22,
+      "y": 11,
+      "glyph": "■",
+      "name": "wet chest"
+     },
+     {
+      "x": 24,
+      "y": 11,
+      "glyph": "%",
+      "name": "wet trash"
+     },
+     {
+      "x": 39,
+      "y": 11,
+      "glyph": "%",
+      "name": "wet glowfish corpse"
+     },
+     {
+      "x": 40,
+      "y": 11,
+      "glyph": "%",
+      "name": "wet glowfish corpse"
+     },
+     {
+      "x": 42,
+      "y": 11,
+      "glyph": "%",
+      "name": "wet glowfish corpse"
+     },
+     {
+      "x": 47,
+      "y": 11,
+      "glyph": "]",
+      "name": "slender wool kilt"
+     },
+     {
+      "x": 47,
+      "y": 11,
+      "glyph": "\\",
+      "name": "two-handed iron long sword"
+     },
+     {
+      "x": 47,
+      "y": 11,
+      "glyph": "%",
+      "name": "snapjaw corpse"
+     },
+     {
+      "x": 18,
+      "y": 12,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "822",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 1,
+      "agi": 6,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 23,
+      "y": 12,
+      "glyph": "%",
+      "name": "wet trash"
+     },
+     {
+      "x": 38,
+      "y": 12,
+      "glyph": "\\",
+      "name": "iron dagger"
+     },
+     {
+      "x": 38,
+      "y": 12,
+      "glyph": "}",
+      "name": "wooden buckler"
+     },
+     {
+      "x": 38,
+      "y": 12,
+      "glyph": "%",
+      "name": "snapjaw corpse"
+     },
+     {
+      "x": 63,
+      "y": 12,
+      "glyph": "%",
+      "name": "wet glowfish corpse"
+     },
+     {
+      "x": 19,
+      "y": 13,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "857",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 1,
+      "agi": 5,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 61,
+      "y": 13,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "824",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 1,
+      "agi": 6,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 67,
+      "y": 13,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "839",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 0,
+      "agi": 6,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 25,
+      "y": 14,
+      "glyph": "%",
+      "name": "trash"
+     },
+     {
+      "x": 26,
+      "y": 14,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "862",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 1,
+      "agi": 6,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 24,
+      "y": 15,
+      "glyph": "%",
+      "name": "trash"
+     },
+     {
+      "x": 26,
+      "y": 15,
+      "glyph": "%",
+      "name": "trash"
+     },
+     {
+      "x": 40,
+      "y": 15,
+      "glyph": "\\",
+      "name": "weird artifact"
+     },
+     {
+      "x": 40,
+      "y": 15,
+      "glyph": "%",
+      "name": "snapjaw corpse"
+     },
+     {
+      "x": 46,
+      "y": 15,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "851",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 1,
+      "agi": 5,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 17,
+      "y": 16,
+      "glyph": "%",
+      "name": "trash"
+     },
+     {
+      "x": 25,
+      "y": 16,
+      "glyph": "%",
+      "name": "trash"
+     },
+     {
+      "x": 75,
+      "y": 18,
+      "glyph": "%",
+      "name": "trash"
+     },
+     {
+      "x": 38,
+      "y": 22,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "850",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 1,
+      "agi": 5,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 21,
+      "y": 23,
+      "glyph": "%",
+      "name": "wet snapjaw corpse"
+     },
+     {
+      "x": 23,
+      "y": 23,
+      "glyph": "]",
+      "name": "wet woven tunic"
+     },
+     {
+      "x": 23,
+      "y": 23,
+      "glyph": "%",
+      "name": "wet snapjaw corpse"
+     }
+    ],
+    "features": [
+     {
+      "x": 10,
+      "y": 0,
+      "name": "watervine"
+     },
+     {
+      "x": 12,
+      "y": 0,
+      "name": "watervine"
+     },
+     {
+      "x": 14,
+      "y": 0,
+      "name": "watervine"
+     },
+     {
+      "x": 14,
+      "y": 0,
+      "name": "brinestalk"
+     },
+     {
+      "x": 15,
+      "y": 0,
+      "name": "watervine"
+     },
+     {
+      "x": 16,
+      "y": 0,
+      "name": "watervine"
+     },
+     {
+      "x": 17,
+      "y": 0,
+      "name": "watervine"
+     },
+     {
+      "x": 18,
+      "y": 0,
+      "name": "watervine"
+     },
+     {
+      "x": 19,
+      "y": 0,
+      "name": "watervine"
+     },
+     {
+      "x": 25,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 25,
+      "y": 0,
+      "name": "dirt path"
+     },
+     {
+      "x": 26,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 26,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 26,
+      "y": 0,
+      "name": "dirt path"
+     },
+     {
+      "x": 27,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 0,
+      "name": "dirt path"
+     },
+     {
+      "x": 28,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 28,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 30,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 30,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 31,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 31,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 31,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 34,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 34,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 34,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 34,
+      "y": 0,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 35,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 0,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 38,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 38,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 38,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 38,
+      "y": 0,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 65,
+      "y": 0,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 23,
+      "y": 1,
+      "name": "brinestalk"
+     },
+     {
+      "x": 26,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 26,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 26,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 26,
+      "y": 1,
+      "name": "dirt path"
+     },
+     {
+      "x": 27,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 1,
+      "name": "dirt path"
+     },
+     {
+      "x": 28,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 28,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 28,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 29,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 29,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 29,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 31,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 31,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 31,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 1,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 38,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 38,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 38,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 38,
+      "y": 1,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 40,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 40,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 40,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 40,
+      "y": 1,
+      "name": "brinestalk"
+     },
+     {
+      "x": 41,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 41,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 62,
+      "y": 1,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 63,
+      "y": 1,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 64,
+      "y": 1,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 65,
+      "y": 1,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 66,
+      "y": 1,
+      "name": "brinestalk"
+     },
+     {
+      "x": 15,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 16,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 16,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 17,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 17,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 17,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 2,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 27,
+      "y": 2,
+      "name": "bridge"
+     },
+     {
+      "x": 28,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 28,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 28,
+      "y": 2,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 28,
+      "y": 2,
+      "name": "bridge"
+     },
+     {
+      "x": 29,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 29,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 29,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 29,
+      "y": 2,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 31,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 31,
+      "y": 2,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 35,
+      "y": 2,
+      "name": "deep pool of 4003 drams of bloody brackish water"
+     },
+     {
+      "x": 40,
+      "y": 2,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 41,
+      "y": 2,
+      "name": "deep pool of 3980 drams of salty water"
+     },
+     {
+      "x": 41,
+      "y": 2,
+      "name": "wet brinestalk"
+     },
+     {
+      "x": 60,
+      "y": 2,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 61,
+      "y": 2,
+      "name": "deep pool of 3974 drams of salty water"
+     },
+     {
+      "x": 62,
+      "y": 2,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 63,
+      "y": 2,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 15,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 15,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 15,
+      "y": 3,
+      "name": "brinestalk"
+     },
+     {
+      "x": 16,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 16,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 16,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 17,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 17,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 17,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 24,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 25,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 25,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 25,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 25,
+      "y": 3,
+      "name": "bridge"
+     },
+     {
+      "x": 28,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 28,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 28,
+      "y": 3,
+      "name": "bridge"
+     },
+     {
+      "x": 29,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 29,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 29,
+      "y": 3,
+      "name": "bridge"
+     },
+     {
+      "x": 30,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 30,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 31,
+      "y": 3,
+      "name": "deep pool of 3980 drams of salty water"
+     },
+     {
+      "x": 31,
+      "y": 3,
+      "name": "wet brinestalk"
+     },
+     {
+      "x": 32,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 32,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 35,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 3,
+      "name": "deep pool of 4006 drams of bloody brackish water"
+     },
+     {
+      "x": 37,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 37,
+      "y": 3,
+      "name": "deep pool of 4004 drams of bloody brackish water"
+     },
+     {
+      "x": 38,
+      "y": 3,
+      "name": "deep pool of 3986 drams of brackish water"
+     },
+     {
+      "x": 38,
+      "y": 3,
+      "name": "wet brinestalk"
+     },
+     {
+      "x": 39,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 40,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 46,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 47,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 48,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 60,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 17,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 17,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 17,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 19,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 20,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 21,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 22,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 23,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 24,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 25,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 25,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 26,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 26,
+      "y": 4,
+      "name": "bridge"
+     },
+     {
+      "x": 27,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 27,
+      "y": 4,
+      "name": "bridge"
+     },
+     {
+      "x": 29,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 29,
+      "y": 4,
+      "name": "bridge"
+     },
+     {
+      "x": 30,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 30,
+      "y": 4,
+      "name": "bridge"
+     },
+     {
+      "x": 31,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 31,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 32,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 32,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 32,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 35,
+      "y": 4,
+      "name": "blood-stained [Widget]"
+     },
+     {
+      "x": 35,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 4,
+      "name": "deep pool of 3968 drams of bloody brackish water"
+     },
+     {
+      "x": 36,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 36,
+      "y": 4,
+      "name": "sap-stained [Widget]"
+     },
+     {
+      "x": 36,
+      "y": 4,
+      "name": "sap-stained [Widget]"
+     },
+     {
+      "x": 36,
+      "y": 4,
+      "name": "deep pool of 3982 drams of brackish water"
+     },
+     {
+      "x": 36,
+      "y": 4,
+      "name": "wet brinestalk"
+     },
+     {
+      "x": 37,
+      "y": 4,
+      "name": "blood-and-sap-stained [Widget]"
+     },
+     {
+      "x": 37,
+      "y": 4,
+      "name": "sap-and-blood-stained [Widget]"
+     },
+     {
+      "x": 37,
+      "y": 4,
+      "name": "deep pool of 4018 drams of brackish sugary water"
+     },
+     {
+      "x": 38,
+      "y": 4,
+      "name": "sap-and-blood-stained [Widget]"
+     },
+     {
+      "x": 38,
+      "y": 4,
+      "name": "deep pool of 4010 drams of brackish sugary water"
+     },
+     {
+      "x": 39,
+      "y": 4,
+      "name": "deep pool of 4003 drams of bloody brackish water"
+     },
+     {
+      "x": 40,
+      "y": 4,
+      "name": "deep pool of 3980 drams of salty water"
+     },
+     {
+      "x": 40,
+      "y": 4,
+      "name": "wet brinestalk"
+     },
+     {
+      "x": 45,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 46,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 50,
+      "y": 4,
+      "name": "deep pool of 3980 drams of salty water"
+     },
+     {
+      "x": 50,
+      "y": 4,
+      "name": "wet brinestalk"
+     },
+     {
+      "x": 53,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 54,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 55,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 13,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 13,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 14,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 14,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 14,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 15,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 15,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 15,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 15,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 16,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 16,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 18,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 5,
+      "name": "deep pool of 3980 drams of salty water"
+     },
+     {
+      "x": 18,
+      "y": 5,
+      "name": "wet brinestalk"
+     },
+     {
+      "x": 19,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 20,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 21,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 22,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 23,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 24,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 25,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 25,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 26,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 27,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 27,
+      "y": 5,
+      "name": "bridge"
+     },
+     {
+      "x": 28,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 28,
+      "y": 5,
+      "name": "bridge"
+     }
+    ]
+   },
+   "quests": [
+    {
+     "name": "What's Eating the Watervine?",
+     "finished": false,
+     "giver": "Mehmet",
+     "where": "Joppa",
+     "steps": [
+      {
+       "name": "Travel to Red Rock",
+       "text": "Journey two parasangs north of Joppa to Red Rock.",
+       "finished": true
+      },
+      {
+       "name": "Find the Vermin",
+       "text": "Find the creatures that are eating Joppa's watervine.",
+       "finished": false
+      },
+      {
+       "name": "Get a Corpse",
+       "text": "Collect a corpse from one of the creatures.",
+       "finished": false
+      },
+      {
+       "name": "Return with the Corpse",
+       "text": "Return to Joppa with the corpse of the watervine vermin.",
+       "finished": false
+      }
+     ]
+    },
+    {
+     "name": "Fetch Argyve a Knickknack",
+     "finished": false,
+     "giver": "Argyve",
+     "where": "Joppa",
+     "steps": [
+      {
+       "name": "Find a Knickknack",
+       "text": "Search the regions surrounding Joppa for an artifact.",
+       "finished": true
+      },
+      {
+       "name": "Return to Argyve",
+       "text": "Bring the artifact to Argyve.",
+       "finished": false
+      }
+     ]
+    },
+    {
+     "name": "Visit the Namritara Glassfold",
+     "finished": false,
+     "giver": null,
+     "where": "outskirts, Joppa",
+     "steps": [
+      {
+       "name": "Travel to the historical site of the Namritara Glassfold",
+       "text": "",
+       "finished": false
+      }
+     ]
+    },
+    {
+     "name": "Visit Ekavuh",
+     "finished": false,
+     "giver": null,
+     "where": "Red Rock, 2 strata deep",
+     "steps": [
+      {
+       "name": "Travel to the historical site of Ekavuh",
+       "text": "",
+       "finished": false
+      }
+     ]
+    }
+   ],
+   "inventory": [
+    "waterskin [empty]",
+    "waterskin [empty]",
+    "torch x9 (unburnt)",
+    "waterskin [13 drams of fresh water]",
+    "bear jerky [8 servings]",
+    "witchwood bark x4",
+    "copper nugget x4",
+    "bent metal sheet x2",
+    "fractured microchip",
+    "bedroll",
+    "bedroll",
+    "dreadroot tuber x6",
+    "failed energy relay x3",
+    "small violet tube",
+    "cave spider's right hindleg",
+    "cave spider's left mid-hindleg",
+    "blood-stained neck-ring \u00040 \t0",
+    "bronze battle axe x3 \u001a5 \u00031d2",
+    "furs \u00042 \t-1",
+    "bronze two-handed sword \u001a6 \u00031d6",
+    "short bow \u001a4 [empty]",
+    "bronze dagger \u001a5 \u00031d2",
+    "beaded bracelet x2 \u00040 \t0",
+    "leather armor \u00042 \t0",
+    "iron long sword \u001a6 \u00031d4",
+    "iron battle axe x2 \u001a6 \u00031d2+1",
+    "steel arrow \u001a4 \u00031d2 (4/1d3+1)",
+    "vinewafer",
+    "wooden arrow x4 \u001a4 \u00031d2 (4/1d4)",
+    "torch (half-burnt)",
+    "bronze long sword \u001a5 \u00031d3"
+   ],
+   "equipped": [
+    "studded leather armor \u00043 \t-2",
+    "leather cap \u00041 \t0",
+    "lit torch (blazing)",
+    "iron long sword \u001a6 \u00031d4",
+    "short bow \u001a4 \u00031d4 [wooden arrow]"
+   ],
+   "inventory_ids": [
+    "576",
+    "577",
+    "549",
+    "578",
+    "579",
+    "580",
+    "581",
+    "582",
+    "583",
+    "584",
+    "585",
+    "708",
+    "714",
+    "715",
+    "721",
+    "722",
+    "749",
+    "587",
+    "586",
+    "767",
+    "770",
+    "773",
+    "790",
+    "791",
+    "797",
+    "860",
+    "861",
+    "864",
+    "868",
+    "550",
+    "872"
+   ],
+   "equipped_ids": [
+    "766",
+    "765",
+    "869",
+    "750",
+    "865"
+   ],
+   "messages": [
+    "You pass by a deep pool of salty water.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a puddle of dilute salt.",
+    "You pass by some studded leather armor, a staff, and a snapjaw corpse.",
+    "You pass by some studded leather armor, a staff, and a snapjaw corpse.",
+    "You pass by some studded leather armor, a staff, and a snapjaw corpse.",
+    "You pass by some studded leather armor, a staff, and a snapjaw corpse.",
+    "There is a deep pool of brackish sugary water that way. Move northeast again to enter it and start swimming.",
+    "You pass by a set of campfire remains.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a set of campfire remains.",
+    "You see a giant dragonfly to the southeast and stop acting."
+   ]
+  },
+  {
+   "seq": 4239,
+   "mode": "run",
+   "wait": "map",
+   "autoact": null,
+   "time": "2026-11-27T00:34:02.227",
+   "turn": 145746,
+   "game": {
+    "id": "1f19697d-7a0e-4bbc-8a1c-b1efd156ea8d",
+    "mode": "Roleplay"
+   },
+   "screen": {
+    "w": 80,
+    "h": 25,
+    "rows": [
+     "..... .... .        .....   ......      ..... ........... ..      ..............",
+     ".......... ............ .   .....        ............. .....       .............",
+     "..................... ...                     ..............      .  ........ ..",
+     "............... .......                             ........     . .. .... .....",
+     "..................                                      ....     ...............",
+     "...............                 .. .                              .  ...........",
+     "........ . ...                   . ..   .......                  ... ...........",
+     ".   ..........              .     .................              ...............",
+     "... ...... ..       . ........     ......... ..............   .    .............",
+     "..............        ...... ..      ......................          ...........",
+     "...............                       ..  ...... . ...  ...          ...........",
+     " .............                                . ........   . .       ... ..... .",
+     " ............ ...                                 ......    ...     .... ..... .",
+     "...............  .. .......                       ........... ..    ............",
+     "............... . .......  ......                 .   ...... ..... .. . ..... . ",
+     "..  ............. ......   .....     ... ...      ................... .. ... ...",
+     "................. ......  ......    ......        ... .........  .       .... ..",
+     "............   .  ..............   ....           ..... ..........   .      . ..",
+     "...  . ....  ..   .... ........                  ......  ...... ....  .       ..",
+     ".   .....  .              ....                 ........  ...........          ..",
+     "............                                ...  .................... .  .   ...",
+     "............                             ..        .  ......... ......      ....",
+     "............                         .  .  . .  .... .............. ...... ... .",
+     " .. ........                        .      .  .  ............... ...... ... ... ",
+     "............                                 . .. .... ... ....................."
+    ],
+    "fg": [
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkGkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkYkYkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkGkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkYkYkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkYYkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kyykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkBkkkkkYkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkWkkkkkkkkkkkkkkkkYYkYkkkkYkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkYk",
+     "kkkkkkkkkkkkkkkkkkGkkkkkkkkkkkkkkkkkkkYkkkkkkkkkkkkkkkkkkkkkkkkYkkkkkkkkYkkkkkYk",
+     "kkkkkkkkkkkkkkkykkkGkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkGkkkkkGkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkGkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkYkkkkkGkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkykkkkkkkykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kyykkkkkkykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkWYWkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkWkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkGkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkkkkkkkkkkYkYkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+     "kkkkkkkkkkkkykkkkkkyykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+    ]
+   },
+   "player": {
+    "name": "Siwur",
+    "hp": 30,
+    "maxhp": 30,
+    "level": 4,
+    "av": 4,
+    "dv": 0,
+    "qn": 100,
+    "ms": 60,
+    "food": "Sated",
+    "water": "Wet",
+    "effects": [
+     "defensive stance"
+    ],
+    "x": 35,
+    "y": 10,
+    "zone": "JoppaWorld.11.21.0.1.10",
+    "zoneName": "salt marsh, surface"
+   },
+   "map": {
+    "w": 80,
+    "h": 25,
+    "rows": [
+     "*....¥....⌠.⌠⌠¥⌠⌠⌠⌠⌠.....···******~.~≈.~***..¥...........¥..~.≈~~~..............",
+     "..........⌠............¥*···*****~~.~≈~≈¥**...........¥.....~..≈~~¥.............",
+     "...............******i***·###≈~~≈~~≈~~~~~¥≈.................~.~≈~..¥¥........¥..",
+     "..............*¥*******.≈#####~¥~~~~%~%~~~≈≈~≈.~.~.≈.........~~~~.¥..¥....¥.....",
+     ".............*****~~~≈~~.≈#####~≈~..¥~≈~¥≈≈..≈≈~≈~i¥~~~~....~~.~~...............",
+     ".............**≈≈~¥≈.~~.~~.##¥#·**¥*..~~~¥¥~.≈¥.~≈.~~~~~..¥≈~≈~~~%.%%...........",
+     "........¥.¥..*≈~~~..≈~≈.~≈.~·····*¥.*%%¥**.....≈~~~~..~≈.~.~~...≈...¥...........",
+     ".  ¥........**.~≈~.≈~≈≈≈≈~≈≈*·····...******........~~...~≈~~≈.~~~...............",
+     "...¥......⌠.*¥~.¥≈~≈*¥..******·····...******¥..............¥⌠⌠.~~~~.............",
+     "...........***.~≈.≈≈~~...***`**'·····...********...........⌠⌠⌠.≈¥.~≈≈...........",
+     "...........****.~~.~~≈≈%.≈~≈≈~~≈··'@··..%\\******¥*¥***⌠⌠...⌠⌠⌠.~....~...........",
+     "¥........,.***¥≈~~.~.~■∙%..~~≈~~~######%%≈%.~~*%*******.⌠⌠⌠.⌠.¥~~~¥.≈...¥.....%.",
+     "¥..........**¥*..≈i~.~.%≈.~.≈~~~.≈~###%~.~¥.≈.~.≈~******⌠⌠⌠⌠...%≈≈~~....%.....%.",
+     "...........***. ¥..i.......≈.≈.≈~~#####¥~~~~≈~~~~≈*******....i..≈.≈i............",
+     "...............¥.¥.......%i......··###≈≈¥.≈.....~..⌠¥%****..¥.....¥..⌠.⌠.....¥.⌠",
+     ".. ¥.............¥......%∙%.....·····...%....~i~.~....*****..........⌠..⌠...¥.**",
+     ".................%......¥%......··'·......≈~..≈~≈~...¥.*****...⌠⌠.⌠⌠⌠⌠⌠⌠¥....⌠**",
+     "............ ¥••¥•..............···.....≈~~.≈≈≈~~¥.....⌠**********⌠⌠⌠.⌠⌠⌠¥⌠⌠.⌠**",
+     "... ¥.%.... ¥',•''....¥........·,··~~~¥~~~..~≈.≈¥......⌠¥******¥***.⌠⌠.⌠⌠⌠⌠%⌠⌠**",
+     ".  ¥..... ¥.~~≈..~≈≈~~.≈.~....'`###~¥...~~~..~~........⌠¥.**********⌠¥⌠⌠⌠⌠■∙■¥**",
+     "............~~.~.¥..≈~~~~≈~..#####~~~~~.¥~.~...⌠⌠..........***..*****⌠.~~.⌠%⌠***",
+     "............~≈≈≈≈.~≈¥~~~.~~~##¥##~~~~≈~~⌠..⌠⌠⌠⌠⌠⌠⌠¥.⌠⌠.........¥.*****⌠~≈.~⌠****",
+     "............≈.~≈.~.⌠⌠~~~.~~#####~¥~.~.i⌠.⌠⌠.⌠.⌠⌠....¥.............*¥******~***¥*",
+     "¥..¥........~¥~≈~≈.⌠¥%~%≈#¥####≈≈~~⌠.⌠⌠⌠⌠⌠⌠.⌠⌠.¥¥...............¥..****¥***¥***⌠",
+     "............ ¥≈¥≈..  ¥~≈~#·###~~~~~⌠⌠⌠⌠¥~¥≈~⌠.⌠..⌠....⌠...⌠.........**********.."
+    ],
+    "vis": [
+     "00000000011110111111100001111011001100100000000000011110000000000111000000000000",
+     "11000000000011111111111100111101000100101100000001111000000000111110000000000000",
+     "11111000000000111111111110011101000100001100000011100000000111110000000000000000",
+     "11111111100000011111111111001111100101111000001110000000111110000000000000000000",
+     "00111111111110000111111111110111100111111000011000100111100000000000000000000000",
+     "00000000111111111011111111111111110111110111111011111000000000000111100000000000",
+     "00000000000001111111111111111111111111111111111111000000000111111111100001000000",
+     "0  00000000000000001111111111111111111111111110000000111111111110000000000000000",
+     "00011100000000001000011111111111111111111111100111111111111100000001111111000000",
+     "11111111111111111111111111111111111111111111111111111111111110000000000000000000",
+     "11111111111111111111111111111111111111111111111110000000000000000000000000000000",
+     "00000000000000111111111111111111111111111111111111111111111110000000000000000000",
+     "00000000000001111111111111111111111111111110011111111111111111111111111000000000",
+     "000000000111100 1111111111111111111111111111000001111111111111111111111111111111",
+     "11111000000000000111111111111111111111110011111000000001111110001110000111111100",
+     "00 00000000000000111111111111111111111111001111110000000000011100000000000000000",
+     "00000000000000001111111111111111111111111100011111110000000000000111100000000000",
+     "000000000000 1101111110011111111111111111110000111011110000000000000011111000000",
+     "000 0000000 00011111001111111111111111111111000011000111100000000000000000110000",
+     "0  000000 0001111100001111111111111111011111100000010001100000000000000000000000",
+     "00000000001111110000111111111111111101101111111000000100010000000000000000000000",
+     "00000000111111000001111111111111111101100011111100000001000100000000000000000000",
+     "00000111111100000100111111111001111100100011111110000000110001000000000000000000",
+     "00011111110000001001111111111011101100110001111111000000001100010000000000000000",
+     "001111110000 011011  11110110011101100110001111100100000000011000000000000000000"
+    ],
+    "objects": [
+     {
+      "x": 21,
+      "y": 2,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "825",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 1,
+      "agi": 5,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 38,
+      "y": 3,
+      "glyph": "]",
+      "name": "wet gentling mask"
+     },
+     {
+      "x": 38,
+      "y": 3,
+      "glyph": "\\",
+      "name": "wet club"
+     },
+     {
+      "x": 38,
+      "y": 3,
+      "glyph": "%",
+      "name": "wet snapjaw corpse"
+     },
+     {
+      "x": 50,
+      "y": 4,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "840",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 1,
+      "agi": 5,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 65,
+      "y": 5,
+      "glyph": "%",
+      "name": "giant dragonfly corpse"
+     },
+     {
+      "x": 65,
+      "y": 5,
+      "glyph": "]",
+      "name": "slender cloth robe"
+     },
+     {
+      "x": 65,
+      "y": 5,
+      "glyph": "\\",
+      "name": "counterweighted bronze dagger"
+     },
+     {
+      "x": 65,
+      "y": 5,
+      "glyph": "¿",
+      "name": "waterskin"
+     },
+     {
+      "x": 65,
+      "y": 5,
+      "glyph": "%",
+      "name": "snapjaw corpse"
+     },
+     {
+      "x": 67,
+      "y": 5,
+      "glyph": "\\",
+      "name": "bronze long sword"
+     },
+     {
+      "x": 67,
+      "y": 5,
+      "glyph": "%",
+      "name": "snapjaw corpse"
+     },
+     {
+      "x": 68,
+      "y": 5,
+      "glyph": "%",
+      "name": "trash"
+     },
+     {
+      "x": 37,
+      "y": 6,
+      "glyph": "]",
+      "name": "studded leather armor"
+     },
+     {
+      "x": 37,
+      "y": 6,
+      "glyph": "\\",
+      "name": "staff"
+     },
+     {
+      "x": 37,
+      "y": 6,
+      "glyph": "%",
+      "name": "snapjaw corpse"
+     },
+     {
+      "x": 38,
+      "y": 6,
+      "glyph": "%",
+      "name": "sappy snapjaw corpse"
+     },
+     {
+      "x": 23,
+      "y": 10,
+      "glyph": "%",
+      "name": "wet trash"
+     },
+     {
+      "x": 40,
+      "y": 10,
+      "glyph": "%",
+      "name": "trash"
+     },
+     {
+      "x": 41,
+      "y": 10,
+      "glyph": "]",
+      "name": "studded leather armor x2"
+     },
+     {
+      "x": 41,
+      "y": 10,
+      "glyph": "\\",
+      "name": "bronze long sword"
+     },
+     {
+      "x": 41,
+      "y": 10,
+      "glyph": "%",
+      "name": "snapjaw corpse"
+     },
+     {
+      "x": 41,
+      "y": 10,
+      "glyph": "\\",
+      "name": "slender bronze two-handed sword"
+     },
+     {
+      "x": 22,
+      "y": 11,
+      "glyph": "%",
+      "name": "wet trash"
+     },
+     {
+      "x": 22,
+      "y": 11,
+      "glyph": "■",
+      "name": "wet chest"
+     },
+     {
+      "x": 24,
+      "y": 11,
+      "glyph": "%",
+      "name": "wet trash"
+     },
+     {
+      "x": 39,
+      "y": 11,
+      "glyph": "%",
+      "name": "wet glowfish corpse"
+     },
+     {
+      "x": 40,
+      "y": 11,
+      "glyph": "%",
+      "name": "wet glowfish corpse"
+     },
+     {
+      "x": 42,
+      "y": 11,
+      "glyph": "%",
+      "name": "wet glowfish corpse"
+     },
+     {
+      "x": 47,
+      "y": 11,
+      "glyph": "]",
+      "name": "slender wool kilt"
+     },
+     {
+      "x": 47,
+      "y": 11,
+      "glyph": "\\",
+      "name": "two-handed iron long sword"
+     },
+     {
+      "x": 47,
+      "y": 11,
+      "glyph": "%",
+      "name": "snapjaw corpse"
+     },
+     {
+      "x": 18,
+      "y": 12,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "822",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 1,
+      "agi": 6,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 23,
+      "y": 12,
+      "glyph": "%",
+      "name": "wet trash"
+     },
+     {
+      "x": 38,
+      "y": 12,
+      "glyph": "\\",
+      "name": "iron dagger"
+     },
+     {
+      "x": 38,
+      "y": 12,
+      "glyph": "}",
+      "name": "wooden buckler"
+     },
+     {
+      "x": 38,
+      "y": 12,
+      "glyph": "%",
+      "name": "snapjaw corpse"
+     },
+     {
+      "x": 63,
+      "y": 12,
+      "glyph": "%",
+      "name": "wet glowfish corpse"
+     },
+     {
+      "x": 19,
+      "y": 13,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "857",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 1,
+      "agi": 5,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 61,
+      "y": 13,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "824",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 1,
+      "agi": 6,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 67,
+      "y": 13,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "839",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 0,
+      "agi": 6,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 25,
+      "y": 14,
+      "glyph": "%",
+      "name": "trash"
+     },
+     {
+      "x": 26,
+      "y": 14,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "862",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 1,
+      "agi": 6,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 24,
+      "y": 15,
+      "glyph": "%",
+      "name": "trash"
+     },
+     {
+      "x": 26,
+      "y": 15,
+      "glyph": "%",
+      "name": "trash"
+     },
+     {
+      "x": 40,
+      "y": 15,
+      "glyph": "\\",
+      "name": "weird artifact"
+     },
+     {
+      "x": 40,
+      "y": 15,
+      "glyph": "%",
+      "name": "snapjaw corpse"
+     },
+     {
+      "x": 46,
+      "y": 15,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "851",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 1,
+      "agi": 5,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 17,
+      "y": 16,
+      "glyph": "%",
+      "name": "trash"
+     },
+     {
+      "x": 25,
+      "y": 16,
+      "glyph": "%",
+      "name": "trash"
+     },
+     {
+      "x": 75,
+      "y": 18,
+      "glyph": "%",
+      "name": "trash"
+     },
+     {
+      "x": 38,
+      "y": 22,
+      "glyph": "i",
+      "name": "giant dragonfly",
+      "id": "850",
+      "creature": true,
+      "hostile": false,
+      "seen": true,
+      "av": 2,
+      "dv": 0,
+      "qn": 100,
+      "ms": 100,
+      "lvl": 1,
+      "diff": "{{w|Average}}",
+      "str": 1,
+      "agi": 5,
+      "attacks": [
+       {
+        "name": "bite",
+        "dmg": "1d3",
+        "pen": 0,
+        "cap": 1000,
+        "hit": 0,
+        "part": "Head"
+       },
+       {
+        "name": "wings",
+        "dmg": "1d2",
+        "pen": 0,
+        "cap": 0,
+        "hit": 0,
+        "part": "Back"
+       }
+      ],
+      "parts": [
+       "Springy",
+       "DarkVision",
+       "Wings"
+      ],
+      "desc": "Big diaphanous wings bat the air as it drones in place.",
+      "hp": 6,
+      "maxhp": 6,
+      "effects": [
+       "flying"
+      ],
+      "mutations": [
+       "Night Vision",
+       "Wings"
+      ]
+     },
+     {
+      "x": 21,
+      "y": 23,
+      "glyph": "%",
+      "name": "wet snapjaw corpse"
+     },
+     {
+      "x": 23,
+      "y": 23,
+      "glyph": "]",
+      "name": "wet woven tunic"
+     },
+     {
+      "x": 23,
+      "y": 23,
+      "glyph": "%",
+      "name": "wet snapjaw corpse"
+     }
+    ],
+    "features": [
+     {
+      "x": 10,
+      "y": 0,
+      "name": "watervine"
+     },
+     {
+      "x": 12,
+      "y": 0,
+      "name": "watervine"
+     },
+     {
+      "x": 14,
+      "y": 0,
+      "name": "watervine"
+     },
+     {
+      "x": 14,
+      "y": 0,
+      "name": "brinestalk"
+     },
+     {
+      "x": 15,
+      "y": 0,
+      "name": "watervine"
+     },
+     {
+      "x": 16,
+      "y": 0,
+      "name": "watervine"
+     },
+     {
+      "x": 17,
+      "y": 0,
+      "name": "watervine"
+     },
+     {
+      "x": 18,
+      "y": 0,
+      "name": "watervine"
+     },
+     {
+      "x": 19,
+      "y": 0,
+      "name": "watervine"
+     },
+     {
+      "x": 25,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 25,
+      "y": 0,
+      "name": "dirt path"
+     },
+     {
+      "x": 26,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 26,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 26,
+      "y": 0,
+      "name": "dirt path"
+     },
+     {
+      "x": 27,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 0,
+      "name": "dirt path"
+     },
+     {
+      "x": 28,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 28,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 30,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 30,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 31,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 31,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 31,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 34,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 34,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 34,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 34,
+      "y": 0,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 35,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 0,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 38,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 38,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 38,
+      "y": 0,
+      "name": "[Widget]"
+     },
+     {
+      "x": 38,
+      "y": 0,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 65,
+      "y": 0,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 23,
+      "y": 1,
+      "name": "brinestalk"
+     },
+     {
+      "x": 26,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 26,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 26,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 26,
+      "y": 1,
+      "name": "dirt path"
+     },
+     {
+      "x": 27,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 1,
+      "name": "dirt path"
+     },
+     {
+      "x": 28,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 28,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 28,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 29,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 29,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 29,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 31,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 31,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 31,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 1,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 38,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 38,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 38,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 38,
+      "y": 1,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 40,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 40,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 40,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 40,
+      "y": 1,
+      "name": "brinestalk"
+     },
+     {
+      "x": 41,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 41,
+      "y": 1,
+      "name": "[Widget]"
+     },
+     {
+      "x": 62,
+      "y": 1,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 63,
+      "y": 1,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 64,
+      "y": 1,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 65,
+      "y": 1,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 66,
+      "y": 1,
+      "name": "brinestalk"
+     },
+     {
+      "x": 15,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 16,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 16,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 17,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 17,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 17,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 27,
+      "y": 2,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 27,
+      "y": 2,
+      "name": "bridge"
+     },
+     {
+      "x": 28,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 28,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 28,
+      "y": 2,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 28,
+      "y": 2,
+      "name": "bridge"
+     },
+     {
+      "x": 29,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 29,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 29,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 29,
+      "y": 2,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 31,
+      "y": 2,
+      "name": "[Widget]"
+     },
+     {
+      "x": 31,
+      "y": 2,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 35,
+      "y": 2,
+      "name": "deep pool of 4003 drams of bloody brackish water"
+     },
+     {
+      "x": 40,
+      "y": 2,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 41,
+      "y": 2,
+      "name": "deep pool of 3980 drams of salty water"
+     },
+     {
+      "x": 41,
+      "y": 2,
+      "name": "wet brinestalk"
+     },
+     {
+      "x": 60,
+      "y": 2,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 61,
+      "y": 2,
+      "name": "deep pool of 3974 drams of salty water"
+     },
+     {
+      "x": 62,
+      "y": 2,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 63,
+      "y": 2,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 15,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 15,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 15,
+      "y": 3,
+      "name": "brinestalk"
+     },
+     {
+      "x": 16,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 16,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 16,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 17,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 17,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 17,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 24,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 25,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 25,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 25,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 25,
+      "y": 3,
+      "name": "bridge"
+     },
+     {
+      "x": 28,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 28,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 28,
+      "y": 3,
+      "name": "bridge"
+     },
+     {
+      "x": 29,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 29,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 29,
+      "y": 3,
+      "name": "bridge"
+     },
+     {
+      "x": 30,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 30,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 31,
+      "y": 3,
+      "name": "deep pool of 3980 drams of salty water"
+     },
+     {
+      "x": 31,
+      "y": 3,
+      "name": "wet brinestalk"
+     },
+     {
+      "x": 32,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 32,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 35,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 3,
+      "name": "deep pool of 4006 drams of bloody brackish water"
+     },
+     {
+      "x": 37,
+      "y": 3,
+      "name": "[Widget]"
+     },
+     {
+      "x": 37,
+      "y": 3,
+      "name": "deep pool of 4004 drams of bloody brackish water"
+     },
+     {
+      "x": 38,
+      "y": 3,
+      "name": "deep pool of 3986 drams of brackish water"
+     },
+     {
+      "x": 38,
+      "y": 3,
+      "name": "wet brinestalk"
+     },
+     {
+      "x": 39,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 40,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 46,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 47,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 48,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 60,
+      "y": 3,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 17,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 17,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 17,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 19,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 20,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 21,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 22,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 23,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 24,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 25,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 25,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 26,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 26,
+      "y": 4,
+      "name": "bridge"
+     },
+     {
+      "x": 27,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 27,
+      "y": 4,
+      "name": "bridge"
+     },
+     {
+      "x": 29,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 29,
+      "y": 4,
+      "name": "bridge"
+     },
+     {
+      "x": 30,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 30,
+      "y": 4,
+      "name": "bridge"
+     },
+     {
+      "x": 31,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 31,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 32,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 32,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 32,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 35,
+      "y": 4,
+      "name": "blood-stained [Widget]"
+     },
+     {
+      "x": 35,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 35,
+      "y": 4,
+      "name": "deep pool of 3968 drams of bloody brackish water"
+     },
+     {
+      "x": 36,
+      "y": 4,
+      "name": "[Widget]"
+     },
+     {
+      "x": 36,
+      "y": 4,
+      "name": "sap-stained [Widget]"
+     },
+     {
+      "x": 36,
+      "y": 4,
+      "name": "sap-stained [Widget]"
+     },
+     {
+      "x": 36,
+      "y": 4,
+      "name": "deep pool of 3982 drams of brackish water"
+     },
+     {
+      "x": 36,
+      "y": 4,
+      "name": "wet brinestalk"
+     },
+     {
+      "x": 37,
+      "y": 4,
+      "name": "blood-and-sap-stained [Widget]"
+     },
+     {
+      "x": 37,
+      "y": 4,
+      "name": "sap-and-blood-stained [Widget]"
+     },
+     {
+      "x": 37,
+      "y": 4,
+      "name": "deep pool of 4018 drams of brackish sugary water"
+     },
+     {
+      "x": 38,
+      "y": 4,
+      "name": "sap-and-blood-stained [Widget]"
+     },
+     {
+      "x": 38,
+      "y": 4,
+      "name": "deep pool of 4010 drams of brackish sugary water"
+     },
+     {
+      "x": 39,
+      "y": 4,
+      "name": "deep pool of 4003 drams of bloody brackish water"
+     },
+     {
+      "x": 40,
+      "y": 4,
+      "name": "deep pool of 3980 drams of salty water"
+     },
+     {
+      "x": 40,
+      "y": 4,
+      "name": "wet brinestalk"
+     },
+     {
+      "x": 45,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 46,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 50,
+      "y": 4,
+      "name": "deep pool of 3980 drams of salty water"
+     },
+     {
+      "x": 50,
+      "y": 4,
+      "name": "wet brinestalk"
+     },
+     {
+      "x": 53,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 54,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 55,
+      "y": 4,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 13,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 13,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 14,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 14,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 14,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 15,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 15,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 15,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 15,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 16,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 16,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 18,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 18,
+      "y": 5,
+      "name": "deep pool of 3980 drams of salty water"
+     },
+     {
+      "x": 18,
+      "y": 5,
+      "name": "wet brinestalk"
+     },
+     {
+      "x": 19,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 19,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 20,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 20,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 21,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 21,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 22,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 22,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 23,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 23,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 24,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 24,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 25,
+      "y": 5,
+      "name": "[Widget]"
+     },
+     {
+      "x": 25,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 26,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 27,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 27,
+      "y": 5,
+      "name": "bridge"
+     },
+     {
+      "x": 28,
+      "y": 5,
+      "name": "deep pool of 4000 drams of salty water"
+     },
+     {
+      "x": 28,
+      "y": 5,
+      "name": "bridge"
+     }
+    ]
+   },
+   "quests": [
+    {
+     "name": "What's Eating the Watervine?",
+     "finished": false,
+     "giver": "Mehmet",
+     "where": "Joppa",
+     "steps": [
+      {
+       "name": "Travel to Red Rock",
+       "text": "Journey two parasangs north of Joppa to Red Rock.",
+       "finished": true
+      },
+      {
+       "name": "Find the Vermin",
+       "text": "Find the creatures that are eating Joppa's watervine.",
+       "finished": false
+      },
+      {
+       "name": "Get a Corpse",
+       "text": "Collect a corpse from one of the creatures.",
+       "finished": false
+      },
+      {
+       "name": "Return with the Corpse",
+       "text": "Return to Joppa with the corpse of the watervine vermin.",
+       "finished": false
+      }
+     ]
+    },
+    {
+     "name": "Fetch Argyve a Knickknack",
+     "finished": false,
+     "giver": "Argyve",
+     "where": "Joppa",
+     "steps": [
+      {
+       "name": "Find a Knickknack",
+       "text": "Search the regions surrounding Joppa for an artifact.",
+       "finished": true
+      },
+      {
+       "name": "Return to Argyve",
+       "text": "Bring the artifact to Argyve.",
+       "finished": false
+      }
+     ]
+    },
+    {
+     "name": "Visit the Namritara Glassfold",
+     "finished": false,
+     "giver": null,
+     "where": "outskirts, Joppa",
+     "steps": [
+      {
+       "name": "Travel to the historical site of the Namritara Glassfold",
+       "text": "",
+       "finished": false
+      }
+     ]
+    },
+    {
+     "name": "Visit Ekavuh",
+     "finished": false,
+     "giver": null,
+     "where": "Red Rock, 2 strata deep",
+     "steps": [
+      {
+       "name": "Travel to the historical site of Ekavuh",
+       "text": "",
+       "finished": false
+      }
+     ]
+    }
+   ],
+   "inventory": [
+    "waterskin [empty]",
+    "waterskin [empty]",
+    "torch x9 (unburnt)",
+    "waterskin [13 drams of fresh water]",
+    "bear jerky [8 servings]",
+    "witchwood bark x4",
+    "copper nugget x4",
+    "bent metal sheet x2",
+    "fractured microchip",
+    "bedroll",
+    "bedroll",
+    "dreadroot tuber x6",
+    "failed energy relay x3",
+    "small violet tube",
+    "cave spider's right hindleg",
+    "cave spider's left mid-hindleg",
+    "blood-stained neck-ring \u00040 \t0",
+    "bronze battle axe x3 \u001a5 \u00031d2",
+    "furs \u00042 \t-1",
+    "bronze two-handed sword \u001a6 \u00031d6",
+    "short bow \u001a4 [empty]",
+    "bronze dagger \u001a5 \u00031d2",
+    "beaded bracelet x2 \u00040 \t0",
+    "leather armor \u00042 \t0",
+    "iron long sword \u001a6 \u00031d4",
+    "iron battle axe x2 \u001a6 \u00031d2+1",
+    "steel arrow \u001a4 \u00031d2 (4/1d3+1)",
+    "vinewafer",
+    "wooden arrow x4 \u001a4 \u00031d2 (4/1d4)",
+    "torch (half-burnt)",
+    "bronze long sword \u001a5 \u00031d3"
+   ],
+   "equipped": [
+    "studded leather armor \u00043 \t-2",
+    "leather cap \u00041 \t0",
+    "lit torch (blazing)",
+    "iron long sword \u001a6 \u00031d4",
+    "short bow \u001a4 \u00031d4 [wooden arrow]"
+   ],
+   "inventory_ids": [
+    "576",
+    "577",
+    "549",
+    "578",
+    "579",
+    "580",
+    "581",
+    "582",
+    "583",
+    "584",
+    "585",
+    "708",
+    "714",
+    "715",
+    "721",
+    "722",
+    "749",
+    "587",
+    "586",
+    "767",
+    "770",
+    "773",
+    "790",
+    "791",
+    "797",
+    "860",
+    "861",
+    "864",
+    "868",
+    "550",
+    "872"
+   ],
+   "equipped_ids": [
+    "766",
+    "765",
+    "869",
+    "750",
+    "865"
+   ],
+   "messages": [
+    "You pass by a deep pool of salty water.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a puddle of dilute salt.",
+    "You pass by some studded leather armor, a staff, and a snapjaw corpse.",
+    "You pass by some studded leather armor, a staff, and a snapjaw corpse.",
+    "You pass by some studded leather armor, a staff, and a snapjaw corpse.",
+    "You pass by some studded leather armor, a staff, and a snapjaw corpse.",
+    "There is a deep pool of brackish sugary water that way. Move northeast again to enter it and start swimming.",
+    "You pass by a set of campfire remains.",
+    "You pass by a deep pool of salty water.",
+    "You pass by a set of campfire remains.",
+    "You see a giant dragonfly to the southeast and stop acting."
+   ]
+  }
+ ],
+ "expect": {
+  "answer_re": "^CMD CmdAutoExplore$",
+  "answer_not_re": "^STOP"
+ }
+}

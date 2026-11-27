@@ -24,7 +24,7 @@ One brain call per key wait; the answer is lines (`brain/step.py`'s docstring ha
 
 | To do this | Use | Notes |
 |---|---|---|
-| **Go up or down a level** | `CMD CmdMoveD` / `CMD CmdMoveU` anywhere in the zone | Off the stairs the game asks "Would you like to walk to the nearest stairway down? [Yes] [No]" (or up): `KEY y` walks there with its own pathing, then the same command again takes the stairs. No need to find or walk to the stairs yourself. You arrive on the opposite stairs. |
+| **Go up or down a level** | `CMD CmdMoveD` / `CMD CmdMoveU` anywhere in the zone | Off the stairs the game asks "Would you like to walk to the nearest stairway down? [Yes] [No]" (or up): `KEY y` walks there with its own pathing, then the same command again takes the stairs. No need to find or walk to the stairs yourself. You arrive on the opposite stairs. The prompt shows even when no stairs are known; then `y` answers "There are no stairways leading downward nearby" (Space dismisses it). |
 | Go to the world map | `CMD CmdMoveU` on the surface | One world-map step (`CmdMoveN`...) is a parasang and costs 300 turns, plus water and a chance of getting lost. |
 | Enter a world-map tile | `CMD CmdMoveD` | A town tile asks "a) Current location" or "b) Center": the town is the centre zone. |
 | Walk to a zone edge | `CMD CmdMoveFarN` (S/E/W) | The game's pathing to that edge; walking off it enters the next zone of the parasang. `tools/next_zone.py` does edge, crossing and the next explore plan. |
@@ -47,7 +47,7 @@ One brain call per key wait; the answer is lines (`brain/step.py`'s docstring ha
 | To do this | Use | Notes |
 |---|---|---|
 | Look at something (free) | `CMD CmdLook`, raw direction keys move the cursor | The card: description, health, difficulty for us, attitude. Escape closes it; a Look panel left open swallows commands. |
-| Melee | `CMD CmdAttack<dir>` (N, NE, ... ) | Messages carry the rolls: "[17]" ours, "[2 vs 10]" theirs vs our DV. |
+| Melee | `CMD CmdAttack<dir>` (N, NE, ... ) | Messages carry the rolls: "[17]" ours, "[2 vs 10]" theirs vs our DV. The "health has dropped below 40%" popup (wait `key`) blocks the next command: `KEY Space` first. |
 | An ability | `CMD CmdAbilities`, cursor to it, `KEY Space`; with `AIM x y` first for targeted ones | The list shows "[N turn cooldown]" while one cools; Escape out costs no turn. The fight script fires Freezing Ray and Charge itself. |
 | Shoot | `CMD CmdFire`, `CMD CmdReload` | Reload in downtime. |
 | Kill rooted enemies | `tools/kill.py <kind>` / `--rooted`; groups that never move: `tools/siege.py <kind>` | |
@@ -62,6 +62,7 @@ One brain call per key wait; the answer is lines (`brain/step.py`'s docstring ha
 | Trade | `tools/menu.py trade <dir> --sell ... --buy ... --examine ...` | Trade controls are commands (`CmdTradeOffer`, `CmdVendorExamine` to identify...). Prices in drams of water; rounding goes the merchant's way. |
 | The quest log | `CMD CmdQuests`; the snapshot's `quests` has it too | |
 | Character sheet | `CMD CmdCharacter`; `tools/profile.py` records it | Run profile.py after every level-up. |
+| Spend points | `CMD CmdCharacter`, `KEY RightArrow` to the mutations column (arrows move the cursor), `KEY Space`, read the this-rank/next-rank card, `KEY y`, `KEY Space` for the popup, `KEY Escape` | 1 MP raises a mutation a rank, and `M` buys a random new one for 4 MP. A mutation's rank is capped by level ("You may not advance this mutation's rank yet"). Skills: `KEY Keypad7` (plain `7` does nothing). Keypad2/8 move, Keypad4/6 collapse or expand a group, Space buys and asks "Are you sure", `KEY y` confirms. Send menu keys one per call: batched keys got dropped here. Space on an owned skill only says "You already have that skill". A skill listed without a price is owned. A tree's proficiency (Long Blade Proficiency) comes free with it. Stances are abilities: `CmdAbilities` and the stance's letter switches one on. Record the reasoning in `research/points_plan_<character>.md`. |
 | Save | system menu (`CMD CmdSystemMenu`): Save and Quit saves anywhere; "k) Set Checkpoint" in a settlement | Roleplay: entering or leaving a town is a checkpoint; a death reloads it. |
 
 ## Reading the game without pressing anything

@@ -26,27 +26,30 @@
     25,
     25,
     25,
+    25,
+    25,
     25
    ],
    "max_hit": 5,
    "difficulty": "Average",
    "mobile": false,
-   "kills": 22,
+   "kills": 24,
    "obs": {
-    "attacks": 49,
-    "hits": 26,
-    "dmg": 67,
-    "mult": 28,
-    "av": 63,
-    "av_n": 26,
-    "turns": 39,
-    "last_turn": 142538
+    "attacks": 50,
+    "hits": 27,
+    "dmg": 69,
+    "mult": 29,
+    "av": 65,
+    "av_n": 27,
+    "turns": 40,
+    "last_turn": 142758
    }
   },
   "seed-spitting vine": {
    "verdict": "fight",
    "effects": [],
    "xp": [
+    25,
     25,
     25,
     25,
@@ -60,7 +63,7 @@
    "mobile": false,
    "ranged": true,
    "engage_hp_fraction": 0.9,
-   "kills": 7,
+   "kills": 8,
    "obs": {
     "attacks": 16,
     "hits": 16,
@@ -83,21 +86,22 @@
     50,
     50,
     50,
+    50,
     50
    ],
    "max_hit": 4,
    "difficulty": "Average",
    "mobile": true,
-   "kills": 8,
+   "kills": 9,
    "obs": {
-    "attacks": 75,
-    "hits": 51,
-    "dmg": 81,
-    "mult": 53,
-    "av": 110,
-    "av_n": 51,
-    "turns": 58,
-    "last_turn": 142585
+    "attacks": 85,
+    "hits": 60,
+    "dmg": 96,
+    "mult": 62,
+    "av": 128,
+    "av_n": 60,
+    "turns": 67,
+    "last_turn": 143158
    }
   },
   "giant centipede": {
@@ -119,14 +123,14 @@
    "mobile": true,
    "kills": 9,
    "obs": {
-    "attacks": 27,
-    "hits": 20,
-    "dmg": 44,
-    "mult": 24,
-    "av": 47,
-    "av_n": 19,
-    "turns": 22,
-    "last_turn": 370321
+    "attacks": 28,
+    "hits": 21,
+    "dmg": 47,
+    "mult": 26,
+    "av": 49,
+    "av_n": 20,
+    "turns": 23,
+    "last_turn": 142699
    }
   },
   "croc": {
@@ -150,14 +154,14 @@
    "mobile": true,
    "kills": 11,
    "obs": {
-    "attacks": 18,
-    "hits": 10,
-    "dmg": 24,
-    "mult": 11,
-    "av": 23,
-    "av_n": 10,
-    "turns": 18,
-    "last_turn": 161325
+    "attacks": 19,
+    "hits": 11,
+    "dmg": 26,
+    "mult": 12,
+    "av": 27,
+    "av_n": 11,
+    "turns": 19,
+    "last_turn": 144628
    }
   },
   "giant amoeba": {
@@ -198,21 +202,24 @@
     10,
     10,
     10,
+    10,
+    10,
+    10,
     10
    ],
    "max_hit": 2,
    "prey": true,
    "mobile": true,
-   "kills": 13,
+   "kills": 16,
    "obs": {
-    "attacks": 6,
-    "hits": 4,
-    "dmg": 5,
-    "mult": 5,
-    "av": 12,
-    "av_n": 4,
-    "turns": 6,
-    "last_turn": 368529
+    "attacks": 8,
+    "hits": 6,
+    "dmg": 7,
+    "mult": 7,
+    "av": 20,
+    "av_n": 6,
+    "turns": 8,
+    "last_turn": 143571
    }
   },
   "dreadroot": {
@@ -227,7 +234,7 @@
    "difficulty": "Average",
    "xp_note": "died to 2 damage, gave no XP",
    "harmless": true,
-   "kills": 67
+   "kills": 76
   },
   "snapjaw scavenger": {
    "verdict": "fight",
@@ -256,22 +263,30 @@
     10,
     10,
     10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
     10
    ],
    "max_hit": 4,
    "mobile": true,
    "difficulty": "Easy",
    "swarmer": true,
-   "kills": 25,
+   "kills": 36,
    "obs": {
-    "attacks": 28,
-    "hits": 17,
-    "dmg": 38,
-    "mult": 18,
-    "av": 30,
-    "av_n": 17,
-    "turns": 22,
-    "last_turn": 366714
+    "attacks": 31,
+    "hits": 18,
+    "dmg": 40,
+    "mult": 19,
+    "av": 34,
+    "av_n": 18,
+    "turns": 25,
+    "last_turn": 144433
    }
   },
   "young ivory": {
@@ -532,8 +547,14 @@
   "glowfish": {
    "verdict": "fight",
    "effects": [],
-   "kills": 27,
+   "kills": 35,
    "xp": [
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
     25,
     25,
     25,
@@ -566,14 +587,14 @@
    "prey": true,
    "difficulty": "Average",
    "obs": {
-    "attacks": 40,
-    "hits": 9,
-    "dmg": 15,
-    "mult": 9,
-    "av": 18,
-    "av_n": 9,
-    "turns": 38,
-    "last_turn": 141093
+    "attacks": 45,
+    "hits": 10,
+    "dmg": 18,
+    "mult": 10,
+    "av": 22,
+    "av_n": 10,
+    "turns": 43,
+    "last_turn": 144646
    }
   },
   "giant dragonfly": {
@@ -597,9 +618,26 @@
   },
   "glowpad": {
    "verdict": "fight",
-   "effects": [],
-   "kills": 46,
+   "effects": [
+    "glowpad is stunned",
+    "stunned"
+   ],
+   "kills": 61,
    "xp": [
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
     25,
     25,
     25,
@@ -651,14 +689,14 @@
    "prey": true,
    "difficulty": "Average",
    "obs": {
-    "attacks": 518,
-    "hits": 144,
-    "dmg": 272,
-    "mult": 145,
-    "av": 331,
-    "av_n": 144,
-    "turns": 375,
-    "last_turn": 207249
+    "attacks": 623,
+    "hits": 155,
+    "dmg": 292,
+    "mult": 156,
+    "av": 375,
+    "av_n": 155,
+    "turns": 449,
+    "last_turn": 146399
    },
    "mobile": false
   },
@@ -756,6 +794,33 @@
    "max_hit": 0,
    "prey": false,
    "note": "townsfolk parts: Pettable"
+  },
+  "slumberling": {
+   "verdict": "avoid",
+   "effects": [],
+   "kills": 0,
+   "xp": [],
+   "max_hit": 0,
+   "difficulty": "Impossible",
+   "mobile": true
+  },
+  "hulking snapjaw firesnarler": {
+   "verdict": "avoid",
+   "effects": [],
+   "kills": 0,
+   "xp": [],
+   "max_hit": 0,
+   "difficulty": "Average",
+   "mobile": true
+  },
+  "snapjaw warrior": {
+   "verdict": "fight",
+   "effects": [],
+   "kills": 1,
+   "xp": [],
+   "max_hit": 0,
+   "difficulty": "Average",
+   "mobile": true
   }
  },
  "food": [
@@ -859,6 +924,10 @@
   "slime": {
    "note": "slime: you can slip; walk around",
    "turn": 371191
+  },
+  "oil": {
+   "note": "Flammable: worth filling a container to sell, but never carry or stand in it near fire (the Firesnarler's pyrokinesis).",
+   "turn": 143786
   }
  },
  "feature_kinds": {
@@ -1057,6 +1126,10 @@
   "wine weep": {
    "note": "a spring of wine: fill every empty container and sell it (the user, 2026-11-26)",
    "turn": 371191
+  },
+  "shimmering heat": {
+   "note": "The warning of a pyrokinesis strike (a Snapjaw Firesnarler's): it burns next turn and sets you on fire. Step out of it at once.",
+   "turn": 143687
   }
  }
 }

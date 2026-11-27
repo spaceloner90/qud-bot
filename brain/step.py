@@ -29,6 +29,7 @@ MEMORY = ROOT / "live" / "memory.json"
 SAY_TO_GAME_LOG = False
 NO_PROGRESS_CALLS = 6  # identical answers with nothing changing in the game before handing over
 IDLE_WAIT_CALLS = 25  # waits in a row at full HP with nothing hostile in view before handing over
+PACE_CALLS = 12  # step answers in a row on at most two cells (while turns pass) before handing over
 sys.path.insert(0, str(ROOT / "brain"))
 
 
@@ -40,6 +41,27 @@ def load_json(path, default):
 
 
 HANDOVER = ROOT / "live" / "handover.json"
+
+
+def pacing(memory, state, acts, in_remote):
+    """The pacing failsafe: a reason to hand over when the last PACE_CALLS step answers (GOTO, CmdMove)
+    all landed on at most two cells while game turns passed, else None. Any other kind of answer resets
+    it. Only scripts' answers count, not the LLM's remote stage."""
+    steps = [l for l in acts if l.startswith(("GOTO", "CMD CmdMove"))]
+    if not steps:
+        memory.pop("_trail", None)
+        return None
+    if in_remote or state.get("wait") != "map":
+        return None
+    p = state.get("player") or {}
+    trail = (memory.get("_trail") or [])[-(PACE_CALLS - 1):] + [[p.get("x"), p.get("y"), state.get("turn") or 0]]
+    memory["_trail"] = trail
+    cells = {(c[0], c[1]) for c in trail}
+    if len(trail) >= PACE_CALLS and len(cells) <= 2 and trail[-1][2] > trail[0][2]:
+        memory.pop("_trail", None)
+        return (f"pacing: {PACE_CALLS} steps between {' and '.join(map(str, sorted(cells)))} over "
+                f"{trail[-1][2] - trail[0][2]} turns")
+    return None
 
 
 def signal_handover(state, reason):
@@ -196,8 +218,16 @@ def main():
                 words = [w for w in detail if len(w) > 1 or w.isdigit()][:8]
                 lines.append(f"VOICE handoff: Pausing to think: {reason}" + (", " + " ".join(words) if words else "") + ".")
     except Exception:
-        lines = ["STOP brain exception: " + traceback.format_exc().strip().splitlines()[-1]]
+        err = traceback.format_exc().strip().splitlines()[-1]
         sys.stderr.write(traceback.format_exc())
+        # A script that fails (a half-done edit, 2026-11-27: a NameError stopped the run and the owner had
+        # to press F1) holds the run in the remote stage and wakes the LLM, rather than ending it. The
+        # remote stage failing too is the one case left that stops.
+        failed = (locals().get("stage") or {}).get("script")
+        if memory.get("_hold") or failed in (None, "remote"):
+            lines = ["STOP brain exception: " + err]
+        else:
+            lines = hand_over(memory, state, "brain exception: " + err)
 
     # No-progress failsafe for every script but the LLM's own remote stage (the user, 2026-11-25: a stuck
     # bot must be caught by observing that the game doesn't respond): the same game action answered again
@@ -218,6 +248,12 @@ def main():
                 memory, state, f"no progress: {n} answers ({acts[0]}) and the game hasn't changed")
     else:
         memory.pop("_same", None)
+    # Pacing failsafe, the same idea for walking: game turns pass, but the steps keep landing on the same
+    # two cells (2026-11-27: a fight target and a gear walk took turns, and the fight routine's own pacing
+    # check didn't see the gear steps; earlier a fight flip-flop ran 40 turns). Only step answers count.
+    why = pacing(memory, state, acts, in_remote)
+    if why:
+        lines = [l for l in lines if l.startswith(("SAY", "VOICE"))] + hand_over(memory, state, why)
     # Idle failsafe: waiting turn after turn at full HP with nothing hostile in view is waiting for
     # nothing (2026-11-25: a "stay" hold went on 150 turns after the croc died; the user: never assume
     # enemies will do something without safeties and wake-ups). Hand over after IDLE_WAIT_CALLS.

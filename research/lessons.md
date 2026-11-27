@@ -111,6 +111,16 @@ Ways of looking, not item rules. Each came from something available that went un
 
 ## Running the bot
 
+- **What to accept depends on how sure we are of what's around** (11-27). A rule made for danger (never
+  path through deep water, made for fights and escapes) is wrong in a cleared, controlled zone, where a
+  swim for loot is fine (Amphibious; relight the torch after). Scripts take the context as an input,
+  such as hostiles known alive nearby, HP and the time since the last threat, rather than one blanket
+  ban. "Unreachable" means unreachable now, under these conditions, not for good.
+- **Our scripts' failure is never a reason to give up on an area** (11-27). Outside a recorded run, when
+  the explorer stalls or loops because of our own code (stuck on a creature sighting, chasing unreachable
+  loot, flip-flopping between targets), stop and fix it live, vet it, then finish the area. Leaving a
+  zone or a dungeon is for real game reasons (too dangerous, nothing left). In a recorded run, fix what
+  blocks and note the rest.
 - A stop keeps the run live and wakes me; observe "no game change when one was expected" and kick back
   (11-24, 11-25).
 - Every skipped popup is interpreted later; a warning (Famished) is never pressed past (11-24).

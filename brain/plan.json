@@ -1,28 +1,8 @@
 {
- "label": "Siwur: continue Red Rock stratum 1 (11.20.1.1.11)",
- "objective": "Siwur from level 1 to level 5",
- "goal": "Finish exploring, fighting, and looting Red Rock stratum 1",
+ "label": "Siwur: level 5 reached, held",
+ "objective": "Siwur to level 5 (reached at turn 146400)",
+ "goal": "hold: the owner sets the next goal",
  "stages": [
-  {
-   "script": "explore",
-   "args": {
-    "hand_off": true,
-    "fight": true,
-    "missile": true,
-    "collect": true,
-    "auto_eat": true,
-    "auto_cook": true,
-    "hunt": true,
-    "goal_level": 5,
-    "max_turns": 1500,
-    "raise_hp_fraction": 0.5,
-    "hold": true,
-    "max_hostiles": 2,
-    "accept_kinds": [
-     "dreadroot"
-    ]
-   }
-  },
   {
    "script": "remote",
    "args": {

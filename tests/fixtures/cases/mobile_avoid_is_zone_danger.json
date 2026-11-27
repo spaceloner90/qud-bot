@@ -1,0 +1,337 @@
+{
+ "name": "mobile_avoid_is_zone_danger",
+ "why": "Siwur 2026-11-27, Red Rock stratum 3: after fleeing the Snapjaw Firesnarler (avoid, mobile, tracks by smell), restarting explore walked straight back into him: the danger check covered only 12 cells round his last sighting. A fresh sighting of a mobile avoid kind must stop explore for the whole zone.",
+ "script": "explore",
+ "args": {
+  "hand_off": true,
+  "fight": true,
+  "missile": true,
+  "collect": true,
+  "auto_eat": true,
+  "auto_cook": true,
+  "hunt": true,
+  "goal_level": 5,
+  "max_turns": 1500,
+  "raise_hp_fraction": 0.5,
+  "hold": true,
+  "max_hostiles": 2,
+  "accept_kinds": [
+   "dreadroot"
+  ]
+ },
+ "memory": {},
+ "state": {
+  "seq": 1354,
+  "mode": "run",
+  "wait": "map",
+  "autoact": null,
+  "time": "2026-11-27T00:07:34.451",
+  "turn": 143721,
+  "game": {
+   "id": "1f19697d-7a0e-4bbc-8a1c-b1efd156ea8d",
+   "mode": "Roleplay"
+  },
+  "screen": {
+   "w": 80,
+   "h": 25,
+   "rows": [
+    "                                                                                ",
+    "                                ................                                ",
+    "                                .              .. ... .                         ",
+    "                       .......  ......                .                         ",
+    "                       .     .  .. ...                .                         ",
+    "                       .     .   ......                ........                 ",
+    "                       .     .   .......                      .                 ",
+    "                  ......     .  ........                      .. .              ",
+    "                    ..       ... . ... ....                      .              ",
+    "                               ..   ..                                          ",
+    "                 .....          .  .                                            ",
+    "                 .....   ........ .                                             ",
+    "                 ..... .     .. .....                                           ",
+    "                 ... . .        .....                                           ",
+    "                 . ... .       .......                                          ",
+    "                  ......        .....                   ...                     ",
+    "                  ........      .....                  ..                       ",
+    "                 ... ...     .... ...               ....                        ",
+    "                  .....         .. .                ..                          ",
+    "                  .....                              .                          ",
+    "                   ...                            ....                          ",
+    "                  .....                 .. .. .  .                              ",
+    "                  ............     ....           .                             ",
+    "                 .......     .......   ... .                                    ",
+    "                                                                                "
+   ],
+   "fg": [
+    "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyykkkkkkkkkkkkkkkkkkyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyykkkkkkkkkkkkkkkkkkkkkkkkkyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyyyyyyyykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkYkkyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyyyyyyyykkkkkkkkkkkkkkkkkyyyyyyykkkkkkkkkkyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyyyyyyyykkkkkkkkkkkkkkkkkkyyyyyyyyyyyyykkkkkkkkkkkyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyyyyyyyykkkyyykkkkkkkkkkkkyyyyyyyyyyyyykYkkkkkkkkkyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyyyykkkkkkkyyykkkkkkkkkkkkkyyyyyyyyyyyykkkkkkkkkkkkkyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyyyykkkkkkkkyykkkkkkkkkkkkkyyyyyyyyyyyyyyyyyyyykkkYkkyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyykkkkkkkkkkkyykkkkkkkkkkkkkkkyyyyyyyyyyyyyyyyyykkkkkkYYyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyykkkkkkkkkkkyykkkkkkYkkkkykkkyyyyyyyyyyyyyyyyyyyyyyykkykyyyyyyyyyy",
+    "yyyyyyyyyyyyyyykkkkkkkkkkkkkkkkkkkkkkkkyyykyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyykkkkkkkkkkkYBkkkkkkkkkkkkkyyyykyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyykkkkkkkkkkkkkkkkkkkkkkkkkkkkyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyykkkkkkkkYkkkkyyykkkkkkkkkkkyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyykkkkkYkkkkkkyyyyykkkkkkkkkyyyyyyyyyyyyyyyykkkkkyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyykkkkkkkkkyyyyykkkkkkkkkyyyyyyyyyyyyyyykkkkkkyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyykkkkkkkkkkyyyykkkkkkkkyyyyyyyyyyyyykkkkkkkkkyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyykkkkMkkkkyyykkkkkkkkkkyyyyyyyyyyyyykkkkkkkyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyykkkkkkkkkyyyykkkkkkkkkyyyyyyyyyyyyykkkkkkyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyyykkkkkkkyyyyyyykkkkkkyyyyyyyyyyyykkkkkkyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyykkkkkkkkkyyyyyyyyyyyyyyykkkkkkkkkkkkkkkkyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyykkkkkkkkkkkkkkkkyyykkkkkkkkYkkkkkkkkkkkkyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyykkkkkkkkkkkkkkkkkkkkkkkkkYkkkkkYkkkkkyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyykkkkkkkkkkkkkkkkkkkkkkkYkkkkkkkkkkkkkyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "yyyyyyyyyyyyyyyykkkkkkkkkyyykkkkkkkkkkkkkkkkkkyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
+   ]
+  },
+  "player": {
+   "name": "Siwur",
+   "hp": 30,
+   "maxhp": 30,
+   "level": 4,
+   "av": 4,
+   "dv": 0,
+   "qn": 100,
+   "ms": 60,
+   "food": "Sated",
+   "water": "Wet",
+   "effects": [
+    "defensive stance"
+   ],
+   "x": 24,
+   "y": 11,
+   "zone": "JoppaWorld.11.20.1.1.13",
+   "zoneName": "Red Rock, 3 strata deep"
+  },
+  "map": {
+   "w": 80,
+   "h": 25,
+   "rows": [
+    "                               ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                               ",
+    "                               ▒................▒▒▒▒▒▒▒▒                        ",
+    "                      ▒▒▒▒▒▒▒▒▒▒.▒▒▒▒▒▒▒▒▒▒▒▒▒▒../...¿.▒                        ",
+    "                      ▒...',..▒▒......▒       ▒▒▒▒▒▒▒▒.▒                        ",
+    "                      ▒.▒▒▒▒▒.▒▒..▒...▒▒             ▒.▒▒▒▒▒▒▒▒▒                ",
+    "                      ▒•▒   ▒.▒▒▒......▒             ▒¿........▒                ",
+    "                  ▒▒▒▒▒.▒   ▒.▒▒▒.......▒            ▒▒▒▒▒▒▒▒▒.▒▒▒              ",
+    "                  ....`.▒▒  ▒.▒▒........▒                    ▒..%.▒             ",
+    "               ▒▒▒▒▒.,≈..▒  ▒...▒.%...▒....                  ▒▒▒▒.∙..           ",
+    "               ▒..~≈≈≈~▒▒▒  ▒▒▒..%∙%..▒ ▒+╫                       ▒▒ ▒          ",
+    "               ▒≈.....▒▒▒▒▒▒▒▒▒▒.▒▒.▒▒▒   ▒                                     ",
+    "            ▒▒▒▒~'....▒∙@........▒.▒▒▒    ▒                                     ",
+    "          ▒≈≈.~▒≈'....▒.▒▒▒▒▒..▒.....▒                                          ",
+    "            ▒▒.~~,..%.▒.▒   ▒▒▒▒.....▒▒                                         ",
+    "             ▒▒▒▒.∙...▒.▒     ▒.......▒                ▒▒▒▒▒                    ",
+    "                ▒▒......▒     ▒▒.....▒▒               ▒▒...╫                    ",
+    "                ▒▒........    ▒▒.....╫             ▒▒▒▒..▒▒▒                    ",
+    "                ▒...<•..▒   ▒....▒...╫             ▒....▒▒                      ",
+    "                ▒▒.....▒▒    ▒▒▒..%.▒▒             ▒..▒▒▒                       ",
+    "                 ▒.....▒       ▒▒▒▒▒▒            ▒▒▒╫.▒                         ",
+    "               ▒~▒▒...▒▒               ▒▒▒▒▒▒▒▒▒▒▒....▒                         ",
+    "               ▒~≈.....▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒..∙..▒.σ%.%▒▒▒▒                         ",
+    "               ~..............▒▒▒▒▒....▒∙▒▒▒∙%.▒▒%.▒                            ",
+    "               ▒▒.......▒▒▒▒▒.......▒▒∙.../.%▒▒▒▒▒▒▒                            ",
+    "                ▒▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                                  "
+   ],
+   "vis": [
+    "                               000000000000000000                               ",
+    "                               0000000000000000000000000                        ",
+    "                      0000000000000000000000000000000000                        ",
+    "                      00000000000000000       0000000000                        ",
+    "                      000000000000000000             00000000000                ",
+    "                      000   000000000000             00000000000                ",
+    "                  0000000   0000000000000            0000000000000              ",
+    "                  00000000  0000000000000                    000000             ",
+    "               00000000000  000000000000000                  00000000           ",
+    "               00000000000  00000000000 000                       00 0          ",
+    "               000000011111000000000000   0                                     ",
+    "            00000000001111111000000000    0                                     ",
+    "          0000000000001111100000000000                                          ",
+    "            0000000000100   00000000000                                         ",
+    "             000000000100     000000000                00000                    ",
+    "                000000000     000000000               000000                    ",
+    "                0000000000    00000000             000000000                    ",
+    "                000000000   0000000000             0000000                      ",
+    "                000000000    000000000             000000                       ",
+    "                 0000000       000000            000000                         ",
+    "               000000000               0000000000000000                         ",
+    "               0000000000000000   000000000000000000000                         ",
+    "               0000000000000000000000000000000000000                            ",
+    "               0000000000000000000000000000000000000                            ",
+    "                000000000   000000000000000000                                  "
+   ],
+   "objects": [
+    {
+     "x": 23,
+     "y": 11,
+     "glyph": "∙",
+     "name": "small boulder"
+    }
+   ],
+   "features": []
+  },
+  "quests": [
+   {
+    "name": "What's Eating the Watervine?",
+    "finished": false,
+    "giver": "Mehmet",
+    "where": "Joppa",
+    "steps": [
+     {
+      "name": "Travel to Red Rock",
+      "text": "Journey two parasangs north of Joppa to Red Rock.",
+      "finished": true
+     },
+     {
+      "name": "Find the Vermin",
+      "text": "Find the creatures that are eating Joppa's watervine.",
+      "finished": false
+     },
+     {
+      "name": "Get a Corpse",
+      "text": "Collect a corpse from one of the creatures.",
+      "finished": false
+     },
+     {
+      "name": "Return with the Corpse",
+      "text": "Return to Joppa with the corpse of the watervine vermin.",
+      "finished": false
+     }
+    ]
+   },
+   {
+    "name": "Fetch Argyve a Knickknack",
+    "finished": false,
+    "giver": "Argyve",
+    "where": "Joppa",
+    "steps": [
+     {
+      "name": "Find a Knickknack",
+      "text": "Search the regions surrounding Joppa for an artifact.",
+      "finished": true
+     },
+     {
+      "name": "Return to Argyve",
+      "text": "Bring the artifact to Argyve.",
+      "finished": false
+     }
+    ]
+   },
+   {
+    "name": "Visit the Namritara Glassfold",
+    "finished": false,
+    "giver": null,
+    "where": "outskirts, Joppa",
+    "steps": [
+     {
+      "name": "Travel to the historical site of the Namritara Glassfold",
+      "text": "",
+      "finished": false
+     }
+    ]
+   },
+   {
+    "name": "Visit Ekavuh",
+    "finished": false,
+    "giver": null,
+    "where": "Red Rock, 2 strata deep",
+    "steps": [
+     {
+      "name": "Travel to the historical site of Ekavuh",
+      "text": "",
+      "finished": false
+     }
+    ]
+   }
+  ],
+  "inventory": [
+   "waterskin [empty]",
+   "waterskin [empty]",
+   "torch x10 (unburnt)",
+   "waterskin [21 drams of fresh water]",
+   "bear jerky [8 servings]",
+   "witchwood bark x4",
+   "copper nugget x3",
+   "bent metal sheet x2",
+   "fractured microchip",
+   "bedroll",
+   "bedroll",
+   "dreadroot tuber x6",
+   "failed energy relay x2",
+   "small violet tube",
+   "cave spider's right hindleg",
+   "cave spider's left mid-hindleg",
+   "blood-stained neck-ring \u00040 \t0",
+   "bronze battle axe x3 \u001a5 \u00031d2",
+   "furs \u00042 \t-1",
+   "bronze two-handed sword \u001a6 \u00031d6",
+   "short bow \u001a4 [empty]",
+   "bronze dagger \u001a5 \u00031d2",
+   "beaded bracelet \u00040 \t0",
+   "leather armor \u00042 \t0"
+  ],
+  "equipped": [
+   "studded leather armor \u00043 \t-2",
+   "leather cap \u00041 \t0",
+   "lit torch (blazing)",
+   "iron long sword \u001a6 \u00031d4"
+  ],
+  "inventory_ids": [
+   "576",
+   "577",
+   "549",
+   "578",
+   "579",
+   "580",
+   "581",
+   "582",
+   "583",
+   "584",
+   "585",
+   "708",
+   "714",
+   "715",
+   "721",
+   "722",
+   "749",
+   "587",
+   "586",
+   "767",
+   "770",
+   "773",
+   "790",
+   "791"
+  ],
+  "equipped_ids": [
+   "766",
+   "765",
+   "550",
+   "750"
+  ],
+  "messages": [
+   "You hit (x2) for 5 damage with your iron long sword! [15]",
+   "The snapjaw scavenger dies!",
+   "You gain 10 XP!",
+   "The snapjaw hunter hits you (x1) with a wooden arrow for 2 damage!",
+   "You take 2 damage from Rofuluagoufoaho's pyrokinesis!",
+   "You take 1 damage from the fire started by Rofuluagoufoaho!",
+   "You pass by some shimmering heat.",
+   "You pass by some shimmering heat.",
+   "You take 1 damage from the fire started by Rofuluagoufoaho!",
+   "The air here ceases shimmering with heat.",
+   "You pass by a vase.",
+   "You pass by a brinestalk gate.",
+   "The way is blocked by some shale.",
+   "The way is blocked by some shale.",
+   "The way is blocked by some shale."
+  ]
+ },
+ "expect": {
+  "answer_re": "^(STOP|NEXT) mobile danger in this zone: .*Firesnarler"
+ }
+}

@@ -9,6 +9,11 @@ A case is a JSON file:
    "script": "explore",                 the stage script whose act(state, memory, args) is called
    "args": {...}, "memory": {...},      the stage args and stage memory to call it with
    "state": {...},                      the frozen snapshot (from live/log.jsonl)
+   "states": [{...}, ...],              or several, played in order with the same memory; expect is
+                                        checked against the last answer
+   "fresh_world": true,                 optional: an empty world file of its own (shared game knowledge
+                                        only) instead of the live one, so the live file's records can't
+                                        make a case pass
    "known_bug": "...",                  optional: a bug not fixed yet; reported as KNOWN (not failing) while
                                         it fails, and as FIXED once it passes (then drop the field)
    "expect": {"answer_re": "...",       a regex (multiline: ^ is any line's start) the answer lines must match
@@ -44,11 +49,29 @@ def isolate():
 def run_case(path):
     case = json.loads(path.read_text(encoding="utf-8"))
     import world
-    state = copy.deepcopy(case["state"])
-    world.CURRENT = world.load(state, apply=False)
+    # "states": a sequence of snapshots played in order with one stage memory (for bugs that only show
+    # across calls, like a target flip-flop); "expect" checks the last call's answer.
+    states = case.get("states") or [case["state"]]
     script = importlib.import_module("scripts." + case["script"])
     memory = copy.deepcopy(case.get("memory") or {})
-    answer = list(script.act(state, memory, case.get("args") or {}))
+    fresh = None
+    for raw in states:
+        state = copy.deepcopy(raw)
+        if case.get("fresh_world"):
+            # A world file of its own, empty but for the shared game knowledge, kept across the case's
+            # states (2026-11-27: a case reading the live world file passed because the live file already
+            # held what the fix was meant to record).
+            if fresh is None:
+                rid = world.run_id(state)
+                data = world.empty(rid)
+                for key in world.SHARED:
+                    data[key] = copy.deepcopy(world.load_game().get(key, {}))
+                fresh = world.World(rid, data, Path(tempfile.mkdtemp(prefix="qudbot_world_")) / "world.json")
+            fresh.update(state)  # what step.py does every call: the world learns from each snapshot
+            world.CURRENT = fresh
+        else:
+            world.CURRENT = world.load(state, apply=False)
+        answer = list(script.act(state, memory, case.get("args") or {}))
     text = "\n".join(answer)
     exp = case.get("expect") or {}
     problems = []

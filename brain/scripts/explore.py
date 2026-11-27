@@ -39,6 +39,7 @@ from scripts import fight  # noqa: E402
 from scripts import eat  # noqa: E402
 from scripts import collect  # noqa: E402
 from scripts import cook  # noqa: E402
+from scripts import light  # noqa: E402
 
 
 def interrupt_kinds(state, args):
@@ -127,16 +128,83 @@ def visible_hostiles(state):
     return [o for _, o in sorted(found, key=lambda t: t[0])], px, py
 
 
+THREAT_MEMORY_TURNS = 500  # a mobile hostile's sighting older than this says little about now
+
+
+def mobile_dangers(state, args):
+    """Hostiles in this zone we avoid (or haven't assessed) that move, seen within THREAT_MEMORY_TURNS,
+    wherever their last sighting was: [(creature, turns ago)]. A mobile hunter isn't where we last saw it
+    (2026-11-27: the explorer walked back into the Snapjaw Firesnarler, which tracks by smell, because
+    the danger check only covered 12 cells round its last cell, and it had moved on)."""
+    if world.CURRENT is None:
+        return []
+    p = state.get("player") or {}
+    turn = state.get("turn") or 0
+    found = []
+    for c in world.CURRENT.threats(p.get("zone")):
+        k = world.CURRENT.kind(c["name"])
+        if ignored(c["name"]) or harmless(c["name"]) or (k or {}).get("mobile") is False:
+            continue
+        if k is not None and k.get("verdict") == "fight":
+            continue  # routine fights come to the fight routine
+        if world.kind_name(c["name"]) in args.get("accept_kinds", []):
+            continue
+        ago = max(0, turn - c.get("last_turn", 0))
+        if ago <= args.get("mobile_danger_turns", THREAT_MEMORY_TURNS):
+            found.append((c, ago))
+    return sorted(found, key=lambda t: t[1])
+
+
+def swim_safe(state, memory, args):
+    """Whether a swim for loot is acceptable now (the user, 2026-11-27: we can swim with relative safety
+    as long as the zone is controlled; what we accept depends on how sure we are of what's around).
+    Never in or near a fight: nothing that moves or shoots in view or known alive within swim_radius (15),
+    full HP, and no fight for swim_quiet_turns (20)."""
+    p = state.get("player") or {}
+    if (p.get("hp") or 0) < (p.get("maxhp") or 1):
+        return False
+    turn = state.get("turn") or 0
+    if turn - memory.get("last_fight_turn", -10 ** 9) < args.get("swim_quiet_turns", 20):
+        return False
+    def can_come(name):
+        k = (world.CURRENT.kind(name) if world.CURRENT is not None else None) or {}
+        return k.get("mobile") is not False or k.get("ranged")
+    if any(can_come(o["name"]) for o in visible_hostiles(state)[0]):
+        return False
+    if world.CURRENT is None:
+        return False
+    px, py = p.get("x", 0), p.get("y", 0)
+    for c in world.CURRENT.threats(p.get("zone")):
+        if ignored(c["name"]) or harmless(c["name"]) or not can_come(c["name"]):
+            continue
+        # Knowledge goes stale: a sighting older than swim_memory_turns (500) says little about now (2026-11-27:
+        # snapjaws last seen 1,600-4,700 turns ago, likely dead or gone, kept a quiet zone "unsafe").
+        if turn - c.get("last_turn", 0) > args.get("swim_memory_turns", 500):
+            continue
+        # one seen moving off its last cell: whereabouts unknown, so it counts wherever it was
+        if c.get("moved_turn", -1) > c.get("last_turn", 0):
+            return False
+        if max(abs(c["x"] - px), abs(c["y"] - py)) <= args.get("swim_radius", 15):
+            return False
+    return True
+
+
 def known_threats(state, radius):
     """Hostiles the world file knows alive in this zone within radius, nearest first: [(creature, distance)]."""
     if world.CURRENT is None:
         return []
     p = state.get("player") or {}
     found = []
+    turn = state.get("turn") or 0
     for c in world.CURRENT.threats(p.get("zone")):
         if c.get("moved_turn", -1) > c.get("last_turn", 0):
             continue  # seen to have moved off its last known cell: whereabouts unknown
         if ignored(c["name"]) or harmless(c["name"]):
+            continue
+        # A mobile one's last sighting goes stale (2026-11-27: snapjaws last seen 1,600-4,700 turns earlier,
+        # likely dead or gone, still blocked camping and swimming). Rooted ones stay where they are.
+        k = world.CURRENT.kind(c["name"]) or {}
+        if k.get("mobile") is not False and turn - c.get("last_turn", 0) > THREAT_MEMORY_TURNS:
             continue
         d = max(abs(c["x"] - p.get("x", 0)), abs(c["y"] - p.get("y", 0)))
         if d <= radius:
@@ -367,7 +435,16 @@ def decide(state, memory, args):
         if why:
             return more + [f"STOP {why}"]
         return more or ["PASS"]
-    if memory.get("collecting") and memory.get("collect", {}).get("got") and state.get("wait") == "key":
+    # Relighting a torch (scripts/light.py): the inventory screens are its own.
+    if memory.get("light") and state.get("wait") == "key":
+        more, why, done = light.step(state, memory)
+        if why:
+            return more + [f"STOP {why}"]
+        if more:
+            return more
+    # The same for opening a container: its direction prompt, lists and popups are collect's.
+    if (memory.get("collecting") and state.get("wait") == "key"
+            and (memory.get("collect", {}).get("got") or (memory.get("collect", {}).get("chest") or {}).get("phase"))):
         more, why, done = collect.step(state, memory, world.CURRENT, args)
         if why:
             return more + [f"STOP {why}"]
@@ -631,6 +708,8 @@ def decide(state, memory, args):
                                                             or (args.get("hold") and args.get("stay"))):
         # The fight routine takes routine fights; anything unusual comes back as a reason to stop.
         lines, why = fight.engage(state, memory, dict(args, hunt=hunting), world.CURRENT)
+        if memory.get("fight", {}).get("active"):
+            memory["last_fight_turn"] = turn  # swim_safe waits swim_quiet_turns after any fight
         if why:
             return pre_eval + [f"STOP {why}"]
         if lines and any(not l.startswith(("SAY", "VOICE")) for l in lines):
@@ -670,12 +749,24 @@ def decide(state, memory, args):
         return [f"STOP budget: {turn - memory['start_turn']} turns used"]
 
     here = [player.get("zone"), player.get("x"), player.get("y"), turn]
+    # The game halts autoexplore whenever a creature comes into view ("You see a giant dragonfly to the
+    # south and stop acting."). That isn't the zone being done or blocked (2026-11-27, Siwur: a marsh full
+    # of non-hostile dragonflies handed over as "stuck" again and again, and the zone was abandoned): start
+    # autoexplore again, up to sighting_retries times in a row without moving.
+    last_msg = (state.get("messages") or [""])[-1]
+    sighting = bool(re.match(r"^You see .+ and stop (acting|exploring)\.?$", last_msg))
     if memory.get("last") == here:
-        memory["no_progress"] = memory.get("no_progress", 0) + 1
+        if sighting and memory.get("sightings", 0) < args.get("sighting_retries", 10):
+            memory["sightings"] = memory.get("sightings", 0) + 1
+        else:
+            memory["no_progress"] = memory.get("no_progress", 0) + 1
     else:
         memory["no_progress"] = 0
+        memory["sightings"] = 0
     memory["last"] = here
-    if memory["no_progress"] >= 2 and not memory.get("collecting"):  # collecting has its own give-up rules
+    # Collecting, and walking to gear, have their own give-up rules (2026-11-27: a gear walk that met the
+    # swim prompt was taken for autoexplore being stuck).
+    if memory["no_progress"] >= 2 and not memory.get("collecting") and not (memory.get("gear") or {}).get("target"):
         last = (state.get("messages") or [""])[-1]
         return [f"STOP stuck: autoexplore made no progress; last message: {last[:200]}"]
 
@@ -692,6 +783,14 @@ def decide(state, memory, args):
         k = world.CURRENT.kind(c["name"]) if world.CURRENT is not None else None
         if k is None or k.get("verdict") != "fight" or k.get("ranged"):
             return [f"STOP near known danger: {c['name']} ({(k or {}).get('verdict', 'unassessed')}) last seen at ({c['x']},{c['y']}), {d} away"]
+    # A mobile one we avoid is a danger to the whole zone while its sighting is fresh: it moves (and may
+    # track us by smell), so its last cell says little. The LLM decides: leave the zone, or accept_kinds.
+    md = mobile_dangers(state, args)
+    if md:
+        c, ago = md[0]
+        k = (world.CURRENT.kind(c["name"]) if world.CURRENT is not None else None) or {}
+        return [f"STOP mobile danger in this zone: {c['name']} ({k.get('verdict', 'unassessed')}) seen {ago} turns ago "
+                f"at ({c['x']},{c['y']}); it moves, so it could be anywhere here. Leave the zone, or accept_kinds to go on"]
     # Reload in downtime, not at the start of the next fight (the user, 2026-11-24): an empty missile
     # weapon with ammo in the pack and nothing hostile in view gets reloaded before moving on.
     equipped = state.get("equipped") or []
@@ -701,14 +800,28 @@ def decide(state, memory, args):
         memory["reload_tried_turn"] = turn
         return lines + ["SAY The musket is empty and nothing is around: reloading now so it is ready for the next fight.", "CMD CmdReload"]
     # The zone is explored: sweep up the remembered items autoget left (args.collect), then report.
+    # The torch went out (a swim does that): light a fresh one before going on, with nothing hostile in view.
+    if args.get("relight", True) and (memory.get("light") or (state.get("wait") == "map" and light.needed(state)
+                                                            and not visible_hostiles(state)[0])):
+        more, why, done = light.step(state, memory)
+        if why:
+            return lines + more + [f"STOP {why}"]
+        if not done and more:
+            return lines + more
+    swim_ok = swim_safe(state, memory, args) if args.get("swim", True) else False
     if memory.get("collecting"):
-        more, why, done = collect.step(state, memory, world.CURRENT, args)
+        more, why, done = collect.step(state, memory, world.CURRENT, dict(args, swim_ok=swim_ok))
         if why:
             return lines + more + [f"STOP {why}"]
         if done:
             taken = memory.get("collect", {}).get("taken", [])
+            left = [k.split(",", 2)[2] for k in collect.deep(world.CURRENT, player.get("zone"))
+                    if any(f"{o['x']},{o['y']},{o['name']}" == k for o in world.CURRENT.objects_in(player.get("zone")))]
+            full = memory.get("collect", {}).get("load_full")
             return lines + [f"NEXT zone explored at turn {turn}; picked up {len(taken)} item(s)"
-                            + (": " + ", ".join(taken[:8]) if taken else "")]
+                            + (": " + ", ".join(taken[:8]) if taken else "")
+                            + (f"; stopped collecting: carrying {full}, over max_load (sell or drop surplus)" if full else "")
+                            + (f"; left in deep water until it's safe to swim: {', '.join(left[:6])}" if left else "")]
         lines += more
         return lines if any(not l.startswith(("SAY", "VOICE")) for l in lines) else lines + ["PASS"]
     # Gear in sight (weapons, armour): take it now, not at the end-of-zone sweep (the user, 2026-11-24:
@@ -725,8 +838,8 @@ def decide(state, memory, args):
                 return False
         return True
     if args.get("collect") and args.get("gear_early", True) and world.CURRENT is not None and safe_to_loot():
-        more, why, done = collect.step(state, memory, world.CURRENT, args, mkey="gear", only=collect.GEAR,
-                                       max_dist=args.get("gear_dist", 20))
+        more, why, done = collect.step(state, memory, world.CURRENT, dict(args, swim_ok=swim_ok), mkey="gear",
+                                       only=collect.GEAR, max_dist=args.get("gear_dist", 20))
         if why:
             return lines + more + [f"STOP {why}"]
         picked = [l[len("SAY Picked up "):].rstrip(".") for l in more if l.startswith("SAY Picked up ")]
@@ -736,6 +849,9 @@ def decide(state, memory, args):
             if verdict:
                 return lines + more + [f"STOP {verdict}"]
         if not done:
+            # Busy with gear, not autoexploring: standing still meanwhile isn't autoexplore being stuck
+            # (2026-11-27: three gear give-ups in place added up to a false "stuck").
+            memory["no_progress"] = 0
             lines += more
             return lines if any(not l.startswith(("SAY", "VOICE")) for l in lines) else lines + ["PASS"]
     memory["sent"] = True

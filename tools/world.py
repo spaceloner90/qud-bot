@@ -5,6 +5,7 @@
   python tools/world.py food add "<name>"       a food the bot may eat on its own when hungry
   python tools/world.py evaluate liquid|feature "<kind>" "<note>"  a new one's use (clears it from to_evaluate)
   python tools/world.py pending                 the liquids and features still to evaluate
+  python tools/world.py loot-reset [zone]       forget a zone's loot give-ups (deep, unreachable, opened)
   python tools/world.py backfill                feed every logged snapshot of this run into it (no live run!)
 
 note, kind and food are queued (runs/<id>/edits.jsonl) and applied by the bot on its next call, so they
@@ -69,6 +70,12 @@ def main():
             return
         W.queue_edit(w.id, {"op": "evaluate", "type": sys.argv[2], "kind": sys.argv[3].lower(), "note": sys.argv[4], "turn": state.get("turn")})
         print(f"queued evaluation of {sys.argv[2]} {sys.argv[3]}: {sys.argv[4]}")
+        return
+    if cmd == "loot-reset":
+        # loot-reset [zone]: forget the zone's loot give-ups (deep, unreachable, opened); default: this zone
+        zone = sys.argv[2] if len(sys.argv) > 2 else (state.get("player") or {}).get("zone")
+        W.queue_edit(w.id, {"op": "loot_reset", "zone": zone})
+        print(f"queued loot reset for {zone}")
         return
     if cmd == "pending":
         for e in w.data.get("to_evaluate") or []:

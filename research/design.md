@@ -523,5 +523,83 @@ plus offline cases for each trigger.
   Read-only, so it's safe with or without a run.
 - **`--say` / `--think`** on send, walk and next_zone (`say.take_narration`): the narration plays before
   the action, in the same call. say.py and think.py are importable (`say()`, `think()`).
+- **Fight target flip-flop (2026-11-27, Siwur, salt marsh):** two hostile glowpads 9 and 13 cells away
+  in their pools. From (35,11) both were in view and the nearer was picked; the GOTO step landed on
+  (34,10), where only the other was in view, so the routine turned round, for 40 turns. The no-progress
+  failsafe missed it because the answers alternate. Two changes in `fight.engage`:
+  - **Commitment:** while walking to a target that drops out of view, keep walking to its last known
+    cell, until we're next to it, a kill message names it, or `approach_patience` turns pass (default
+    40). It applies only while nothing in view can come at us. A hostile that moves or shoots gets the
+    normal choice: the user pointed out that rounding a corner into nearer, more dangerous enemies must
+    never mean walking past them.
+  - **Pacing hand-over:** if the last `pace_steps` (8) approach steps landed on two cells or fewer, hand
+    over, whatever the cause.
+  - Replay cases: `glowpad_pingpong_commits`, `danger_in_view_breaks_commitment`, `pacing_hands_over`.
+    `replay_tests.py` now takes `"states"`, several snapshots played in order with one memory.
+- **The explorer no longer gives up on a zone because of our own scripts (2026-11-27, the user):**
+  - *Creature sightings:* the game halts autoexplore when a creature comes into view ("You see a giant
+    dragonfly to the south and stop acting."). That no longer counts as no progress, up to
+    `sighting_retries` (10) in a row. Case: `sighting_stop_is_not_stuck`.
+  - *Unreachable loot is remembered:* items given up on go into the run's world file per zone
+    (`unreachable`), not stage memory, which a plan change wipes. The swim prompt ("Move ... again to enter
+    it and start swimming") gives that item up at once. A gear walk is exempt from explore's no-progress
+    stop.
+  - *Containers:* the end-of-zone sweep opens every chest, locker, coffer, crate and strongbox
+    (`collect.chest_step`) and takes what's inside. Opened ones are kept per zone (`opened`). The flow
+    is the one found by hand: walk onto it or next to it, `CmdGetFrom`, the direction, its letter, `o`,
+    then each item's letter and `g`. An empty one gets `n` at "store an item?". It never presses on an
+    unchanged screen, because the snapshot can lag a key. Check: `chests_are_opened_like_by_hand`, which
+    replays the real screens.
+  - The walk stops before deep water; known rooted melee dangers 2+ cells off don't stop it.
+- **Swimming depends on the surroundings (the user, 2026-11-27: "the behaviours we should accept depend
+  on how confident we are about what's around"):**
+  - `explore.swim_safe`: full HP, no fight for `swim_quiet_turns` (20), nothing that moves or shoots in
+    view or known alive within `swim_radius` (15). One seen moving off its cell counts wherever it was.
+  - At the swim prompt, collect repeats the step when it's safe, so it goes in. Otherwise the item goes on
+    the zone's `deep` list and is fetched once it's safe. The zone report names what's still waiting.
+  - "Unreachable" give-ups expire after `RETRY_TURNS` (300): unreachable now, not for good.
+  - `scripts/light.py` relights the torch from the pack when the one in hand has gone out.
+  - The walk swims only with `tools/walk.py --swim` (the `+swim` token on WALK).
+  - Checks: `swims_for_loot_only_when_safe`, `swim_safety_reads_the_surroundings`.
+  - First live run, three fixes:
+    - Only a swim prompt *new* since the last call counts. An old one still in the message log had
+      marked dry loot as deep, including a chest at our feet.
+    - Sightings older than `swim_memory_turns` (500) don't count. Snapjaws last seen 1,600-4,700 turns
+      earlier had kept a quiet zone "unsafe".
+    - The chest routine's 40-key limit counts menu keys only, not walking steps.
+    - `tools/world.py loot-reset [zone]` forgets a zone's loot give-ups.
+- **Containers, second fix:** after the last item the game goes back to the cell's list with the
+  chest's own menu up ("o) open", "g) get"). Its g picked up the chest itself. Now a menu with "o) open"
+  in the taking phase means the chest is done. The repeat guard compares only the menu (lettered rows,
+  popup lines), not the whole screen, whose water glyphs change. Check: `chest_menu_is_not_an_item_menu`.
+- **Fixes from the Siwur level-5 retro (2026-11-27, `retro_siwur_level5.md`):**
+  - *Mobile avoid kinds are a zone-wide danger* (`explore.mobile_dangers`). A hostile we avoid that moves,
+    seen in this zone within 500 turns, stops explore wherever its last cell was ("mobile danger in this
+    zone ... leave, or accept_kinds"). Case: `mobile_avoid_is_zone_danger` (the Firesnarler walk-back).
+  - *Sightings go stale:* `known_threats` drops a mobile kind's sighting older than `THREAT_MEMORY_TURNS`
+    (500); rooted ones are kept. This also stopped stale snapjaws blocking camping. Check:
+    `stale_sightings_dont_block`.
+  - *Ordinary messages:* the camp meal's text, "is/remains stunned!" and the level-5 genome message no
+    longer stop a fight or explore. Case: `camp_meal_text_is_ordinary`.
+  - *The sweep says why it stopped:* "stopped collecting: carrying X/Y lbs, over max_load". Case:
+    `overloaded_sweep_says_why`.
+  - *Pacing failsafe in step.py* (`pacing`) for every script. 12 step answers in a row on at most two
+    cells, while turns pass, hand over. It caught the fight-and-gear alternation that the fight
+    routine's own pacing check missed. Check: `pacing_between_subsystems_hands_over`.
+  - *A script exception holds the run* (hand-over to the remote stage) instead of ending it. Only a failing
+    remote stage still stops.
+  - *`tools/profile.py`* walks the skills list a row at a time and expands every collapsed group, so the
+    list is complete however the page was left. Owned headers count ("[+] Axe").
+  - *`tools/menu.py` look* prints the card's own lines in full (`popup_text`). Check: `look_card_reads_in_full`.
+  - *Kind names drop any "x-stained", "x-encrusted", "x-covered" or "x-soaked" prefix*, so one item kept
+    one weapon record. Siwur's split iron long sword records were merged. Check: `stained_names_are_one_kind`.
+  - *Replay cases can take `"fresh_world": true`* (their own world file, updated from each state the way
+    step.py does), so the live file can't make them pass. `gear_giveups_are_not_stuck` uses it.
+  - *Mod v0.28* (installed, loads on the next game start): features are written nearest first, with the
+    cap raised from 300 to 1,200 in zones.
+  - *Not changed, by finding:* the explorer waiting to cook while Hungry is the owner's rule (cook only
+    450 turns after turning Hungry), so my hand-cooking was early. Long Blade Proficiency shows no to-hit
+    bonus in Siwur's rolls (mean 11.4 with the long sword, about Agility +1 alone), so `skill_bonus` is
+    unchanged. Charge from 4 cells works; the one failure was a wall in the way.
 - **`tools/help.py`**: the tools index, generated from the docstrings. **`research/controls.md`**: the
   core moves (game shortcuts and tools), required reading.

@@ -55,7 +55,9 @@ ORDINARY = [re.compile(p) for p in (
     r"^You cleave through the .+'s armor\.$",  # the axe's critical cleave (target AV down)
     r"^The .+ begins (bleeding|leaking)!$",  # plants leak instead of bleeding
     r"^The .+ takes \d+ damage from (bleeding|leaking)\.$",
-    r"^The .+ is (dazed|stunned|frozen|confused)\.$",  # effects we put on them (a torch crit dazed one)
+    r"^The .+ (is|remains) (dazed|stunned|frozen|confused)[.!]$",  # effects on them (2026-11-27: "The glowpad is stunned!" stopped explore twice)
+    r"^You gather whatever you can find for your meal",  # the camp meal's own text (2026-11-27: handed over as unexpected)
+    r"^Your genome enters an excited state",  # the level-5 rapid mutation (its choice popup follows)
     r"^You (begin|stop) bleeding[.!]$",  # our own bleeding (cave spider bites); HP checks still apply
     r"^You take (no|\d+) damage from bleeding\.$",
     r"^You miss",
@@ -344,7 +346,8 @@ def engage(state, memory, args, world):
     lines = []
     if not fight.get("active"):
         fight.update({"active": True, "start_turn": turn, "max_hit": 0, "hp_start": player.get("hp"),
-                      "ids": [o.get("id") or o["name"] for o in hostiles], "close_noted": [], "lost_noted": False})
+                      "ids": [o.get("id") or o["name"] for o in hostiles], "close_noted": [], "lost_noted": False,
+                      "trail": [], "approach": None})
         new = []  # what happened before the fight isn't the fight's business
     # Hand-overs for fights that need thinking, not the routine (the user, 2026-11-25: coming close to
     # death unexpectedly certainly qualifies; chancy fights are better played a turn at a time by the LLM).
@@ -662,8 +665,30 @@ def engage(state, memory, args, world):
             and hp < tk.get("engage_hp_fraction", args.get("engage_hp_fraction", 0.7)) * maxhp):
         # A new target that can't follow: better to rest first (step out of its sight); the LLM decides.
         return None, f"hurt before engaging: HP {hp}/{maxhp}, next is {target['name']}, which doesn't move"
+    # Walking to a target, stay committed to it while it's out of view (2026-11-27, Siwur: two glowpads in
+    # their pools, 9 and 13 cells off; from one cell only A was in sight, from the next only B, so every
+    # step turned round and we walked A-B-A-B for 40 turns). Re-picking from what's in view each call
+    # flips whenever a step hides the one we chose. Kept until we're next to its last known cell, a kill
+    # message names it, or approach_patience turns pass.
+    # Only while nothing in view can come at us (the user, 2026-11-27: rounding a corner into nearer, more
+    # dangerous enemies and walking past them is not the same case): any hostile in view that moves or
+    # shoots gets the normal choice, and the new-enemy hand-over above still applies.
+    tid = target.get("id") or f"{target['name']}@{target['x']},{target['y']}"
+    goal = fight.get("approach")
+    in_view = {(o.get("id") or f"{o['name']}@{o['x']},{o['y']}") for o in hostiles}
+    killed = {k.group(1) for m in new for k in [KILL.match(m)] if k}
+    def can_come(o):
+        k = world.kind(o["name"]) or {}
+        return o.get("hostile") and (k.get("mobile") is not False or k.get("ranged"))
+    danger_in_view = any(can_come(o) for o in hostiles)
+    committed = (goal if goal and goal["id"] != tid and goal["id"] not in in_view and goal["name"] not in killed
+                 and dist > 1 and not danger_in_view
+                 and turn - goal["turn"] <= args.get("approach_patience", 40)
+                 and max(abs(goal["x"] - px), abs(goal["y"] - py)) > 1 else None)
+    if not committed:
+        fight["approach"] = {"id": tid, "name": target["name"], "x": target["x"], "y": target["y"], "turn": turn}
     fight["target_at"] = target.get("id") or f"{target['name']}@{target['x']},{target['y']}"
-    if fight.get("target") != target["name"]:
+    if fight.get("target") != target["name"] and not committed:
         fight["target"] = target["name"]
         k = world.kind(target["name"])
         lines.append(f"VOICE engage: {W_kind(target['name']).capitalize()}. Engaging.")
@@ -735,4 +760,17 @@ def engage(state, memory, args, world):
     if fight.get("holding") and stalled:
         fight["holding"] = False
         lines.append(f"SAY {target['name']} isn't coming closer: going to it.")
-    return lines + [f"GOTO {target['x']} {target['y']}"], None
+    gx, gy = (committed["x"], committed["y"]) if committed else (target["x"], target["y"])
+    # The catch-all: approach steps that keep landing on the same two cells are going nowhere, whatever
+    # the cause (the no-progress failsafe in step.py misses it: the answers alternate and the position
+    # changes). Hand over rather than walk in place.
+    trail = fight.setdefault("trail", [])
+    trail.append([px, py, turn])
+    del trail[:-args.get("pace_steps", 8)]
+    if len(trail) >= args.get("pace_steps", 8) and len({(c[0], c[1]) for c in trail}) <= 2:
+        cells = sorted({(c[0], c[1]) for c in trail})
+        fight["trail"] = []
+        return None, handover(state, f"going back and forth between {' and '.join(map(str, cells))} for {len(trail)} steps "
+                                     f"(towards {committed['name'] if committed else target['name']} at ({gx},{gy})); "
+                                     "the routine can't reach it from here", fight)
+    return lines + [f"GOTO {gx} {gy}"], None

@@ -108,15 +108,27 @@ def select(name, col=0, width=40, max_sends=60):
     return False
 
 
-def dismiss_popups(limit=6):
+def popup_text(rs):
+    """The popup's own lines: the text between its ▌ and ▐ borders, without the screen behind it
+    (2026-11-26: an item's look card printed as a cut-off line mixed with the inventory list)."""
+    out = []
+    for x in rs:
+        if "▌" in x:
+            inner = x[x.index("▌") + 1:x.rindex("▐")] if "▐" in x[x.index("▌") + 1:] else x[x.index("▌") + 1:]
+            if inner.strip():
+                out.append(inner.strip())
+    return out
+
+
+def dismiss_popups(limit=6, full=False):
     for _ in range(limit):
         s = state()
         if s.get("wait") == "map":
             return
         text = " ".join(rows(s)).lower()
         if "press space" in text or "press [space]" in text:
-            popup = [x.strip("│ ▌▐").strip() for x in rows(s) if "▌" in x and x.strip("▌▐ █│")]
-            print("popup:", " / ".join(popup)[:200])
+            joined = " / ".join(popup_text(rows(s)))
+            print("popup:", joined if full else joined[:200])
             send("KEY Space")
             continue
         return
@@ -163,7 +175,7 @@ def item(name, action):
     if not key:
         fail(f"no '{action}' in the item's menu")
     send(f"KEY {key}")
-    dismiss_popups()
+    dismiss_popups(full=action.lower() == "look")  # a look card is read in full
     escape_to_map()
     s = state()
     # Report only what this action said: old messages read as success (2026-11-25: a failed equip

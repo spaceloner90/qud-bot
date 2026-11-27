@@ -948,10 +948,15 @@ namespace QudBot
             int w = zone.Width, h = zone.Height;
             StringBuilder objects = new StringBuilder();
             int objectCount = 0;
-            StringBuilder features = new StringBuilder();
+            // (v0.28) Features are gathered with their distance from the player and written nearest first, so a cap
+            // never drops the cells round us (2026-11-27: at 300, deep water next to the player went
+            // missing in a busy marsh zone). The world map (zone ID without dots, e.g. "JoppaWorld") shows
+            // all its cells at once.
+            List<KeyValuePair<int, string>> featureList = new List<KeyValuePair<int, string>>();
             int featureCount = 0;
-            // The world map (zone ID without dots, e.g. "JoppaWorld") shows all its cells at once.
-            int featureCap = zone.ZoneID != null && zone.ZoneID.IndexOf('.') < 0 ? 2500 : 300;
+            int featureCap = zone.ZoneID != null && zone.ZoneID.IndexOf('.') < 0 ? 2500 : 1200;
+            int pcx = 0, pcy = 0;
+            try { pcx = player.CurrentCell.X; pcy = player.CurrentCell.Y; } catch { }
             sb.Append(",\"map\":{\"w\":").Append(w).Append(",\"h\":").Append(h).Append(",\"rows\":[");
             StringBuilder visRows = new StringBuilder();
             for (int y = 0; y < h; y++)
@@ -1099,12 +1104,14 @@ namespace QudBot
                                 // Terrain and features in view by name: pools (with their liquid),
                                 // furniture, plants, and on the world map each cell's terrain. Walls
                                 // and everything already in objects are left out.
-                                else if (visible && featureCount < featureCap && o != player && !o.IsCreature && !o.IsTakeable()
+                                else if (visible && featureCount < 4000 && o != player && !o.IsCreature && !o.IsTakeable()
                                     && !o.IsDoor() && !o.IsWall() && !o.HasPart("StairsUp") && !o.HasPart("StairsDown"))
                                 {
-                                    features.Append(featureCount == 0 ? "" : ",");
-                                    features.Append("{\"x\":").Append(x).Append(",\"y\":").Append(y);
-                                    features.Append(",\"name\":").Append(Json.Str(o.DisplayNameStripped)).Append("}");
+                                    StringBuilder one = new StringBuilder();
+                                    one.Append("{\"x\":").Append(x).Append(",\"y\":").Append(y);
+                                    one.Append(",\"name\":").Append(Json.Str(o.DisplayNameStripped)).Append("}");
+                                    int d = Math.Max(Math.Abs(x - pcx), Math.Abs(y - pcy));
+                                    featureList.Add(new KeyValuePair<int, string>(d, one.ToString()));
                                     featureCount++;
                                 }
                             }
@@ -1118,6 +1125,10 @@ namespace QudBot
                 sb.Append(y == 0 ? "" : ",").Append(Json.Str(row.ToString()));
                 visRows.Append(y == 0 ? "" : ",").Append(Json.Str(vis.ToString()));
             }
+            featureList.Sort((a, b) => a.Key.CompareTo(b.Key));
+            StringBuilder features = new StringBuilder();
+            for (int i = 0; i < featureList.Count && i < featureCap; i++)
+                features.Append(i == 0 ? "" : ",").Append(featureList[i].Value);
             sb.Append("],\"vis\":[").Append(visRows).Append("],\"objects\":[").Append(objects)
               .Append("],\"features\":[").Append(features).Append("]}");
         }

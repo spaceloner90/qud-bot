@@ -35,7 +35,9 @@ def kind_name(name):
     name = name.split(" and friend to ")[0]
     base = name.split("[")[0].strip().lower()
     words = base.split()
-    while len(words) > 1 and words[0] in STATE_WORDS:
+    # Also any "<x>-stained", "<x>-encrusted", "<x>-covered", "<x>-soaked" (2026-11-27: "salt-encrusted iron
+    # long sword" kept its own weapon record beside "iron long sword" for the same item id).
+    while len(words) > 1 and (words[0] in STATE_WORDS or re.match(r"^[\w-]+-(stained|encrusted|covered|soaked)$", words[0])):
         words = words[1:]
     return " ".join(words)
 
@@ -352,6 +354,11 @@ def _apply_edit_file(w, path):
             store = w.data.setdefault("liquid_kinds" if typ == "liquid" else "feature_kinds", {})
             store[k] = {"note": e.get("note", ""), "turn": e.get("turn")}
             w.data["to_evaluate"] = [x for x in pending if x["kind"] != k]
+        elif e.get("op") == "loot_reset":
+            # {"op": "loot_reset", "zone": ...}: forget a zone's loot give-ups (deep, unreachable, opened)
+            # so the sweep tries everything again (2026-11-27: a stale swim prompt marked dry loot deep)
+            for store in ("deep", "unreachable", "opened"):
+                (w.data.get(store) or {}).pop(e.get("zone"), None)
         elif e.get("op") == "food":
             food = w.data.setdefault("food", [])
             for name in e.get("add", []):

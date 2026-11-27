@@ -7,6 +7,8 @@ view, a new status, a level-up) or on arrival. Prints why it stopped and what's 
 
 --ignore: a kind that doesn't stop the walk (walking up to a rooted one to kill it: tools/kill.py).
 --say / --think: narrate in the same call (voice / panel thought), before the walk starts.
+--swim: let the walk go into deep water (by default it stops there). Only when the zone is under control:
+        nothing that moves or shoots near, full HP (lessons.md: what we accept depends on what's around).
 Importable: walk(x, y, ignore=None) -> (reason, state). Needs a live run in the remote stage.
 """
 import argparse, json, sys, time
@@ -28,10 +30,10 @@ def state():
     return json.loads((ROOT / "live" / "state.json").read_text(encoding="utf-8-sig"))
 
 
-def walk(x, y, ignore=None, timeout=300, stall=8):
+def walk(x, y, ignore=None, timeout=300, stall=8, swim=False):
     """Walk to (x, y); returns (the reason it ended, the state then). Reason "send failed" if not sent."""
     before = memory().get("walk_result")
-    line = f"WALK {x} {y}" + (" " + ignore.replace(" ", "_") if ignore else "")
+    line = f"WALK {x} {y}" + (" " + ignore.replace(" ", "_") if ignore else "") + (" +swim" if swim else "")
     code = _send.play([line])
     if code in (2, 4):
         return "send failed", state()
@@ -70,9 +72,10 @@ def main():
     ap.add_argument("y", type=int)
     ap.add_argument("--ignore", default=None)
     ap.add_argument("--timeout", type=float, default=300)
+    ap.add_argument("--swim", action="store_true")
     import say as _say
     a = ap.parse_args(_say.take_narration(sys.argv[1:]))
-    reason, s = walk(a.x, a.y, a.ignore, a.timeout)
+    reason, s = walk(a.x, a.y, a.ignore, a.timeout, swim=a.swim)
     report(reason, s)
     return 0 if reason == "arrived" else 2
 

@@ -21,6 +21,32 @@ missing or code-only there). Imported by CLAUDE.md. Facts, not rules (rules are 
   in threat.py (misses checked against the wielded weapon; observed rate blended with the computed one
   over PRIOR_SWINGS = 10); vet 0 failing. Hand-played swings still aren't recorded (no target in remote).
 - Explore can report a false "stuck" after several pickups in a row (position unchanged): just resume.
+- Explore handed over as "unexpected" on the camp meal's own text, "You gather whatever you can find for
+  your meal: ... You toss them in a pot and stir." (Siwur, 2026-11-27). Explore also reported "stuck" after
+  the game stopped autoexplore for a non-hostile dragonfly ("You see a giant dragonfly ... and stop
+  acting"). Restarting is enough in both cases. (2026-11-27: the sighting stop is fixed, see
+  `sighting_retries` in design.md; the meal text still hands over.)
+- Collect forgot "cannot reach X; leaving it" on every plan change, so each restart walked back to the
+  same unreachable loot. Here it was across deep water, and explore then stalled at the swim prompt
+  (2026-11-27). Fixed the same day: give-ups are kept per zone in the world file, and the swim prompt
+  gives the item up at once.
+- **Auto-loot never opened containers**: collect.py listed chests among the fixtures it walks past, so
+  chests were only ever looted by hand (2026-11-27; fixed the same day: `collect.chest_step`). By hand: stand next to it, `CMD CmdGetFrom`, the
+  direction, the chest's letter, `o) open`. An empty one asks "would you like to store an item?"
+  (`KEY n`). In a full one, take each item with its letter then `g`; the list re-letters after each take.
+- The snapshot's `map.features` stops at 300 entries (Siwur, salt marsh, 2026-11-27): in a busy zone the
+  cells round the player can be missing, deep water included. It's a mod cap: raise it in the next mod
+  batch, nearest cells first.
+- `tools/walk.py` followed the game's path into a deep pool (the second step after "Move ... again to enter
+  it and start swimming"), and the swim put the torch out (2026-11-27). Fixed: the walk stops at that
+  message or when swimming.
+- `tools/profile.py` reads only the skill groups left expanded on the Skills page. After I collapsed them to
+  find Long Blade (Siwur, level 3, 2026-11-26), it recorded the skills as just Long Blade and its
+  proficiency. Expand every group (Keypad6) before running it, or fix it to expand them. Also,
+  `threat.skill_bonus` knows only Axe and Cudgel Proficiency, not Long Blade Proficiency (not fixed yet).
+- `tools/menu.py item "<name>" look` prints only a cut-off line of the description popup and dismisses it
+  (2026-11-26, Siwur). To read an item, do it by hand: `CMD CmdInventory`, its letter, `KEY Return`, `KEY l`,
+  then `tools/send.py --screen`.
 - Autoexplore sometimes stalls with "no progress" after picking up a pile (not weight): restart it.
 - Autoexplore won't move while a hostile is in view, so a hostile in an unreachable pool stalls it.
 
@@ -76,6 +102,15 @@ missing or code-only there). Imported by CLAUDE.md. Facts, not rules (rules are 
   lingering "healing" effect.
 - Musket: kept for range 2+ (point-blank shots go wild); shots into a pool hit brinestalk and glowpads
   in the line. Whether a shot plus reload costs ~2 turns is unmeasured.
+- **Freezing Ray kills out of sight without a message.** Siwur, 2026-11-27: a vine shooting from the
+  dark stopped shooting after a ray down its line, and "You gain 25 XP!" (a vine's XP) came with the ray.
+  The two chilled dreadroots in the same line took no damage message. Likely the vine died unseen.
+- Long Blade Proficiency: Siwur's long-sword rolls average 11.4 over 92 swings, about Agility +1 alone,
+  so no visible to-hit bonus (Axe Proficiency's was about +2). Only part of those swings came after the
+  purchase. Check again with a long-blade character.
+- **Level 5 (Mutated Human): "Your genome enters an excited state!"** comes after the level-up popups, then
+  a forced choice, "Choose a physical mutation to rapidly advance": the pick gains three ranks at once
+  (Siwur: Freezing Ray 3 -> 6, 2026-11-27). Space picks the highlighted one.
 - HP gain per level-up is rolled: 2-5 with Toughness 18 (HP at level 5 ranged 29-35).
 - XP shrinks as we level well before the wiki's "out-tier by a lot" (croc 75 -> 37 by level 5).
 - Our sturdy steel battle axe's crit "cleaves through" armour (lowers the target's AV).
@@ -135,6 +170,9 @@ missing or code-only there). Imported by CLAUDE.md. Facts, not rules (rules are 
 ## Driving the game through the bot
 
 - Dismiss the "health below 40%" popup before the next command: it blocks it (CmdAbilities didn't open).
+- The snapshot right after an action can lag it. On Siwur, 2026-11-26, a swing showed no new message and an
+  unchanged spider for several snapshots. The miss and the "below 40%" popup only showed on the next send.
+  Re-read (`tools/send.py` with no lines) before concluding the game ignored a command.
 - Space on an item's popup takes the default action (for food: eat). Read before Space.
 - Equipment screen: Space on a slot opens the equipped item's own menu; the slot's letter asks what to
   put in; remove = cursor to the row, Space, "r) remove". Equip from the inventory ("e) equip (auto)").
@@ -163,6 +201,9 @@ missing or code-only there). Imported by CLAUDE.md. Facts, not rules (rules are 
 - Explore/fight args beyond design.md: `stay`/`stay_turns` (hold a cell with nothing in view),
   `ignore_far`, `assess_radius` (12), `outnumber_radius` (3: only enemies this close count toward
   max_hostiles), `auto_start` in bridge.json (start the run once in a zone).
+- **The brain reloads the scripts on every call, so a live run runs half-done edits** (2026-11-27: an
+  import added after its first use stopped the run with a NameError). Hold the run first (a remote-only
+  plan) before editing scripts, vet, then hand back.
 - Editing: no backslash escapes through shell heredocs into code (`\b`, `\n` got mangled; a backspace
   in a C# string froze the game); don't rewrite files through PowerShell (garbled UTF-8, wiped a
   section); keep .ps1 ASCII; compile before the bot can run it; brain output is UTF-8, inputs utf-8-sig.

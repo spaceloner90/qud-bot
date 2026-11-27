@@ -40,14 +40,127 @@
     "bronze battle axe \u001a5 \u00031d2"
    ],
    "recorded": "2026-11-26 00:22"
+  },
+  {
+   "turn": 142646,
+   "level": 2,
+   "xp": 260,
+   "attributes": {
+    "Strength": 22,
+    "Agility": 18,
+    "Toughness": 18,
+    "Intelligence": 14,
+    "Willpower": 16,
+    "Ego": 16
+   },
+   "mutations": {
+    "Freezing Ray": "2",
+    "Multiple Legs": "1",
+    "Teleportation": "1"
+   },
+   "skills": [
+    "Axe",
+    "Axe Proficiency",
+    "Dismember",
+    "Butchery",
+    "Charge",
+    "Make Camp"
+   ],
+   "points": {
+    "skill": 66,
+    "attribute": 0,
+    "mutation": 0
+   },
+   "hp": 21,
+   "maxhp": 21,
+   "equipped": [
+    "furs \u00042 \t-1",
+    "lit torch (blazing)",
+    "bronze battle axe \u001a5 \u00031d2"
+   ],
+   "recorded": "2026-11-26 23:44"
+  },
+  {
+   "turn": 143057,
+   "level": 3,
+   "xp": 595,
+   "attributes": {
+    "Strength": 22,
+    "Agility": 18,
+    "Toughness": 18,
+    "Intelligence": 14,
+    "Willpower": 16,
+    "Ego": 16
+   },
+   "mutations": {
+    "Freezing Ray": "2",
+    "Multiple Legs": "1",
+    "Teleportation": "1"
+   },
+   "skills": [
+    "Axe",
+    "Axe Proficiency",
+    "Dismember",
+    "Butchery",
+    "Charge",
+    "Make Camp"
+   ],
+   "points": {
+    "skill": 132,
+    "attribute": 1,
+    "mutation": 1
+   },
+   "hp": 25,
+   "maxhp": 25,
+   "equipped": [
+    "wet furs \u00042 \t-1",
+    "lit torch (blazing)",
+    "wet iron long sword \u001a6 \u00031d4"
+   ],
+   "recorded": "2026-11-26 23:52"
+  },
+  {
+   "turn": 143057,
+   "level": 3,
+   "xp": 595,
+   "attributes": {
+    "Strength": 23,
+    "Agility": 18,
+    "Toughness": 18,
+    "Intelligence": 14,
+    "Willpower": 16,
+    "Ego": 16
+   },
+   "mutations": {
+    "Freezing Ray": "2",
+    "Multiple Legs": "2",
+    "Teleportation": "1"
+   },
+   "skills": [
+    "Long Blade",
+    "Long Blade Proficiency"
+   ],
+   "points": {
+    "skill": 32,
+    "attribute": 0,
+    "mutation": 0
+   },
+   "hp": 25,
+   "maxhp": 25,
+   "equipped": [
+    "wet furs \u00042 \t-1",
+    "lit torch (blazing)",
+    "wet iron long sword \u001a6 \u00031d4"
+   ],
+   "recorded": "2026-11-26 23:55"
   }
  ],
  "current": {
-  "turn": 140726,
-  "level": 1,
-  "xp": 0,
+  "turn": 143057,
+  "level": 3,
+  "xp": 595,
   "attributes": {
-   "Strength": 22,
+   "Strength": 23,
    "Agility": 18,
    "Toughness": 18,
    "Intelligence": 14,
@@ -55,31 +168,26 @@
    "Ego": 16
   },
   "mutations": {
-   "Freezing Ray": "1",
-   "Multiple Legs": "1",
-   "Amphibious": "D",
+   "Freezing Ray": "2",
+   "Multiple Legs": "2",
    "Teleportation": "1"
   },
   "skills": [
-   "Axe",
-   "Axe Proficiency",
-   "Dismember",
-   "Butchery",
-   "Charge",
-   "Make Camp"
+   "Long Blade",
+   "Long Blade Proficiency"
   ],
   "points": {
-   "skill": 0,
+   "skill": 32,
    "attribute": 0,
    "mutation": 0
   },
-  "hp": 18,
-  "maxhp": 18,
+  "hp": 25,
+  "maxhp": 25,
   "equipped": [
-   "furs \u00042 \t-1",
+   "wet furs \u00042 \t-1",
    "lit torch (blazing)",
-   "bronze battle axe \u001a5 \u00031d2"
+   "wet iron long sword \u001a6 \u00031d4"
   ],
-  "recorded": "2026-11-26 00:22"
+  "recorded": "2026-11-26 23:55"
  }
 }

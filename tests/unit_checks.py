@@ -175,10 +175,210 @@ def feature_kinds_are_world_neutral():
     assert F.base_liquid("pool table") is None
 
 
+def chests_are_opened_like_by_hand():
+    """Siwur 2026-11-27: auto-loot never opened containers (one held the short bow we lacked). Replays the
+    real screens from opening two chests by hand: the script must press what I pressed."""
+    import json
+    from pathlib import Path
+    from scripts import collect
+    steps = json.loads((Path(__file__).parent / "fixtures" / "chest_open_states.json").read_text(encoding="utf-8"))
+    by_seq = {s["seq"]: s for s in steps}
+
+    class W:
+        def __init__(self, box):
+            self.data = {}
+            self.box = box
+        def objects_in(self, zone):
+            return [self.box]
+    zone = by_seq[3896]["state"]["player"]["zone"]
+    worlds = []
+    for box, seqs in (({"name": "chest", "x": 74, "y": 19}, range(3896, 3903)),
+                      ({"name": "chest", "x": 76, "y": 19}, range(3903, 3909))):
+        w, c = W(dict(box, zone=zone)), {"tried": [], "taken": [], "steps": 0}
+        worlds.append(w)
+        for seq in seqs:
+            s = by_seq[seq]
+            st = s["state"]
+            got = [l for l in collect.chest_step(st, c, w, zone, st["player"]["x"], st["player"]["y"]) or []
+                   if not l.startswith("SAY")]
+            assert got == [s["answer"]], (seq, got, s["answer"])
+    # the first chest is recorded as opened, so it isn't tried again after a plan change
+    assert "74,19,chest" in worlds[0].data.get("opened", {}).get(zone, []), worlds[0].data
+
+
+def chest_menu_is_not_an_item_menu():
+    """Siwur 2026-11-27: after "g" took the staff (the chest's last item), the game went back to the cell's
+    list with the chest's own menu up ("o) open", "g) get"); the routine took that for an item menu and
+    pressed g, picking up the chest itself. The replayed screens up to there must match, then that menu
+    gets Escape (the chest is done)."""
+    import json
+    from pathlib import Path
+    from scripts import collect
+    steps = json.loads((Path(__file__).parent / "fixtures" / "chest_stale_menu_states.json").read_text(encoding="utf-8"))
+    by_seq = {s["seq"]: s for s in steps}
+    zone = by_seq[4953]["state"]["player"]["zone"]
+
+    class W:
+        data = {}
+        def objects_in(self, z):
+            return [{"name": "chest", "x": 76, "y": 19, "zone": zone}]
+    w, c = W(), {"tried": [], "taken": [], "steps": 0}
+    for seq in range(4953, 4960):
+        st = by_seq[seq]["state"]
+        got = [l for l in collect.chest_step(st, c, w, zone, st["player"]["x"], st["player"]["y"]) or []
+               if not l.startswith("SAY")]
+        want = ["KEY Escape"] if seq == 4959 else [by_seq[seq]["answer"]]
+        assert got == want, (seq, got, want)
+
+
+def swims_for_loot_only_when_safe():
+    """The user 2026-11-27: loot in deep water isn't unreachable; swimming is fine when the zone is under
+    control. At the swim prompt: with swim_ok the same step goes in; without, the item is marked deep and
+    left for later (not written off), and a deep item is skipped until swim_ok."""
+    from scripts import collect
+
+    class W:
+        data = {"objects": {}}
+        def objects_in(self, z):
+            return [{"name": "studded leather armor", "x": 37, "y": 6, "zone": z}]
+    prompt = "There is a deep pool of brackish sugary water that way. Move northeast again to enter it and start swimming."
+    st = {"turn": 10, "wait": "map", "player": {"zone": "z", "x": 36, "y": 7},
+          "messages": ["You pass by a watervine.", prompt], "screen": {"rows": []}}
+    before = {"msgs": ["You pass by a watervine."]}  # the prompt is new since the last call
+    w, mem = W(), {"gear": {"tried": [], "taken": [], "steps": 1, "target": "37,6,studded leather armor",
+                            "seen_msgs": dict(before)}}
+    lines, why, done = collect.step(st, mem, w, {"swim_ok": True}, mkey="gear", only=collect.GEAR)
+    assert "GOTO 37 6" in lines, lines
+    w2, mem2 = W(), {"gear": {"tried": [], "taken": [], "steps": 1, "target": "37,6,studded leather armor",
+                              "seen_msgs": dict(before)}}
+    lines, why, done = collect.step(st, mem2, w2, {"swim_ok": False}, mkey="gear", only=collect.GEAR)
+    assert not any(l.startswith("GOTO") for l in lines), lines
+    assert "37,6,studded leather armor" in collect.deep(w2, "z")
+    assert "37,6,studded leather armor" not in collect.unreachable(w2, "z")  # not written off
+    # the same old prompt still in the log next call isn't a new one (2026-11-27: it marked dry loot deep)
+    st2 = dict(st, turn=11)
+    lines, why, done = collect.step(st2, mem2, w2, {"swim_ok": False}, mkey="gear", only=collect.GEAR)
+    assert done and not lines, (lines, done)  # skipped while unsafe
+    lines, why, done = collect.step(st2, mem2, w2, {"swim_ok": True}, mkey="gear", only=collect.GEAR)
+    assert "GOTO 37 6" in lines, lines  # fetched once it's safe
+
+
+def swim_safety_reads_the_surroundings():
+    """swim_safe: full HP, no fight lately, nothing that moves or shoots in view or known within 15 (one
+    seen moving off counts wherever it was); rooted melee kinds don't count."""
+    import world
+    from scripts import explore
+
+    class W:
+        def __init__(self, threats):
+            self.t = threats
+        def kind(self, name):
+            return {"mobile": False} if "glowpad" in name else {"mobile": True}
+        def threats(self, zone):
+            return self.t
+    st = {"turn": 100, "player": {"zone": "z", "x": 10, "y": 10, "hp": 30, "maxhp": 30}, "map": {"objects": []}}
+    old = world.CURRENT
+    try:
+        world.CURRENT = W([])
+        assert explore.swim_safe(st, {}, {}) is True
+        assert explore.swim_safe(st, {"last_fight_turn": 95}, {}) is False
+        assert explore.swim_safe(dict(st, player=dict(st["player"], hp=20)), {}, {}) is False
+        world.CURRENT = W([{"name": "wet glowpad", "x": 12, "y": 10, "last_turn": 90}])
+        assert explore.swim_safe(st, {}, {}) is True  # rooted, can't come
+        world.CURRENT = W([{"name": "snapjaw scavenger", "x": 40, "y": 10, "last_turn": 90}])
+        assert explore.swim_safe(st, {}, {}) is True  # 30 away
+        world.CURRENT = W([{"name": "snapjaw scavenger", "x": 20, "y": 10, "last_turn": 90}])
+        assert explore.swim_safe(st, {}, {}) is False  # 10 away
+        world.CURRENT = W([{"name": "snapjaw scavenger", "x": 70, "y": 10, "last_turn": 90, "moved_turn": 95}])
+        assert explore.swim_safe(st, {}, {}) is False  # whereabouts unknown
+        old_st = dict(st, turn=5000)
+        world.CURRENT = W([{"name": "snapjaw scavenger", "x": 70, "y": 10, "last_turn": 90, "moved_turn": 4990}])
+        assert explore.swim_safe(old_st, {}, {}) is True  # a sighting thousands of turns old says little now
+    finally:
+        world.CURRENT = old
+
+
+def pacing_between_subsystems_hands_over():
+    """Siwur 2026-11-27: the fight routine (a glowpad in view from one cell) and the gear walk (from the
+    other) took turns, so the steps landed on (36,6) and (37,6) for good. step.py's pacing failsafe sees
+    every script's steps; the replayed gear case's real positions must hand over, and a real walk mustn't."""
+    import json
+    from pathlib import Path
+    import step
+    case = json.loads((Path(__file__).parent / "fixtures" / "cases" / "gear_giveups_are_not_stuck.json").read_text(encoding="utf-8"))
+    mem, why = {}, None
+    states = case["states"][6:] * 2  # from (36,6) on, the real back-and-forth with (37,6)
+    for i, st in enumerate(states):
+        st = dict(st, turn=st["turn"] + i)  # turns pass
+        why = step.pacing(mem, st, ["GOTO 37 6" if i % 2 else "GOTO 37 2"], False) or why
+    assert why and why.startswith("pacing"), why
+    mem = {}
+    for i in range(30):  # a real walk east: never on two cells
+        st = {"wait": "map", "turn": 100 + i, "player": {"x": 10 + i, "y": 5}}
+        assert step.pacing(mem, st, ["GOTO 60 5"], False) is None
+    mem = {}
+    for i in range(30):  # attacks between steps reset it (step out to heal, step back in)
+        st = {"wait": "map", "turn": 100 + i, "player": {"x": 10 + i % 2, "y": 5}}
+        assert step.pacing(mem, st, ["GOTO 11 5"] if i % 3 else ["CMD CmdAttackE"], False) is None
+
+
+def look_card_reads_in_full():
+    """Siwur 2026-11-26: menu.py item ... look printed a cut-off line mixed with the inventory behind the
+    card. popup_text takes only the card's own lines (a real look card's screen)."""
+    import json, sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tools"))
+    import menu
+    rows = json.loads((Path(__file__).parent / "fixtures" / "look_card_rows.json").read_text(encoding="utf-8"))
+    assert menu.popup_text(rows) == ["small violet tube", "A strange substance fills a channel of glass.",
+                                     "Weight: 0 lbs.", "Perfect"], menu.popup_text(rows)
+
+
+def stained_names_are_one_kind():
+    """Siwur 2026-11-27: "salt-encrusted iron long sword" kept its own weapon record beside "iron long
+    sword" for the same item; any <x>-stained / -encrusted / -covered / -soaked prefix is a state."""
+    import world
+    assert world.kind_name("salt-encrusted iron long sword") == "iron long sword"
+    assert world.kind_name("sap-and-blood-stained watervine") == "watervine"
+    assert world.kind_name("wet snapjaw scavenger") == "snapjaw scavenger"
+    assert world.kind_name("two-handed iron long sword") == "two-handed iron long sword"
+
+
+def stale_sightings_dont_block():
+    """Siwur 2026-11-27: snapjaws last seen thousands of turns earlier kept counting as threats near us
+    (camping, swimming). A mobile kind's sighting older than THREAT_MEMORY_TURNS is dropped; a rooted
+    one's isn't (it's still there)."""
+    import world
+    from scripts import explore
+
+    class W:
+        def __init__(self, t):
+            self.t = t
+        def kind(self, name):
+            return {"mobile": False, "verdict": "fight", "ranged": True} if "vine" in name else {"mobile": True, "verdict": "fight"}
+        def threats(self, zone):
+            return self.t
+    st = {"turn": 5000, "player": {"zone": "z", "x": 10, "y": 10}}
+    old = world.CURRENT
+    try:
+        world.CURRENT = W([{"name": "snapjaw scavenger", "x": 12, "y": 10, "last_turn": 1000}])
+        assert explore.known_threats(st, 15) == []
+        world.CURRENT = W([{"name": "snapjaw scavenger", "x": 12, "y": 10, "last_turn": 4800}])
+        assert len(explore.known_threats(st, 15)) == 1
+        world.CURRENT = W([{"name": "seed-spitting vine", "x": 12, "y": 10, "last_turn": 1000}])
+        assert len(explore.known_threats(st, 15)) == 1  # rooted: still where it was
+    finally:
+        world.CURRENT = old
+
+
 CHECKS = [(f.__name__, f) for f in (proficiency_counts_in_to_hit, weapon_records_are_per_character,
                                      missile_weapon_fills_empty_slot, new_liquids_and_features_are_listed,
                                      sword_estimate_not_zero, torch_miss_is_not_the_weapons,
                                      thrown_hit_parses_and_is_ranged, rest_when_only_rooted_far,
                                      owned_item_is_declined, popup_never_gets_a_bare_pass,
                                      rewritten_plan_is_new, flying_prey_is_not_hunted,
-                                     charge_only_from_three_cells, feature_kinds_are_world_neutral)]
+                                     charge_only_from_three_cells, feature_kinds_are_world_neutral,
+                                     chests_are_opened_like_by_hand, chest_menu_is_not_an_item_menu,
+                                     swims_for_loot_only_when_safe, swim_safety_reads_the_surroundings,
+                                     look_card_reads_in_full, stained_names_are_one_kind, stale_sightings_dont_block,
+                                     pacing_between_subsystems_hands_over)]
